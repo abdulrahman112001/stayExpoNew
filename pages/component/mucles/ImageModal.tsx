@@ -1,10 +1,9 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import { Avatar, Button, FileButton, Group, Modal, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, Group, Button, Avatar, FileButton, Text } from '@mantine/core';
 import { IconEdit } from '@tabler/icons-react';
-import avatarImg from '../../public/assets/avatar.jpg'
-import Image from 'next/image';
+import { useRef, useState } from 'react';
+import avatarImg from '../../../public/assets/avatar.jpg';
 const ImageModal = () =>  {
     const [opened, { open, close }] = useDisclosure(false);
     const [file, setFile] = useState<File | null>(null);
@@ -49,7 +48,7 @@ const ImageModal = () =>  {
                 
              </div>
              <div className='text-end'>
-             <button className='px-1 py-2 text-white rounded-md  bg-bg_banfsgy'>Save</button>
+             <button className='px-1 py-2 text-white rounded-md bg-bg_banfsgy'>Save</button>
              </div>
         </Modal>
   
