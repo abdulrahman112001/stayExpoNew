@@ -75,7 +75,7 @@ export default function CardSearch({
 }: CardSearchProps) {
   const { classes } = useStyles();
 
-  const slides = image.map((image) => (
+  const slides = image?.map((image) => (
     <Carousel.Slide key={image}>
       <Image src={image} alt="img" height={230} />
     </Carousel.Slide>
