@@ -1,8 +1,9 @@
 "use client";
 
+import { useAuth } from "@/pages/auth/AuthProvider";
+import { notify } from "@/pages/utils/toast";
 import {
   Anchor,
-  Checkbox,
   Divider,
   Group,
   Loader,
@@ -11,21 +12,18 @@ import {
   PasswordInput,
   Radio,
   Stack,
-  TextInput,
+  TextInput
 } from "@mantine/core";
-import { upperFirst, useToggle } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
+import { upperFirst, useToggle } from "@mantine/hooks";
 import axios from "axios";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { ToastContainer } from "react-toastify";
 import Button from "../atoms/Button";
 import ButtonWithIcons from "../atoms/ButtonWithIcons";
 import facebookIcon from "./../../../public/assets/facebook.svg";
 import googleIcon from "./../../../public/assets/google.svg";
-import { ToastContainer } from "react-toastify";
-import { useState } from "react";
-import { notify } from "@/pages/utils/toast";
-import { useAuth } from "@/pages/auth/AuthProvider";
 export default function AuthinticationForm({ opened, close }:any) {
   const [type, toggle] = useToggle(["login", "register"]);
 
@@ -104,7 +102,7 @@ export default function AuthinticationForm({ opened, close }:any) {
       }
 
       return response.data;
-    } catch (error) {
+    } catch (error:any) {
       notify("error", `${error?.response?.data.error}`);
       setIsLoading(false);
 
