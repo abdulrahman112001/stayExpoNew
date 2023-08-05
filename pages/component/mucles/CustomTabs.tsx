@@ -15,14 +15,15 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import imgCompany from "../../../public/assets/agoda_preferred_logo.png";
-const CustomTabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("tab1");
+const CustomTabs = () => {
+  const [activeTab, setActiveTab] = useState<string>("tab1");
 
   const handleTabClick = () => {
-    scroll.scrollTo("content", {
-      smooth: true,
-      //   offset: -50,
-    });
+    // scroll.scrollTo("content", {
+    //   // smooth: true as boolean ,
+
+
+    // });
   };
 
   return (
