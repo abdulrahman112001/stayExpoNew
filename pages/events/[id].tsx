@@ -4,8 +4,9 @@ import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import AccordionComp from "@/component/accordion/Accordion";
-import Button from "@/component/atoms/Button";
+import AccordionComp from "../component/accordion/Accordion";
+import Button from "../component/atoms/Button";
+
 
 export default function Events() {
   return (
