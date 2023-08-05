@@ -1,5 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
+import { useAuth } from "@/auth/AuthProvider";
 import {
   Avatar,
   Box,
@@ -17,10 +17,10 @@ import {
   UnstyledButton,
   createStyles,
   rem,
+  useMantineTheme,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
-import avatarImg from "../../../public/assets/avatar.jpg";
 import {
   IconBook,
   IconChartPie3,
@@ -30,15 +30,14 @@ import {
   IconLogout,
   IconNotification,
   IconSettings,
+  IconUser,
 } from "@tabler/icons-react";
 import Link from "next/link";
+import { ToastContainer } from "react-toastify";
+import avatarImg from "../../../public/assets/avatar.jpg";
 import ToggleMenue from "../Home/ToggleMenue";
 import Logo from "../atoms/Logo";
 import AuthinticationForm from "./AuthinticationForm";
-import { ToastContainer } from "react-toastify";
-import { IconExternalLink } from "@tabler/icons-react";
-import { IconUser } from "@tabler/icons-react";
-import { useAuth } from "@/auth/AuthProvider";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -143,6 +142,7 @@ const mockdata = [
 ];
 
 export default function Navbar() {
+  
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const { logout, user } = useAuth();
@@ -150,7 +150,9 @@ export default function Navbar() {
   const [opened, { open, close }] = useDisclosure(false);
 
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
-  const { classes, theme } = useStyles();
+
+  const { classes, theme } = useStyles(); // Directly access theme from useStyles
+  
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -223,10 +225,10 @@ export default function Navbar() {
                 <>
                   <Menu
                     position="bottom"
-                    // transitionProps={{
-                    //   transition: "rotate-right",
-                    //   duration: 150,
-                    // }}
+                    transitionProps={{
+                      transition: "rotate-right",
+                      duration: 150,
+                    }}
                     width={200}
                     shadow="md"
                   >
