@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import Button from "./Button"
-import { Quantitiy } from "./Quantitiy"
+import Quantitiy from "./Quantitiy"
 
 function DropDown() {
   const [open, setOpen] = useState(false)

@@ -57,7 +57,7 @@ interface BadgeCardProps {
   }[];
 }
 
-export function BadgeCard({ image, title, description, country, badges ,   rating,
+export default function BadgeCard({ image, title, description, country, badges ,   rating,
 }: BadgeCardProps) {
   const { classes, theme } = useStyles();
 

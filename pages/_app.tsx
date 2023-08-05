@@ -7,8 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "../auth/AuthProvider";
 import { MantineProvider } from "@mantine/core";
-import { Navbar } from "./component/template/Navbar";
 import Footer from "./component/template/Footer";
+import Navbar from "./component/template/Navbar";
 
 
 export default function App({ Component, pageProps }: AppProps) {

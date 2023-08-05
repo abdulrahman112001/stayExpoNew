@@ -46,7 +46,7 @@ interface QuantityInputProps {
   max?: number;
 }
 
-export function Quantitiy({ min = 1, max = 10 }: QuantityInputProps) {
+export default function Quantitiy({ min = 1, max = 10 }: QuantityInputProps) {
   const { classes } = useStyles();
   const handlers = useRef<NumberInputHandlers>(null);
   const [value, setValue] = useState<number | ''>(1);

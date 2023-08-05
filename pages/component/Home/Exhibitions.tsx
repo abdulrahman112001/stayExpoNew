@@ -4,7 +4,7 @@ import { Carousel } from "@mantine/carousel";
 
 import useFetch from "@/hooks/useFetch";
 import Link from "next/link";
-import { BlogCard } from "../mucles/BlogCard";
+import BlogCard from "../mucles/BlogCard";
 interface EventData {
   id: string;
   image: string;

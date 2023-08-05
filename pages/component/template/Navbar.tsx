@@ -142,7 +142,7 @@ const mockdata = [
   },
 ];
 
-export function Navbar() {
+export default function Navbar() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const { logout, user } = useAuth();

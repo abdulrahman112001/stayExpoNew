@@ -66,7 +66,7 @@ interface CardSearchProps {
   };
 }
 
-export function CardSearch({
+export default function CardSearch({
   image,
   category,
   title,

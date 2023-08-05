@@ -35,7 +35,7 @@ interface UserCardImageProps {
   stats?: { label: string; value: string }[];
 }
 
-export function BlogCard({
+export default function BlogCard({
   image,
   avatar,
   name,

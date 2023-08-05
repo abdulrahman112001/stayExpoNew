@@ -77,7 +77,7 @@ interface ArticleCardProps {
   Blogs?: any;
 }
 
-export function BlogCardPage({
+ function BlogCardPage({
   className,
   image,
   link,

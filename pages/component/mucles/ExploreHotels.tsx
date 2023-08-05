@@ -5,7 +5,7 @@ import DropDown from '../atoms/DropDown'
 import Button from '../atoms/Button'
 import Link from 'next/link'
 
-export const ExploreHotels = () => {
+const   ExploreHotels = () => {
   return (
     <form
     // onSubmit={form.onSubmit((values) => {
@@ -31,3 +31,4 @@ export const ExploreHotels = () => {
   </form>
   )
 }
+export default ExploreHotels
