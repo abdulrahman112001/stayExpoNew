@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import React, { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import imgCompany from '../../../public/assets/agoda_preferred_logo.png'
+import imgCompany from "../../../public/assets/agoda_preferred_logo.png";
 const CustomTabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState("tab1");
 
@@ -118,19 +118,22 @@ const CustomTabs: React.FC = () => {
               <div className="border-b">
                 <div>
                   <div>
-                    <Image alt="img company" src={imgCompany} width='100' height='100' />
-                    
+                    <Image
+                      alt="img company"
+                      src={imgCompany}
+                      width="100"
+                      height="100"
+                    />
                   </div>
-                    
-                  
-                <div className="flex items-center gap-2 mt-3">
-                  <h1 className="font-bold">LIHO Hotel Tainan</h1>
-                  <div className="flex gap-1">
-                    <IconStar className="text-yellow-500 fill-yellow-500" />
-                    <IconStar className="text-yellow-500 fill-yellow-500" />
-                    <IconStar className="text-yellow-500 fill-yellow-500" />
+
+                  <div className="flex items-center gap-2 mt-3">
+                    <h1 className="font-bold">LIHO Hotel Tainan</h1>
+                    <div className="flex gap-1">
+                      <IconStar className="text-yellow-500 fill-yellow-500" />
+                      <IconStar className="text-yellow-500 fill-yellow-500" />
+                      <IconStar className="text-yellow-500 fill-yellow-500" />
+                    </div>
                   </div>
-                </div>
                 </div>
                 <div className="py-2">
                   <p className="text-gray-600">
@@ -145,10 +148,9 @@ const CustomTabs: React.FC = () => {
                   Get your trip off to a great start with a stay at this
                   property, which offers free Wi-Fi in all rooms. Strategically
                   situated in Tainan City, allowing you access and proximity to
-                  local attractions and sights. Dont leave before paying a
-                  visit to the famous Chimei Museum. This 3-star property
-                  features hot tub to make your stay more indulgent and
-                  memorable
+                  local attractions and sights. Dont leave before paying a visit
+                  to the famous Chimei Museum. This 3-star property features hot
+                  tub to make your stay more indulgent and memorable
                 </p>
               </div>
             </div>
@@ -368,7 +370,7 @@ const CustomTabs: React.FC = () => {
             <h3 className="text-blue-500">We price match!</h3>
           </div>
         </div>
-        <div  className="p-4 mt-4 border rounded-sm">
+        <div className="p-4 mt-4 border rounded-sm">
           <div className="flex gap-1">
             <IconFilter />
             <h3 className="font-bold">Filter room options by:</h3>
