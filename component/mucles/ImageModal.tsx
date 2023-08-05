@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Group, Button, Avatar, FileButton, Text } from '@mantine/core';
 import { IconEdit } from '@tabler/icons-react';
-import avatarImg from './../../../public/assets/avatar.jpg'
+import avatarImg from '../../public/assets/avatar.jpg'
 import Image from 'next/image';
 const ImageModal = () =>  {
     const [opened, { open, close }] = useDisclosure(false);
@@ -23,9 +23,9 @@ const ImageModal = () =>  {
              <div className='flex flex-row my-5'>
                  <div className='w-[100px]'>
                     {/* {file?
-                   <Avatar radius="xl" size="xl" className=' ' src={preViewLink} /> 
+                   <Avatar radius="xl" size="xl" className='' src={preViewLink} /> 
                    : */}
-                   <Avatar radius="xl" size="xl" className=' ' src={avatarImg.src} /> 
+                   <Avatar radius="xl" size="xl" className='' src={avatarImg.src} /> 
                    
                  </div>
                  <div>
@@ -49,7 +49,7 @@ const ImageModal = () =>  {
                 
              </div>
              <div className='text-end'>
-             <button className=' bg-bg_banfsgy text-white py-2 px-1 rounded-md '>Save</button>
+             <button className='px-1 py-2 text-white rounded-md  bg-bg_banfsgy'>Save</button>
              </div>
         </Modal>
   
@@ -57,9 +57,9 @@ const ImageModal = () =>  {
           <Button unstyled onClick={open}>
             <div className='relative ' >     
 
-                <Avatar radius="xl" size="lg" className=' ' src={avatarImg.src} />  
+                <Avatar radius="xl" size="lg" className='' src={avatarImg.src} />  
                 <div className='h-[100%] flex top-0 absolute z-10 w-[100%] bg-black opacity-60 rounded-full'>
-                <IconEdit className='text-white m-auto  ' />
+                <IconEdit className='m-auto text-white ' />
                 </div>
             </div>
         </Button>
