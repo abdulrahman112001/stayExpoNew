@@ -223,10 +223,10 @@ export default function Navbar() {
                 <>
                   <Menu
                     position="bottom"
-                    transitionProps={{
-                      transition: "rotate-right",
-                      duration: 150,
-                    }}
+                    // transitionProps={{
+                    //   transition: "rotate-right",
+                    //   duration: 150,
+                    // }}
                     width={200}
                     shadow="md"
                   >
