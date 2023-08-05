@@ -20,7 +20,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
-import avatarImg from "./../../../public/assets/avatar.jpg";
+import avatarImg from "../../public/assets/avatar.jpg";
 import {
   IconBook,
   IconChartPie3,
