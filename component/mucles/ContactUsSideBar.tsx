@@ -1,7 +1,7 @@
 import CallUsCell from "../atoms/CallUsCell";
 import EmailCell from "../atoms/EmailCell";
-import IconEarth from ".../../public/assets/global.svg"
-import IconEgypt from "../../public/assets/Egypt.svg.png"
+import IconEarth from "../public/assets/global.svg"
+import IconEgypt from "../public/assets/Egypt.svg.png"
 import Image from "next/image";
 
  function ContactUsSideBar() {
