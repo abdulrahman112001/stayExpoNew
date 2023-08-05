@@ -1,29 +1,22 @@
 "use client";
-import React from "react";
 import {
-  createStyles,
-  Image,
-  Container,
-  Title,
   Button,
-  Group,
-  Text,
-  List,
-  ThemeIcon,
-  rem,
+  Image,
+  Title,
+  createStyles,
+  rem
 } from "@mantine/core";
-import { IconCheck } from "@tabler/icons-react";
 import apiImg from "./../../public/assets/api.svg";
-import mapImg from "./../../public/assets/map.webp";
 import hotelImg from "./../../public/assets/hotels-icon.png";
+import mapImg from "./../../public/assets/map.webp";
 import shape from "./../../public/assets/primary-shape.png";
 
-import Link from "next/link";
 import { useForm } from "@mantine/form";
-import ServiceFeature from "../component/atoms/ServiceFeature";
-import SelectForm from "../component/atoms/SelectForm";
+import Link from "next/link";
 import DateInputComp from "../component/atoms/DateInput";
 import DropDown from "../component/atoms/DropDown";
+import SelectForm from "../component/atoms/SelectForm";
+import ServiceFeature from "../component/atoms/ServiceFeature";
 
 
 const useStyles = createStyles((theme) => ({
