@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~react-image-gallery/styles/css/image-gallery.css";
+body{
+  overflow-x: hidden !important;
+}
+.mantine-tou914 {
+  background-color: transparent;
+  padding: 15px !important;
+  border-right: 0;
+  border-radius: 0.5rem;
+}
+.mantine-tou914[data-active] {
+  background-color: transparent;
+  padding: 15px !important;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.0625rem 0.1875rem,
+    rgba(0, 0, 0, 0.05) 0px 1.25rem 1.5625rem -0.3125rem,
+    rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
+  border: 1px solid #cdcccc !important;
+  border-right: 0;
+  border-radius: 0.5rem;
+}
+.mantine-1l7xo4v {
+  border: 1px solid #5d22d5;
+}
+.mantine-gszoqu{
+  border-radius: 9px !important;
+  padding: 20px;
+  margin: 0;
+}
+.mantine-1cy5rcb{
+  margin: 0;
+}
+.mantine-1w30zfw{
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.mantine-ydk0kj{
+  @apply justify-start  gap-[9px] w-fit
+  
+}
+.mantine-1svz3tp {
+  @apply w-full
+}
+.mantine-1nh6y3l{
+  margin-top: -2.875rem;
+}
+.shapeOne , .shapTwo {
+  top: -101px;
+  z-index: -29;
+  filter: blur(7px);
+}
+.shapeOne{
+  right: -60px;
+}
+.shapTwo{
+  left: -28px;
+  top: -18px;
+}
+.mantine-mqog8a:focus{
+  outline: none;
+  border-color: #5d22d5 !important;
+}
+.mantine-kegijc {
+  cursor: default;
+  padding-left: 0rem
+}
+.mantine-ges9mf {
+
+  gap: 0rem;
+ 
+}
+.mantine-16uitr9 {
+   
+  position:unset;
+}
+.mantine-1lao2wu{
+  padding-left: 0rem;
+  margin-left: unset;
+  
+}
+.mantine-vcl0d1{
+     left: -50px !important; 
+     right: -50px !important;
+}
+.mantine-1v3yzoy {
+  width: 50px !important;
+  height: 50px !important;
+
+}
+.mantine-1v3yzoy:hover {
+  box-shadow: 2px 2px 2px 1px rgba(184, 184, 184, 0.2);
+}
+.read-link:hover .read-icon{
+    transform: translateX(5px) ;
+}
+.mantine-eby8v3[data-hovered] {
+  background-color: #5d22d5 !important;
+  color: white !important;
+}
+
+
+.mantine-jhr97h:focus{
+  border-color: #5d22d5 !important;
+}
+@media(max-width: 768px) {
+  
+.mantine-Carousel-controls{
+  display: none;
+}
+}
+.mantine-ngxfg2 {
+  width: 75% !important;
+}
