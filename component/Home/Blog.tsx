@@ -1,9 +1,9 @@
 "use client";
 
-import { Carousel } from "@mantine/carousel";
-import { BadgeCard } from "../mucles/Card";
-import Link from "next/link";
 import useFetch from "@/hooks/useFetch";
+import { Carousel } from "@mantine/carousel";
+import Link from "next/link";
+import { BadgeCard } from "../mucles/Card";
 
 function Blog() {
   // Blogs

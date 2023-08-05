@@ -1,6 +1,4 @@
-import { Menu, Button, rem } from "@mantine/core";
-import { IconExternalLink } from "@tabler/icons-react";
-import { Burger } from "@mantine/core";
+import { Burger, Menu } from "@mantine/core";
 function ToggleMenue() {
   return (
     <Menu width={250} shadow="md">

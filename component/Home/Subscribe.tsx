@@ -1,6 +1,6 @@
 "use client";
 import { createStyles, Text, Title, TextInput, Button, Image, rem } from '@mantine/core';
-import image from './../../../public/assets/image.969ed1dc.svg'
+import image from '../../public/assets/image.969ed1dc.svg'
 
 const useStyles = createStyles((theme) => ({
   wrapper: {

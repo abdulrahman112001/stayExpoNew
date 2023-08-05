@@ -1,11 +1,10 @@
 "use client";
 
 import { Carousel } from "@mantine/carousel";
-import blog3 from "../../../public/assets/thermprocess-Lxx1-logo.webp";
 
-import { BlogCard } from "../mucles/BlogCard";
-import Link from "next/link";
 import useFetch from "@/hooks/useFetch";
+import Link from "next/link";
+import { BlogCard } from "../mucles/BlogCard";
 interface EventData {
   id: string;
   image: string;

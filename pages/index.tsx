@@ -1,12 +1,14 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import loadable from "@loadable/component";
 import Loading from "@/component/Home/loading";
+import loadable from "@loadable/component";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const HeroSectionMain = loadable(() => import("../component/Home/HeroSection"), {
-  fallback: <Loading />,
-});
+const HeroSectionMain = loadable(
+  () => import("../component/Home/HeroSection"),
+  {
+    fallback: <Loading />,
+  }
+);
 const FeaturesSectionMain = loadable(
   () => import("../component/Home/FeaturesSection"),
   {
@@ -27,9 +29,12 @@ const SubmeMain = loadable(() => import("../component/Home/Subme"), {
   fallback: <Loading />,
 });
 
-const ExhibitionsMain = loadable(() => import("../component/Home/Exhibitions"), {
-  fallback: <Loading />,
-});
+const ExhibitionsMain = loadable(
+  () => import("../component/Home/Exhibitions"),
+  {
+    fallback: <Loading />,
+  }
+);
 const BlogMain = loadable(() => import("../component/Home/Blog"), {
   fallback: <Loading />,
 });
