@@ -1,6 +1,4 @@
-import { Button, ButtonProps } from '@mantine/core'
-import { TwitterIcon } from '@mantine/ds'
-import React from 'react'
+import { Button } from '@mantine/core';
 
 type ButtonCustom_TP = {
     label?: string;

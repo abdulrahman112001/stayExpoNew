@@ -1,13 +1,4 @@
-"use client"
-import React from "react";
-import { Select, createStyles, rem } from "@mantine/core";
-import { IconArrowsSort, IconSortDescending } from "@tabler/icons-react";
-import { SelectItems } from "@mantine/core/lib/Select/SelectItems/SelectItems";
-
-
-
-
-  
+import { Select } from "@mantine/core";
 type selectInput_TP = {
   label?: string;
   placeholder?: string;
@@ -18,8 +9,7 @@ type selectInput_TP = {
   SelectType?:string;
  
 };
-
-export default function SelectSorting( {
+export default function SelectNormal( {
   label,
   placeholder,
   description,
@@ -27,22 +17,21 @@ export default function SelectSorting( {
   icon,
   SelectType,
   className,
-}:selectInput_TP) {
  
+}:selectInput_TP) {
   return (
-
+    <div>
       <Select
-        icon={<IconSortDescending />}
+        icon={icon}
         placeholder={placeholder}
-        radius='xl'
-        my={'md'}
+        className={className}
         data={[
-          { value: "react", label: "Sort by : Check-in date" },
+          { value: "react", label: "React" },
           { value: "ng", label: "Angular" },
           { value: "svelte", label: "Svelte" },
           { value: "vue", label: "Vue" },
-     ]}
+        ]}
       />
-    
+    </div>
   );
 }

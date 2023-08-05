@@ -1,20 +1,17 @@
 import {
-  IconBed,
   IconBedFilled,
   IconMail,
   IconMan,
   IconPencil,
   IconPrinter,
-  IconSmoking,
   IconSmokingNo,
   IconSportBillard,
   IconStarFilled,
-  IconWifi,
+  IconWifi
 } from "@tabler/icons-react";
 import Image from "next/image";
-import React from "react";
-import TabsConfirmation from "./TabsConfirmation";
 import DetailsPayment from "./DetailsPayment";
+import TabsConfirmation from "./TabsConfirmation";
 
 export default function Confirmation() {
   return (

@@ -13,14 +13,14 @@ import {
 } from "@mantine/core";
 import { IconPackage } from "@tabler/icons-react";
 import Image, { StaticImageData } from "next/image";
-import cloud_ico from "../../public/assets/cloud-icon.png";
-import hotel_icon from "../../public/assets/hotels-icon.png";
-import loyalty_program_icon from "../../public/assets/loyalty-program-icon.png";
-import pricecomparison_icon from "../../public/assets/pricecomparison-icon.png";
-import rich_feature_icon from "../../public/assets/rich-features-icon.png";
-import richcontent_icon from "../../public/assets/richcontent-icon.png";
-import support_icon from "../../public/assets/support-icon.png";
-import user_level_icon from "../../public/assets/user-level-icon.png";
+import cloud_ico from "../../../public/assets/cloud-icon.png";
+import hotel_icon from "../../../public/assets/hotels-icon.png";
+import loyalty_program_icon from "../../../public/assets/loyalty-program-icon.png";
+import pricecomparison_icon from "../../../public/assets/pricecomparison-icon.png";
+import rich_feature_icon from "../../../public/assets/rich-features-icon.png";
+import richcontent_icon from "../../../public/assets/richcontent-icon.png";
+import support_icon from "../../../public/assets/support-icon.png";
+import user_level_icon from "../../../public/assets/user-level-icon.png";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {

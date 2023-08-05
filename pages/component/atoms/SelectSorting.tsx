@@ -1,6 +1,11 @@
-import React from "react";
+"use client"
 import { Select } from "@mantine/core";
-import { IconArrowsSort } from "@tabler/icons-react";
+import { IconSortDescending } from "@tabler/icons-react";
+
+
+
+
+  
 type selectInput_TP = {
   label?: string;
   placeholder?: string;
@@ -11,7 +16,8 @@ type selectInput_TP = {
   SelectType?:string;
  
 };
-export default function SelectNormal( {
+
+export default function SelectSorting( {
   label,
   placeholder,
   description,
@@ -19,21 +25,22 @@ export default function SelectNormal( {
   icon,
   SelectType,
   className,
- 
 }:selectInput_TP) {
+ 
   return (
-    <div>
+
       <Select
-        icon={icon}
+        icon={<IconSortDescending />}
         placeholder={placeholder}
-        className={className}
+        radius='xl'
+        my={'md'}
         data={[
-          { value: "react", label: "React" },
+          { value: "react", label: "Sort by : Check-in date" },
           { value: "ng", label: "Angular" },
           { value: "svelte", label: "Svelte" },
           { value: "vue", label: "Vue" },
-        ]}
+     ]}
       />
-    </div>
+    
   );
 }

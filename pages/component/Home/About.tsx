@@ -1,8 +1,8 @@
 import { IconArrowBarToRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import imgAbout from "../../public/assets/aboutUs.png";
-import shape from "../../public/assets/primary-shape.png";
+import imgAbout from "../../../public/assets/aboutUs.png";
+import shape from "../../../public/assets/primary-shape.png";
 function About() {
   return (
     <div className="relative p-5 overflow-hidden md:px-20 max-sm:px-2 md:py-10 ">

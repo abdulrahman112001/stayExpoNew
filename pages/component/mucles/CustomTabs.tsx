@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import React, { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import imgCompany from "../../public/assets/agoda_preferred_logo.png";
+import imgCompany from "../../../public/assets/agoda_preferred_logo.png";
 const CustomTabs = () => {
   const [activeTab, setActiveTab] = useState<string>("tab1");
 

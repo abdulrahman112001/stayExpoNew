@@ -1,6 +1,4 @@
 "use client"
-import { ThemeIcon, Text, Title, Container, SimpleGrid, createStyles, rem } from '@mantine/core';
-import { IconGauge, IconCookie, IconUser, IconMessage2, IconLock } from '@tabler/icons-react';
 import Image from 'next/image';
 
 
@@ -21,11 +19,11 @@ export function ServiceFeature ({
   }:ServiceFeature_TP) {
   return (
    
-    <div className='lg:col-span-6 md:col-span-1 max-sm:col-span-1 py-5'>
+    <div className='py-5 lg:col-span-6 md:col-span-1 max-sm:col-span-1'>
         <div className="flex flex-col lg:pt-[60px] ">
         <Image  src={Icon} width={50} height={50} alt="" />
-        <h6 className='text-xl font-bold py-2'>{label}</h6>
-        <p className='text-lg  font-medium '>
+        <h6 className='py-2 text-xl font-bold'>{label}</h6>
+        <p className='text-lg font-medium '>
             {description}
         </p>
         </div>

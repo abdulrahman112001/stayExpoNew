@@ -4,7 +4,7 @@ import { Button, Tabs } from "@mantine/core";
 import { IconPhone } from "@tabler/icons-react";
 import Image from "next/image";
 import { useState } from "react";
-import imgCustomer from "../../public/assets/discount.jpg";
+import imgCustomer from "../../../public/assets/discount.jpg";
 import FilterCustom from "../Search/FilterCustom";
 import SelectForm from "../atoms/SelectForm";
 import CheckboxComp from "../atoms/CheckBox";

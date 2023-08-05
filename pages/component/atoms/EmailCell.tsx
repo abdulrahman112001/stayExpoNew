@@ -1,6 +1,6 @@
-import React from 'react'
-import { createStyles, ThemeIcon, Text, Box, Stack } from '@mantine/core';
-import { IconSun, IconPhone,  IconAt } from '@tabler/icons-react';
+import { Box, Stack, Text, ThemeIcon, createStyles } from '@mantine/core';
+import { IconAt } from '@tabler/icons-react';
+import React from 'react';
 
 type ContactIconVariant = 'white' | 'gradient';
 

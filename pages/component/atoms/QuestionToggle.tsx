@@ -1,9 +1,7 @@
 "use client";
-import React, { useState } from 'react'
-
-import { Container, Title, Accordion, createStyles, rem, Radio, Group } from '@mantine/core';
+import { useState } from 'react';
+import { Accordion, Container, Group, Radio, createStyles, rem } from '@mantine/core';
 import { IconThumbDown, IconThumbUp } from '@tabler/icons-react';
-import img from "./../../../public/assets/facebook.svg"
 const useStyles = createStyles((theme) => ({
   wrapper: {
     
@@ -57,17 +55,17 @@ export function QuestionToggle({
     <Container className={classes.wrapper}>
       <Accordion  variant="separated">
         <Accordion.Item  className={classes.item} value="reset-password">
-          <Accordion.Control  fz={"md"} fw={'bold'}> <p className=' text-md  font-semibold '>{question} </p></Accordion.Control>
+          <Accordion.Control  fz={"md"} fw={'bold'}> <p className='font-semibold text-md'>{question} </p></Accordion.Control>
           <Accordion.Panel> <p className='text-sm'>{description}</p></Accordion.Panel>
           <Accordion.Panel>
             <div className='flex'>
                 <div className='p-3 w-[100%] rounded  bg-violet-200 m-auto flex lg:flex-row flex-col justify-between  items-center'>
                     <div className='pb-2'>
-                        <p className=' '>Already have a booking?</p>
+                        <p className=''>Already have a booking?</p>
                         <p className='text-sm'>Sign in for faster help and instant access to existing bookings.</p>
                     </div>
                     <div className=''>
-                        <button className='hover:bg-white hover:border hover:border-bg_banfsgy hover:text-bg_banfsgy rounded text-white lg:py-1 lg:px-7 px-4 py-1   bg-bg_banfsgy'>Sign in Now</button>
+                        <button className='px-4 py-1 text-white rounded hover:bg-white hover:border hover:border-bg_banfsgy hover:text-bg_banfsgy lg:py-1 lg:px-7 bg-bg_banfsgy'>Sign in Now</button>
                     </div>
                 </div>
              </div>

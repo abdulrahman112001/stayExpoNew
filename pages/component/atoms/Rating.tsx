@@ -1,5 +1,4 @@
 import { Tabs, TabsProps, rem } from "@mantine/core"
-import { IconPhoto, IconMessageCircle, IconSettings } from "@tabler/icons-react"
 
 function Rating(props: TabsProps) {
   return (

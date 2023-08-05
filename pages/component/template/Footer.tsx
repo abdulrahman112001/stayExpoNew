@@ -10,8 +10,8 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import img from "../../public/assets/footer-payments.png";
-import img2 from "../../public/assets/footer-sectigo.png";
+import img from "../../../public/assets/footer-payments.png";
+import img2 from "../../../public/assets/footer-sectigo.png";
 import LogoWhite from "../atoms/LogoWhite";
 
 function Footer() {
