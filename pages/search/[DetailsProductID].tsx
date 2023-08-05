@@ -1,13 +1,12 @@
 "use client";
-
-import LoacationSite from "@/component/Search/LoacationSite";
-import CustomNavigatonDetails from "@/component/mucles/CustomNavigatonDetails";
-import CustomTabs from "@/component/mucles/CustomTabs";
-import DetailsRoom from "@/component/mucles/DetailsRoom";
-import ImageSlider from "@/component/mucles/ImageSlider";
 import { Skeleton } from "@mantine/core";
 import Image from "next/image";
 import { useState } from "react";
+import CustomNavigatonDetails from "../component/mucles/CustomNavigatonDetails";
+import ImageSlider from "../component/mucles/ImageSlider";
+import CustomTabs from "../component/mucles/CustomTabs";
+import DetailsRoom from "../component/mucles/DetailsRoom";
+import LoacationSite from "../component/Search/LoacationSite";
 
 const images = [
   { full_path: "https://pix8.agoda.net/hotelImages/604/60410/60410_15110714170037574774.jpg?ca=&ce=1&s=1024x768" },

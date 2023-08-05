@@ -22,8 +22,8 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Button from "../atoms/Button";
 import ButtonWithIcons from "../atoms/ButtonWithIcons";
-import facebookIcon from "../../public/assets/facebook.svg";
-import googleIcon from "../../public/assets/google.svg";
+import facebookIcon from "../../../public/assets/facebook.svg";
+import googleIcon from "../../../public/assets/google.svg";
 export default function AuthinticationForm({ opened, close }:any) {
   const [type, toggle] = useToggle(["login", "register"]);
 

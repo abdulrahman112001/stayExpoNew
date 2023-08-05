@@ -1,9 +1,9 @@
 "use client";
-import AccordionComp from '@/component/accordion/Accordion';
 import { Button } from '@mantine/core'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import AccordionComp from '../component/accordion/Accordion';
 
 export default function page() {
   return (

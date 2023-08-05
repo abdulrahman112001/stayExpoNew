@@ -13,9 +13,9 @@ import {
   Textarea,
   Checkbox,
 } from "@mantine/core";
-import HeaderBanner from "@/component/mucles/HeaderBanner";
-import ContactUsSideBar from "@/component/mucles/ContactUsSideBar";
-import ContactUsForm from "@/component/mucles/ContactUsForm";
+import HeaderBanner from "../component/mucles/HeaderBanner";
+import ContactUsSideBar from "../component/mucles/ContactUsSideBar";
+import ContactUsForm from "../component/mucles/ContactUsForm";
 
 function Contact_us() {
   return (
