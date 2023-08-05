@@ -8,7 +8,7 @@ type ImageSlider_TP = {
 function ImageSlider({ media }: ImageSlider_TP) {
   const [images, setImages] = useState([]);
   useEffect(() => {
-    const image = media?.map((photo) => ({
+    const image = media?.map((photo:any) => ({
       original: photo?.full_path,
       thumbnail: photo?.full_path,
     }));
