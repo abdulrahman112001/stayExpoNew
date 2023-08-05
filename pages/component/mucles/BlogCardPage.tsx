@@ -19,7 +19,6 @@ import {
 } from "@mantine/core";
 import blogImage from "./../../../public/assets/event-banner1.jpg";
 import Image from "next/image";
-import useFetch from "@/app/hooks/useFetch";
 import Link from "next/link";
 const useStyles = createStyles((theme) => ({
   card: {
