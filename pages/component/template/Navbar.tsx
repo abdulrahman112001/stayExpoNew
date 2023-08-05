@@ -209,7 +209,7 @@ export default function Navbar() {
               <Link href="/events" className={classes.link}>
                 Events
               </Link>
-              <Link href="/Blogs" className={classes.link}>
+              <Link href="/blogs" className={classes.link}>
                 Blogs
               </Link>
               <Link href="/contact-us" className={classes.link}>
@@ -240,25 +240,26 @@ export default function Navbar() {
                     </Menu.Target>
 
                     <Menu.Dropdown>
-                      <Menu.Item
-                        component="a"
-                        icon={<IconUser size={rem(18)} />}
-                        href="/user-profile"
-                      >
-                        Profile
-                      </Menu.Item>
-                      <Menu.Item
-                        component="a"
-                        icon={<IconSettings size={rem(18)} />}
-                        href="/"
-                      >
-                        Settings
-                      </Menu.Item>
-                      <Menu.Item icon={<IconLogout size={rem(18)} />}>
+                      <Link href="/user-profile">
+                        <div className="flex items-center gap-2 p-3">
+                          <IconUser size={rem(18)} />
+                          Profile
+                        </div>
+                      </Link>
+                      <Link href="/setting">
+                        <div className="flex items-center gap-2 p-3">
+                          <IconSettings size={rem(18)} />
+                          Settings
+                        </div>
+                      </Link>
+                      <Link href="/">
                         <Button unstyled onClick={() => logout()}>
-                          Logout
+                          <div className="flex items-center gap-2 p-3">
+                            <IconLogout size={rem(18)} />
+                            Logout
+                          </div>
                         </Button>
-                      </Menu.Item>
+                      </Link>
                     </Menu.Dropdown>
                   </Menu>
 
@@ -347,7 +348,7 @@ export default function Navbar() {
         </Drawer>
       </Box>
       <ToastContainer />
-          
+         
     </>
   );
 }
