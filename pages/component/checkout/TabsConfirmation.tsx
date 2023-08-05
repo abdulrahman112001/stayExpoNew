@@ -1,13 +1,7 @@
 import { Tabs } from "@mantine/core";
-import {
-  IconPhoto,
-  IconMessageCircle,
-  IconSettings,
-  IconStarFilled,
-} from "@tabler/icons-react";
-import Button from "../atoms/Button";
 import Image from "next/image";
-import { IconStarsFilled } from "@tabler/icons-react";
+import Button from "../atoms/Button";
+import Link from "next/link";
 
 export default function TabsConfirmation() {
   return (
@@ -40,10 +34,9 @@ export default function TabsConfirmation() {
                 </div>
               </div>
               <div className="pt-2 mt-5 border-t border-gray-400">
-                <a href="/" className="font-bold text-blue-700">
-                  {" "}
+                <Link href="/" className="font-bold text-blue-700">
                   Book again
-                </a>
+                </Link>
               </div>
               <div className="pt-2 mt-5 border-t border-gray-400">
                 <h2 className="font-bold">Cancellation policy</h2>
@@ -61,18 +54,18 @@ export default function TabsConfirmation() {
             </div>
             <div className="flex flex-col w-full px-3 border-l">
               <h2>Top FAQs</h2>
-              <a href="/" className="font-bold text-blue-700">
+              <Link href="/" className="font-bold text-blue-700">
                 Can i cancel thisd reservation ?
-              </a>
-              <a href="/" className="font-bold text-blue-700">
+              </Link>
+              <Link href="/" className="font-bold text-blue-700">
                 Can i cancel thisd reservation ?
-              </a>
-              <a href="/" className="font-bold text-blue-700">
+              </Link>
+              <Link href="/" className="font-bold text-blue-700">
                 print a receipt
-              </a>
-              <a href="/" className="font-bold text-blue-700">
+              </Link>
+              <Link href="/" className="font-bold text-blue-700">
                 see all FAQs
-              </a>
+              </Link>
             </div>
           </div>
         </Tabs.Panel>
