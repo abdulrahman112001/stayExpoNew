@@ -38,7 +38,7 @@ import AuthinticationForm from "./AuthinticationForm";
 import { ToastContainer } from "react-toastify";
 import { IconExternalLink } from "@tabler/icons-react";
 import { IconUser } from "@tabler/icons-react";
-import { useAuth } from "@/pages/auth/AuthProvider";
+import { useAuth } from "@/auth/AuthProvider";
 
 const useStyles = createStyles((theme) => ({
   link: {

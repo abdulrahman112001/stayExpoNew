@@ -8,12 +8,13 @@ import {
 } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useAuth } from "../auth/AuthProvider";
-import InputContainer from "../component/atoms/InputContainer";
-import PickMonthInput from "../component/atoms/PickMonthInput";
-import SelectContainer from "../component/atoms/SelectContainer";
-import ImageModal from "../component/mucles/ImageModal";
-import QuestionsSection from "../component/mucles/QuestionsSection";
+import { useAuth } from "../../auth/AuthProvider";
+import ImageModal from "@/component/mucles/ImageModal";
+import InputContainer from "@/component/atoms/InputContainer";
+import SelectContainer from "@/component/atoms/SelectContainer";
+import PickMonthInput from "@/component/atoms/PickMonthInput";
+import QuestionsSection from "@/component/mucles/QuestionsSection";
+
 
 const User_Profile = () => {
   const [value, setValue] = useState<string | null>(null);

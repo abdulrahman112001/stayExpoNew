@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import SelectForm from "../component/atoms/SelectForm";
-import AccordionComp from "../component/accordion/Accordion";
+
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../component/atoms/Button";
+import AccordionComp from "@/component/accordion/Accordion";
+import Button from "@/component/atoms/Button";
 
 export default function Events() {
   return (

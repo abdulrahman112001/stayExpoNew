@@ -20,7 +20,7 @@ import richcontent_icon from "../../../public/assets/richcontent-icon.png";
 import support_icon from "../../../public/assets/support-icon.png";
 import user_level_icon from "../../../public/assets/user-level-icon.png";
 import { IconPackage } from "@tabler/icons-react";
-import useFetch from "@/pages/hooks/useFetch";
+import useFetch from "@/hooks/useFetch";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {

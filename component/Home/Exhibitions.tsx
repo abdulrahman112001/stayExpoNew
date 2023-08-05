@@ -5,7 +5,7 @@ import blog3 from "../../../public/assets/thermprocess-Lxx1-logo.webp";
 
 import { BlogCard } from "../mucles/BlogCard";
 import Link from "next/link";
-import useFetch from "@/pages/hooks/useFetch";
+import useFetch from "@/hooks/useFetch";
 interface EventData {
   id: string;
   image: string;

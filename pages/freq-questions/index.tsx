@@ -11,10 +11,10 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import HeaderBanner from "../component/mucles/HeaderBanner";
-import QuestionsSection from "../component/mucles/QuestionsSection";
 import ask from "./../../public/assets/ask.png";
 import banner from "./../../public/assets/banner.png";
+import HeaderBanner from "@/component/mucles/HeaderBanner";
+import QuestionsSection from "@/component/mucles/QuestionsSection";
 function Freq_questions() {
   const [windowSize, setWindowSize] = useState<number | any>();
 

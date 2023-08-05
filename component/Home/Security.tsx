@@ -5,7 +5,7 @@ import img2 from "../../../public/assets/comodo.8b7192eb.png";
 import img3 from "../../../public/assets/decta.4e998eab.png";
 import img4 from "../../../public/assets/351782734_805374517490850_1285298802741953849_n.png";
 import img5 from "../../../public/assets/stripe.bdb07a0f.png";
-import useFetch from "@/pages/hooks/useFetch";
+import useFetch from "@/hooks/useFetch";
 
 function Security() {
   interface Partner {

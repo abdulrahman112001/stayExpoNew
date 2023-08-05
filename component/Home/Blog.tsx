@@ -3,7 +3,7 @@
 import { Carousel } from "@mantine/carousel";
 import { BadgeCard } from "../mucles/Card";
 import Link from "next/link";
-import useFetch from "@/pages/hooks/useFetch";
+import useFetch from "@/hooks/useFetch";
 
 function Blog() {
   // Blogs

@@ -16,13 +16,14 @@ import { IconCheck } from "@tabler/icons-react";
 import apiImg from "./../../public/assets/api.svg";
 import mapImg from "./../../public/assets/map.webp";
 import hotelImg from "./../../public/assets/hotels-icon.png";
-import ServiceFeature from "../component/atoms/ServiceFeature";
 import shape from "./../../public/assets/primary-shape.png";
-import SelectForm from "../component/atoms/SelectForm";
-import DateInputComp from "../component/atoms/DateInput";
-import DropDown from "../component/atoms/DropDown";
+
 import Link from "next/link";
 import { useForm } from "@mantine/form";
+import ServiceFeature from "@/component/atoms/ServiceFeature";
+import SelectForm from "@/component/atoms/SelectForm";
+import DateInputComp from "@/component/atoms/DateInput";
+import DropDown from "@/component/atoms/DropDown";
 
 const useStyles = createStyles((theme) => ({
   inner: {

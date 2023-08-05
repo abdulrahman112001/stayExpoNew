@@ -1,7 +1,7 @@
 "use client";
 
-import { useAuth } from "@/pages/auth/AuthProvider";
-import { notify } from "@/pages/utils/toast";
+import { useAuth } from "@/auth/AuthProvider";
+import { notify } from "@/utils/toast";
 import {
   Anchor,
   Divider,
