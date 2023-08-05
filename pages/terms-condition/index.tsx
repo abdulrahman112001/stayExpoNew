@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import ContactImg from "./../../public/assets/contact-us.webp";
-import HeaderBanner from '@/component/mucles/HeaderBanner';
+import HeaderBanner from '../component/mucles/HeaderBanner';
 function Terms_condition(){
   return (
     <>

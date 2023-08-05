@@ -20,10 +20,11 @@ import shape from "./../../public/assets/primary-shape.png";
 
 import Link from "next/link";
 import { useForm } from "@mantine/form";
-import ServiceFeature from "@/component/atoms/ServiceFeature";
-import SelectForm from "@/component/atoms/SelectForm";
-import DateInputComp from "@/component/atoms/DateInput";
-import DropDown from "@/component/atoms/DropDown";
+import ServiceFeature from "../component/atoms/ServiceFeature";
+import SelectForm from "../component/atoms/SelectForm";
+import DateInputComp from "../component/atoms/DateInput";
+import DropDown from "../component/atoms/DropDown";
+
 
 const useStyles = createStyles((theme) => ({
   inner: {
