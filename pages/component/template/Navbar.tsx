@@ -39,6 +39,7 @@ import ToggleMenue from "../Home/ToggleMenue";
 import Logo from "../atoms/Logo";
 import AuthinticationForm from "./AuthinticationForm";
 import { useState } from "react";
+import SideBar from "./SideBar";
 const useStyles = createStyles((theme) => ({
   link: {
     display: "flex",
@@ -289,10 +290,9 @@ export default function Navbar() {
         </Header>
         <AuthinticationForm opened={opened} close={close} />
 
-        {openSide && 
-        
-        <div>srgvsdgf</div>
-        }
+        <SideBar  onOpen OpenCloes>
+          "chilldern"
+        </SideBar>
       </Box>
       <ToastContainer />
          

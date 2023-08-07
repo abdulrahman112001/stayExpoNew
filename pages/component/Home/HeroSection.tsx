@@ -1,12 +1,7 @@
 "use client";
 import { useForm } from "@mantine/form";
 import Image from "next/image";
-import Link from "next/link";
 import shape from "../../../public/assets/primary-shape.png";
-import Button from "../atoms/Button";
-import DateInputComp from "../atoms/DateInput";
-import DropDown from "../atoms/DropDown";
-import SelectForm from "../atoms/SelectForm";
 import SerachComponent from "../mucles/SerachComponent";
 function HeroSection() {
   const form = useForm({
