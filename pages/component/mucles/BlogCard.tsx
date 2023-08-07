@@ -1,11 +1,9 @@
 import {
-  createStyles,
-  Card,
   Avatar,
+  Card,
   Text,
-  Group,
-  Button,
-  rem,
+  createStyles,
+  rem
 } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
@@ -30,7 +28,7 @@ interface UserCardImageProps {
   avatar?: string;
   name?: string;
   Date?: string;
-  title?: string | TrustedHTML;
+  title?: string | any;
   stats?: { label: string; value: string }[];
 }
 
