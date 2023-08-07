@@ -38,6 +38,7 @@ import avatarImg from "../../../public/assets/avatar.jpg";
 import ToggleMenue from "../Home/ToggleMenue";
 import Logo from "../atoms/Logo";
 import AuthinticationForm from "./AuthinticationForm";
+import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -142,9 +143,10 @@ const mockdata = [
 ];
 
 export default function Navbar() {
-  
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
+
+  const [openSide, setOpenSide] = useState(false);
   const { logout, user } = useAuth();
 
   const [opened, { open, close }] = useDisclosure(false);
@@ -152,7 +154,6 @@ export default function Navbar() {
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
 
   const { classes, theme } = useStyles(); // Directly access theme from useStyles
-  
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -267,7 +268,6 @@ export default function Navbar() {
 
                   {user?.type && (
                     <Button className="text-white capitalize border bg-bg_banfsgy hover:border-bg_banfsgy hover:bg-white hover:text-bg_banfsgy">
-                      {" "}
                       {user?.type}
                     </Button>
                   )}
@@ -282,72 +282,15 @@ export default function Navbar() {
             </Group>
 
             <Burger
-              opened={drawerOpened}
-              onClick={toggleDrawer}
+              opened={openSide}
+              onClick={() => setOpenSide(true)}
               className={classes.hiddenDesktop}
             />
           </Group>
         </Header>
         <AuthinticationForm opened={opened} close={close} />
-        <Drawer
-          opened={drawerOpened}
-          onClose={closeDrawer}
-          size="100%"
-          padding="md"
-          title="Links Menu"
-          className={classes.hiddenDesktop}
-          zIndex={1000000}
-        >
-          <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
-            <Divider
-              my="sm"
-              color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
-            />
-            <Link href="/" className={classes.link} onClick={closeDrawer}>
-              Home
-            </Link>
 
-            <Link href="/search" className={classes.link} onClick={closeDrawer}>
-              Search
-            </Link>
-            <Link
-              href="/checkout"
-              className={classes.link}
-              onClick={closeDrawer}
-            >
-              checkout
-            </Link>
-            <Collapse in={linksOpened}>{links}</Collapse>
-            {/* <Link href="/about" className={classes.link}>
-            About Us
-          </Link> */}
-            <Link href="/events" className={classes.link} onClick={closeDrawer}>
-              Events
-            </Link>
-            <Link href="/Blogs" className={classes.link} onClick={closeDrawer}>
-              Blogs
-            </Link>
-            <Link
-              href="/contact-us"
-              className={classes.link}
-              onClick={closeDrawer}
-            >
-              Contact Us
-            </Link>
-            <Divider
-              my="sm"
-              color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
-            />
-
-            <Group position="center" grow pb="xl" px="md">
-              {user ? (
-                <Button onClick={() => logout()}>Logout</Button>
-              ) : (
-                <Button onClick={closeDrawer}>Login</Button>
-              )}
-            </Group>
-          </ScrollArea>
-        </Drawer>
+        {openSide && <div>srgvsdgf</div>}
       </Box>
       <ToastContainer />
          
