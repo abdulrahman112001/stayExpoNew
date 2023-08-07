@@ -39,8 +39,6 @@ import ToggleMenue from "../Home/ToggleMenue";
 import Logo from "../atoms/Logo";
 import AuthinticationForm from "./AuthinticationForm";
 import { useState } from "react";
-import OffcanvasComp from "./Offcanvas";
-
 const useStyles = createStyles((theme) => ({
   link: {
     display: "flex",
