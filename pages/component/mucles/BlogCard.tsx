@@ -30,8 +30,7 @@ interface UserCardImageProps {
   avatar?: string;
   name?: string;
   Date?: string;
-  title?: string;
-
+  title?: string | TrustedHTML;
   stats?: { label: string; value: string }[];
 }
 
@@ -74,7 +73,8 @@ export default function BlogCard({
         {Date}
       </Text>
       <Text ta="center" fz="sm" c="dimmed">
-        {title}
+        <div dangerouslySetInnerHTML={{ __html:title }} className=""></div>
+        {/* {title} */}
       </Text>
     </Card>
   );

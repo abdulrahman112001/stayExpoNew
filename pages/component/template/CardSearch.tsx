@@ -9,10 +9,8 @@ import {
 } from "@mantine/core";
 import { IconCheck, IconLocation, IconStar } from "@tabler/icons-react";
 import Button from "../atoms/Button";
-
 import { Carousel } from "@mantine/carousel";
 import Link from "next/link";
-
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:

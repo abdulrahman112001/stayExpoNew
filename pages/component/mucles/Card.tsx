@@ -5,28 +5,28 @@ import {
   Image,
   Text,
   createStyles,
-  rem
-} from '@mantine/core';
+  rem,
+} from "@mantine/core";
 const useStyles = createStyles((theme) => ({
   card: {
-    position: 'relative',
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-    '&:hover': {
-      boxShadow: " rgba(149, 157, 165, 0.2) 0px 8px 24px"
+    position: "relative",
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    "&:hover": {
+      boxShadow: " rgba(149, 157, 165, 0.2) 0px 8px 24px",
     },
-    
   },
 
   rating: {
-    position: 'absolute',
+    position: "absolute",
     top: theme.spacing.xs,
     right: rem(12),
-    pointerEvents: 'none',
+    pointerEvents: "none",
   },
 
   section: {
     borderBottom: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
     }`,
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
@@ -38,7 +38,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   label: {
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     fontSize: theme.fontSizes.xs,
     fontWeight: 700,
   },
@@ -57,14 +57,20 @@ interface BadgeCardProps {
   }[];
 }
 
-export default function BadgeCard({ image, title, description, country, badges ,   rating,
+export default function BadgeCard({
+  image,
+  title,
+  description,
+  country,
+  badges,
+  rating,
 }: BadgeCardProps) {
   const { classes, theme } = useStyles();
 
   const features = badges?.map((badge) => (
     <Badge
       className="hover:shadow-md "
-      color={theme.colorScheme === 'dark' ? 'dark' : 'gray'}
+      color={theme.colorScheme === "dark" ? "dark" : "gray"}
       key={badge.label}
       leftSection={badge.emoji}
     >
@@ -77,21 +83,27 @@ export default function BadgeCard({ image, title, description, country, badges ,
       <Card.Section>
         <Image src={image} alt={title} height={145} />
       </Card.Section>
-      <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>
+      <Badge
+        className={classes.rating}
+        variant="gradient"
+        gradient={{ from: "yellow", to: "red" }}
+      >
         {rating}
       </Badge>
 
       <Card.Section className={classes.section} mt="md">
         <Group position="apart">
-          <Text fz="xs" className='text-gray-500' >u
-            AIGUST 18,2023
+          <Text fz="xs" className="text-gray-500">
+            u AIGUST 18,2023
           </Text>
         </Group>
-        <Text fz="sm" >
-          {description}
+        <Text fz="sm">
+        <div dangerouslySetInnerHTML={{ __html: description }} className="">
+          
+        </div>
         </Text>
       </Card.Section>
-{/* 
+      {/* 
       <Card.Section className={classes.section}>
         <Text mt="md" className={classes.label} c="dimmed">
           Perfect for you, if you enjoy

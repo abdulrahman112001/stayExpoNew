@@ -1,3 +1,4 @@
+"use client";
 import { Drawer, ScrollArea } from "@mantine/core";
 import { ReactNode } from "react";
 
@@ -8,7 +9,7 @@ type FilterCustom_TP = {
   isClosed: () => void;
 };
 
-export default function FilterCustom({ children,title,isOpen, isClosed }:FilterCustom_TP) {
+function FilterCustom({ children,title,isOpen, isClosed }:FilterCustom_TP) {
 
   return (
     <div>
@@ -23,3 +24,4 @@ export default function FilterCustom({ children,title,isOpen, isClosed }:FilterC
     </div>
   );
 }
+export default FilterCustom

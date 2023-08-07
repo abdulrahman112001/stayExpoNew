@@ -58,7 +58,7 @@ function Exhibitions() {
                 avatar={item?.avatar}
                 name={item?.title}
                 Date={item?.start_date}
-                title={"RemoveHTMLTags(item?.content?.slice(0, 50))"}
+                title={item?.content?.slice(0, 30)}
               />
               </Link>
             </Carousel.Slide>

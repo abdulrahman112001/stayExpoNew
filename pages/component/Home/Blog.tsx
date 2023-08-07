@@ -54,7 +54,7 @@ function Blog() {
                   <BadgeCard
                     rating="rating"
                     image={item?.image}
-                    description={`${"rftyhjrth"})}...`}
+                    description={item?.content}
                   />
                 </Link>
               </Carousel.Slide>

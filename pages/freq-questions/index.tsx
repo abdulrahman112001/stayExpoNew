@@ -15,7 +15,6 @@ import ask from "./../../public/assets/ask.png";
 import banner from "./../../public/assets/banner.png";
 import HeaderBanner from "../component/mucles/HeaderBanner";
 import QuestionsSection from "../component/mucles/QuestionsSection";
-
 function Freq_questions() {
   const [windowSize, setWindowSize] = useState<number | any>();
 

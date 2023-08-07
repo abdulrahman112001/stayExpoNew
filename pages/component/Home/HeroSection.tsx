@@ -1,5 +1,4 @@
 "use client";
-
 import { useForm } from "@mantine/form";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +7,7 @@ import Button from "../atoms/Button";
 import DateInputComp from "../atoms/DateInput";
 import DropDown from "../atoms/DropDown";
 import SelectForm from "../atoms/SelectForm";
+import SerachComponent from "../mucles/SerachComponent";
 function HeroSection() {
   const form = useForm({
     initialValues: {
@@ -41,22 +41,7 @@ function HeroSection() {
                 //console.log(values)
               })}
             >
-              <div className="w-[100%] md:w-[60%] mt-10 md:ml-auto ">
-                <div className="p-3 shadow-2xl rounded-xl">
-                  <SelectForm />
-                  <div className="grid grid-cols-2 mt-4">
-                    <div className="col-span-2">
-                      <DateInputComp placeholder="Check-in - Check-out " />
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <DropDown />
-                  </div>
-                  <Button variant="primary" className="p-2 px-4 w-[100%] mt-5">
-                    <Link href="/search">Explore Hotels</Link>
-                  </Button>
-                </div>
-              </div>
+             <SerachComponent/>
             </form>
           </div>
         </div>
