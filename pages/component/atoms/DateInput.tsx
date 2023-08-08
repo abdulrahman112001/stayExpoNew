@@ -8,32 +8,34 @@ function DateInputComp({ placeholder, mobile }: any) {
   return (
     <div>
       {mobile ? (
-        <DatePicker
-          type="range"
-          placeholder={placeholder}
-          value={value}
-          onChange={setValue}
-          mx="auto"
-          maw={400}
-          numberOfColumns={12}
-          weekendDays={[0]}
-          //@ts-ignore
-          // withSelectButtons
-        />
+        ""
+        // <DatePicker
+        //   type="range"
+        //   placeholder={placeholder}
+        //   value={value}
+        //   onChange={setValue}
+        //   mx="auto"
+        //   maw={400}
+        //   numberOfColumns={12}
+        //   weekendDays={[0]}
+        //   //@ts-ignore
+        //   // withSelectButtons
+        // />
       ) : (
-        <DatePickerInput
-          type="range"
-          // label="Pick dates range"
-          placeholder={placeholder}
-          value={value}
-          onChange={setValue}
-          mx="auto"
-          maw={400}
-          weekendDays={[0]}
-          numberOfColumns={1}
-          clearable
-          className="bg-white"
-        />
+        ""
+        // <DatePickerInput
+        //   type="range"
+        //   // label="Pick dates range"
+        //   placeholder={placeholder}
+        //   value={value}
+        //   onChange={setValue}
+        //   mx="auto"
+        //   maw={400}
+        //   weekendDays={[0]}
+        //   numberOfColumns={1}
+        //   clearable
+        //   className="bg-white"
+        // />
       )}
     </div>
   );
