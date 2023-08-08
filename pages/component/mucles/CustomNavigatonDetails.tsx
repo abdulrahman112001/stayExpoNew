@@ -1,26 +1,26 @@
 "use client";
-import React, { useRef, useEffect } from "react";
 import { Button, Tabs } from "@mantine/core";
 import { IconPhone } from "@tabler/icons-react";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useRef, useState } from "react";
 import imgCustomer from "../../../public/assets/discount.jpg";
 import FilterCustom from "../Search/FilterCustom";
-import SelectForm from "../atoms/SelectForm";
 import CheckboxComp from "../atoms/CheckBox";
-import Rating from "../atoms/Rating";
-import ModalComp from "../template/Modal";
 import DateInputComp from "../atoms/DateInput";
 import DropDown from "../atoms/DropDown";
-import SearchIcon from "../icons/SearchIcon";
-import MapIcon from "../icons/MapIcon";
+import Rating from "../atoms/Rating";
+import SelectForm from "../atoms/SelectForm";
 import FilterIcon from "../icons/FilterIcon";
+import MapIcon from "../icons/MapIcon";
+import SearchIcon from "../icons/SearchIcon";
+import ModalComp from "../template/Modal";
+import SerachComponent from "./SerachComponent";
 
 export default function CustomNavigatonDetails() {
   const [open, setOpen] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
   const [openMap, setOpenMap] = useState(false);
-  const itemGridRef = useRef(null);
 
 
   return (
@@ -180,7 +180,7 @@ export default function CustomNavigatonDetails() {
                 <span className="mt-3">
                   <IconPhone />
                 </span>
-                <a href="">+20 122 108 3507</a>
+                <Link href="">+20 122 108 3507</Link>
               </p>
             </div>
           </div>
@@ -192,22 +192,8 @@ export default function CustomNavigatonDetails() {
         isClose={() => setOpen(false)}
         title="Edit Search"
       >
-        <div className="grid grid-cols-4">
-          <div className="col-span-4 p-3">
-            <SelectForm />
-          </div>
-          <div className="col-span-4 p-3">
-            <DateInputComp placeholder="12/2/2022" />
-          </div>
-          <div className="col-span-4 p-3">
-            <DropDown />
-          </div>
-          <div className="col-span-4 p-3">
-            <Button className="p-1 px-4 w-[100%] bg-bg_banfsgy">
-              Update Search
-            </Button>
-          </div>
-        </div>
+                      <SerachComponent/>
+
       </ModalComp>
 
       <ModalComp

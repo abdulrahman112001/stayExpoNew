@@ -5,13 +5,13 @@ import linkdlnIcon from "./../../../public/assets/linkdln.svg"
 import youtubeIcon from "./../../../public/assets/youtube.svg"
 import Image from "next/image"
 import Link from "next/link"
-import ExploreHotels from "./ExploreHotels"
+import SerachComponent from "./SerachComponent"
 
 export const SideNavBlog = () => {
   return (
      <div className="">
         <div className="mt-2 mb-5">
-            <ExploreHotels />
+            <SerachComponent/>
         </div>
         <div className="mb-5 mt-7">
             <SearchInput  />

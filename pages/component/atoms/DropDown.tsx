@@ -15,7 +15,7 @@ function DropDown() {
             id="menu-button"
             onClick={() => (!open ? setOpen(true) : setOpen(false))}
           >
-            0 guesets
+            0 travelr
             <svg
               className="w-5 h-5 -mr-1 text-gray-400"
               viewBox="0 0 20 20"

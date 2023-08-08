@@ -118,3 +118,15 @@ body{
   color: #adb5bd;
   padding: 0 10px;
 }
+
+.react-datepicker__month-container{
+  width: 100%;
+}
+
+.mantine-o00rr2{
+ flex-direction: column; 
+ margin: 0;
+}
+.mantine-o00rr2 [data-month-level]:not(:last-of-type){
+  margin: 0;
+}

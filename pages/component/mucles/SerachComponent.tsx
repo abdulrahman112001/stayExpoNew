@@ -7,6 +7,7 @@ import Button from "../atoms/Button";
 import Link from "next/link";
 import { Input } from "@mantine/core";
 import ModalComp from "../template/Modal";
+import CoustomDatePickerMobile from "./CoustomDatePickerMobile";
 
 export default function SerachComponent() {
   const [openDestniation, setOpenDestination] = useState(false);
@@ -72,7 +73,8 @@ export default function SerachComponent() {
         title="Map"
         fullScreen={true}
       >
-        يبلا
+       
+        <SelectForm />
       </ModalComp>
       <ModalComp
         opened={openDate}
@@ -80,7 +82,8 @@ export default function SerachComponent() {
         title="Map"
         fullScreen={true}
       >
-        يبلا
+        <DateInputComp placeholder="Check-in - Check-out " mobile={true} />
+        {/* <CoustomDatePickerMobile/> */}
       </ModalComp>
       <ModalComp
         opened={openGuest}
@@ -88,7 +91,7 @@ export default function SerachComponent() {
         title="Map"
         fullScreen={true}
       >
-        يبلا
+        <DropDown />
       </ModalComp>
     </>
   );

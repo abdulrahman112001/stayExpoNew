@@ -146,7 +146,7 @@ const mockdata = [
 export default function Navbar() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
-   const [isOpen,setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const [openSide, setOpenSide] = useState(false);
   const { logout, user } = useAuth();
 
@@ -174,7 +174,6 @@ export default function Navbar() {
     </UnstyledButton>
   ));
 
-
   const form = useForm({
     initialValues: {
       email: "",
@@ -199,9 +198,9 @@ export default function Navbar() {
             <Group
               sx={{ height: "100%" }}
               spacing={0}
-              className={`${classes.hiddenMobile}` }
+              className={`${classes.hiddenMobile}`}
             >
-              <Link href="/search" className={classes.link} >
+              <Link href="/search" className={classes.link}>
                 Search
               </Link>
 
@@ -279,36 +278,58 @@ export default function Navbar() {
                   Login
                 </Button>
               )}
-
               <ToggleMenue />
             </Group>
-             <ButtonToggleNav onClick={() => setIsOpen(!isOpen)}/>
+            <ButtonToggleNav onClick={() => setIsOpen(!isOpen)} />
           </Group>
         </Header>
         <AuthinticationForm opened={opened} close={close} />
-
-        <SideBar onOpen={isOpen} onClose={setIsOpen} >
-        <Link href="/" className={classes.link}  onClick={() => setIsOpen(false)}>
+        <SideBar onOpen={isOpen} onClose={setIsOpen}>
+          <Link
+            href="/"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </Link>
 
-          <Link href="/search" className={classes.link}  onClick={() => setIsOpen(false)}>
+          <Link
+            href="/search"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
             Search
           </Link>
-          <Link href="/checkout" className={classes.link}  onClick={() => setIsOpen(false)}>
+          <Link
+            href="/checkout"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
             checkout
           </Link>
           <Collapse in={linksOpened}>{links}</Collapse>
           {/* <Link href="/about" className={classes.link}>
             About Us
           </Link> */}
-          <Link href="/events" className={classes.link}  onClick={() => setIsOpen(false)}>
+          <Link
+            href="/events"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
             Events
           </Link>
-          <Link href="/Blogs" className={classes.link}  onClick={() => setIsOpen(false)}>
+          <Link
+            href="/Blogs"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
             Blogs
           </Link>
-          <Link href="/contact-us" className={classes.link}  onClick={() => setIsOpen(false)}>
+          <Link
+            href="/contact-us"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
             Contact Us
           </Link>
           <Divider
@@ -324,10 +345,8 @@ export default function Navbar() {
             )}
           </Group>
         </SideBar>
-        
       </Box>
       <ToastContainer />
-         
     </>
   );
 }
