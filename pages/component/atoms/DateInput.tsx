@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { DatePicker } from "@mantine/dates";
-import { DatePickerInput } from "@mantine/dates";
+import { DatePickerInput  , DatePicker} from "@mantine/dates";
 function DateInputComp({ placeholder, mobile }: any) {
   
   const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
