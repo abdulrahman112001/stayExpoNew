@@ -10,7 +10,7 @@ import {
   Text,
   ThemeIcon,
   createStyles,
-  rem
+  rem,
 } from "@mantine/core";
 import { IconPackage } from "@tabler/icons-react";
 import Image, { StaticImageData } from "next/image";
@@ -137,7 +137,7 @@ export default function FeaturesSection() {
     "🚀 ~ file: FeaturesSection.tsx:108 ~ FeaturesSection ~ Feature:",
     Feature
   );
- 
+
   const { classes } = useStyles();
 
   const items = features.map((feature) => (
@@ -169,132 +169,126 @@ export default function FeaturesSection() {
 
   return (
     <div className={`${classes.wrapper}   p-20 `}>
-        <div className="  text-center py-5 mb-[50px]" >
-          <h4 className="relative m-auto w-[200px]  lg:w-[350px] mt-5 py-5 text-3xl font-bold text-center after:w-[50px] after:absolute after:left-[10px] lg:after:left-[25px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
-            Save time and money
-          </h4>
-          <p className="text-gray-500">
-            comfort and the best prices for your business and Events
-          </p>
-        </div>
-        <Grid gutter={100} className={windowSize <= 700 ? "hidden" : "block"}>
-          <Col span={12} md={12} className="p-4">
-            <Tabs
-              radius="md" 
-              orientation="vertical"
-              color="violet"
-              fz={"xl"}  
-              defaultValue="Feature 1">
-        
-                <Tabs.List>
-                {Feature?.data?.features.map((item: any) => (
-                    <Tabs.Tab 
-                    key={item?.name} 
-                      value={item?.name}
-                      className="border-r-0 border-black "
-                      fz={"md"}
-                      fw="normal"
-                      py="xl"> 
-                      <h5 className="flex items-center gap-2 py-1 text-base font-medium">
-                        <IconPackage className=" text-bg_banfsgy" size="1.5rem" />
-                        {item?.name}
-                      </h5>
-                      <p className="py-1 text-sm font-normal text-gray-500">
-                        {item?.description}
-                      </p>
-                    </Tabs.Tab>
-                   ))}
-                </Tabs.List>
-                {Feature?.data?.features.map((item: any) => (
-                <Tabs.Panel value={item?.name} key={item?.name}>
-                  <SimpleGrid
-                    cols={2}
-                    spacing={20}
-                    breakpoints={[{ maxWidth: "md", cols: 1 }]}
-                    className="p-0 md:px-20"
-                  >
-                    {item.subfeatures.map((feature:any) => (
-                      <div key={feature?.title} className="p-3 m-2 shadow-sm">
-                        <div className="flex justify-between gap-2">
-                          <Text fz="lg" mt="sm" fw={500}>
-                            {feature.name}
-                          </Text>
-
-                          <ThemeIcon
-                            size={44}
-                            radius="md"
-                          
-                            className="bg-transparent"
-                          >
-                          
-                            <Image
-                              src={feature?.icon}
-                              alt="clud"
-                              width="100"
-                              height="100"
-                            />
-                          </ThemeIcon>
-                        </div>
-                        <Text c="dimmed" fz="sm">
-                          {feature.description}
+      <div className="  text-center py-5 mb-[50px]">
+        <h4 className="relative m-auto w-[200px]  lg:w-[350px] mt-5 py-5 text-3xl font-bold text-center after:w-[50px] after:absolute after:left-[10px] lg:after:left-[25px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
+          Save time and money
+        </h4>
+        <p className="text-gray-500">
+          comfort and the best prices for your business and Events
+        </p>
+      </div>
+      <Grid gutter={100} className={windowSize <= 700 ? "hidden" : "block"}>
+        <Col span={12} md={12} className="p-4">
+          <Tabs
+            radius="md"
+            orientation="vertical"
+            color="violet"
+            fz={"xl"}
+            defaultValue="Feature 1"
+          >
+            <Tabs.List>
+              {Feature?.data?.features.map((item: any) => (
+                <Tabs.Tab
+                  key={item?.name}
+                  value={item?.name}
+                  className="border-r-0 border-black "
+                  fz={"md"}
+                  fw="normal"
+                  py="xl"
+                >
+                  <h5 className="flex items-center gap-2 py-1 text-base font-medium">
+                    <IconPackage className=" text-bg_banfsgy" size="1.5rem" />
+                    {item?.name}
+                  </h5>
+                  <p className="py-1 text-sm font-normal text-gray-500">
+                    {item?.description}
+                  </p>
+                </Tabs.Tab>
+              ))}
+            </Tabs.List>
+            {Feature?.data?.features.map((item: any) => (
+              <Tabs.Panel value={item?.name} key={item?.name}>
+                <SimpleGrid
+                  cols={2}
+                  spacing={20}
+                  breakpoints={[{ maxWidth: "md", cols: 1 }]}
+                  className="p-0 md:px-20"
+                >
+                  {item.subfeatures.map((feature: any) => (
+                    <div key={feature?.title} className="p-3 m-2 shadow-sm">
+                      <div className="flex justify-between gap-2">
+                        <Text fz="lg" mt="sm" fw={500}>
+                          {feature.name}
                         </Text>
-                      </div>
-                    ))}
-                  </SimpleGrid>
-                </Tabs.Panel>
-                ))}
-             
-            </Tabs>
-          </Col>
-      </Grid> 
-      <Grid gutter={100} className={windowSize > 700 ? "hidden" : "block"}>
-      {Feature?.data?.features.map((item: any) => (
-        <Accordion defaultValue={item[0]?.name}>
-          <Accordion.Item  value={item?.name} key={item?.name}>
-            <Accordion.Control>                      
-                      <h5 className="flex items-center gap-2 py-1 text-base font-medium">
-                        <IconPackage className=" text-bg_banfsgy" size="1.5rem" />
-                        {item?.name}
-                      </h5>
-                      <p className="py-1 text-sm font-normal text-gray-500">
-                        {item?.description}
-                      </p>
-              </Accordion.Control>
-            {item.subfeatures.map((feature:any) => (
-            <Accordion.Panel key={feature?.title}>
-               <div key={feature?.title} className="p-3 m-2 shadow-sm">
-                        <div className="flex justify-between  gap-2">
-                          <Text fz="lg" mt="sm" fw={500}>
-                            {feature.name}
-                          </Text>
 
-                          <ThemeIcon
-                            size={44}
-                            radius="md"
-                          
-                            className="bg-transparent"
-                          >
-                          
-                            <Image
-                              src={feature?.icon}
-                              alt="clud"
-                              width="100"
-                              height="100"
-                            />
-                          </ThemeIcon>
-                        </div>
-                        <Text c="dimmed" fz="sm">
-                          {feature.description}
-                        </Text>
+                        <ThemeIcon
+                          size={44}
+                          radius="md"
+                          className="bg-transparent"
+                        >
+                          <Image
+                            src={feature?.icon}
+                            alt="clud"
+                            width="100"
+                            height="100"
+                          />
+                        </ThemeIcon>
                       </div>
-            </Accordion.Panel>
+                      <Text c="dimmed" fz="sm">
+                        {feature.description}
+                      </Text>
+                    </div>
+                  ))}
+                </SimpleGrid>
+              </Tabs.Panel>
             ))}
-          </Accordion.Item>
-        </Accordion>
-      ))}
-    </Grid> 
+          </Tabs>
+        </Col>
+      </Grid>
+      <Grid gutter={100} className={windowSize > 700 ? "hidden" : "block"}>
+        {Feature?.data?.features.map((item: any) => (
+          <Accordion defaultValue={item[0]?.name} key={item?.name}>
+            <Accordion.Item value={item?.name} >
+              <Accordion.Control>
+                <h5 className="flex items-center gap-2 py-1 text-base font-medium">
+                  <IconPackage className=" text-bg_banfsgy" size="1.5rem" />
+                  {item?.name}
+                </h5>
+                <p className="py-1 text-sm font-normal text-gray-500">
+                  {item?.description}
+                </p>
+              </Accordion.Control>
+              {item.subfeatures.map((feature: any) => (
+                <Accordion.Panel key={feature?.title}>
+                  <div key={feature?.title} className="p-3 m-2 shadow-sm">
+                    <div className="flex justify-between gap-2">
+                      <Text fz="lg" mt="sm" fw={500}>
+                        {feature.name}
+                      </Text>
 
-   
+                      <ThemeIcon
+                        size={44}
+                        radius="md"
+                        className="bg-transparent"
+                      >
+                        <Image
+                          src={feature?.icon}
+                          alt="clud"
+                          width="100"
+                          height="100"
+                        />
+                      </ThemeIcon>
+                    </div>
+                    <Text c="dimmed" fz="sm">
+                      {feature.description}
+                    </Text>
+                  </div>
+                </Accordion.Panel>
+              ))}
+            </Accordion.Item>
+          </Accordion>
+        ))}
+      </Grid>
     </div>
   );
 }
