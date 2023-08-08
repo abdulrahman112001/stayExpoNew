@@ -11,7 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@loadable/component": "^5.15.3",
-    "@mantine/carousel": "^6.0.17",
+    "@mantine/carousel": "^6.0.18",
     "@mantine/core": "^6.0.17",
     "@mantine/dates": "^6.0.17",
     "@mantine/ds": "^6.0.17",
@@ -29,6 +29,7 @@
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "cookies-next": "^2.1.2",
+    "dayjs": "^1.11.9",
     "embla-carousel-react": "^8.0.0-rc11",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
