@@ -40,6 +40,7 @@ import Logo from "../atoms/Logo";
 import AuthinticationForm from "./AuthinticationForm";
 import { useState } from "react";
 import SideBar from "./SideBar";
+import ButtonToggleNav from "../atoms/ButtonToggleNav";
 const useStyles = createStyles((theme) => ({
   link: {
     display: "flex",
@@ -145,7 +146,7 @@ const mockdata = [
 export default function Navbar() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
-
+   const [isOpen,setIsOpen] = useState(false)
   const [openSide, setOpenSide] = useState(false);
   const { logout, user } = useAuth();
 
@@ -173,6 +174,7 @@ export default function Navbar() {
     </UnstyledButton>
   ));
 
+
   const form = useForm({
     initialValues: {
       email: "",
@@ -197,9 +199,9 @@ export default function Navbar() {
             <Group
               sx={{ height: "100%" }}
               spacing={0}
-              className={`${classes.hiddenMobile}  `}
+              className={`${classes.hiddenMobile}` }
             >
-              <Link href="/search" className={classes.link}>
+              <Link href="/search" className={classes.link} >
                 Search
               </Link>
 
@@ -280,19 +282,49 @@ export default function Navbar() {
 
               <ToggleMenue />
             </Group>
-
-            <Burger
-              opened={openSide}
-              onClick={() => setOpenSide(true)}
-              className={classes.hiddenDesktop}
-            />
+             <ButtonToggleNav onClick={() => setIsOpen(!isOpen)}/>
           </Group>
         </Header>
         <AuthinticationForm opened={opened} close={close} />
 
-        <SideBar  onOpen OpenCloes>
-          "chilldern"
+        <SideBar onOpen={isOpen} onClose={setIsOpen} >
+        <Link href="/" className={classes.link}  onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+
+          <Link href="/search" className={classes.link}  onClick={() => setIsOpen(false)}>
+            Search
+          </Link>
+          <Link href="/checkout" className={classes.link}  onClick={() => setIsOpen(false)}>
+            checkout
+          </Link>
+          <Collapse in={linksOpened}>{links}</Collapse>
+          {/* <Link href="/about" className={classes.link}>
+            About Us
+          </Link> */}
+          <Link href="/events" className={classes.link}  onClick={() => setIsOpen(false)}>
+            Events
+          </Link>
+          <Link href="/Blogs" className={classes.link}  onClick={() => setIsOpen(false)}>
+            Blogs
+          </Link>
+          <Link href="/contact-us" className={classes.link}  onClick={() => setIsOpen(false)}>
+            Contact Us
+          </Link>
+          <Divider
+            my="sm"
+            color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
+          />
+
+          <Group position="center" grow pb="xl" px="md">
+            {user ? (
+              <Button onClick={() => logout()}>Logout</Button>
+            ) : (
+              <Button>Login</Button>
+            )}
+          </Group>
         </SideBar>
+        
       </Box>
       <ToastContainer />
          
