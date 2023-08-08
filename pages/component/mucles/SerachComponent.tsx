@@ -7,7 +7,6 @@ import Button from "../atoms/Button";
 import Link from "next/link";
 import { Input } from "@mantine/core";
 import ModalComp from "../template/Modal";
-import CoustomDatePickerMobile from "./CoustomDatePickerMobile";
 
 export default function SerachComponent() {
   const [openDestniation, setOpenDestination] = useState(false);
