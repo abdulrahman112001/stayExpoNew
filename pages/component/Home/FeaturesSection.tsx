@@ -168,7 +168,7 @@ export default function FeaturesSection() {
   ));
 
   return (
-    <div className={`${classes.wrapper} mt-5  p-20 `}>
+    <div className={`${classes.wrapper}   p-20 `}>
         <div className="  text-center py-5 mb-[50px]" >
           <h4 className="relative m-auto w-[200px]  lg:w-[350px] mt-5 py-5 text-3xl font-bold text-center after:w-[50px] after:absolute after:left-[10px] lg:after:left-[25px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
             Save time and money
@@ -263,7 +263,7 @@ export default function FeaturesSection() {
             {item.subfeatures.map((feature:any) => (
             <Accordion.Panel key={feature?.title}>
                <div key={feature?.title} className="p-3 m-2 shadow-sm">
-                        <div className="flex justify-between gap-2">
+                        <div className="flex justify-between  gap-2">
                           <Text fz="lg" mt="sm" fw={500}>
                             {feature.name}
                           </Text>

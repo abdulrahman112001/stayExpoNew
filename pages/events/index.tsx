@@ -24,17 +24,17 @@ export default function page() {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-12">
-        <div className="col-span-12 p-2 md:col-span-3">
-          <div className="p-10 shadow rounded-xl">
-            <div>
+      <div className="grid grid-cols-12 pt-5 gap-5 bg-gray-50 ">
+        <div className="col-span-12  lg:col-span-3 ">
+          <div className="relative z-[100]   translate-y-[-70px]  bg-white  shadow rounded-xl">
+            <div className=''>
               <AccordionComp/>
             </div>
           </div>
         </div>
-        <div className="col-span-12 p-2 md:col-span-6">
-          <div className="grid grid-cols-12 p-2 mt-2 align-middle border-b-2">
-            <div className="col-span-3">
+        <div className="col-span-12  lg:col-span-6 relative z-[100]   translate-y-[-70px]  bg-white  shadow rounded-xl ">
+          <div className="grid grid-cols-12 p-5  align-middle border-b-2  ">
+            <div className="col-span-3 ">
               <Image
                 src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
                 width="100"
@@ -48,7 +48,7 @@ export default function page() {
                 <Link href="/events/[id]" as="/events/123">
                   
                   gamescom 2023 </Link>
-                  <span className="bg-[#f30] px-1 rounded text-white">
+                  <span className="bg-[#f30] p-1 rounded text-white">
                     ⚑ Trending
                   </span>
                 </div>
@@ -71,7 +71,7 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-12 p-2 mt-2 align-middle border-b-2">
+          <div className="grid grid-cols-12  p-5 mt-2 align-middle border-b-2">
             <div className="col-span-3">
               <Image
                 src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
@@ -107,7 +107,7 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-12 p-2 mt-2 align-middle border-b-2">
+          <div className="grid grid-cols-12  p-5 mt-2 align-middle border-b-2">
             <div className="col-span-3">
               <Image
                 src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
@@ -143,7 +143,7 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-12 p-2 mt-2 align-middle border-b-2">
+          <div className="grid grid-cols-12  p-5 mt-2 align-middle border-b-2">
             <div className="col-span-3">
               <Image
                 src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
@@ -180,7 +180,7 @@ export default function page() {
             </div>
           </div>
         </div>
-        <div className="col-span-12 p-2 md:col-span-3">
+        <div className="col-span-12  p-5 md:col-span-3">
           <div className="flex flex-col justify-center p-10 align-middle shadow ali rounded-xl">
             <div className="mt-2 text-center">
               <Image

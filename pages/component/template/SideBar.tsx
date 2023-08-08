@@ -12,7 +12,6 @@ export default function SideBar({ children, onOpen, onClose }: any) {
             (onOpen && '!right-0 ') || ''
         } bg-white fixed -right-[50%] top-0 bottom-0 w-full lg:max-w-[50%]  sm:max-w-[80%]  sm:-right-[80%]   max-sm:max-w-[80%]  max-sm:-right-[80%]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-700  z-[51] p-4`}
     >
-
         <div className="overflow-y-auto overflow-x-hidden perfect-scrollbar h-full">
             <div className="relative pb-5">
                 <button type="button" className="absolute top-0 right-0 opacity-30 hover:opacity-100 dark:text-white" onClick={() => onClose(false)}>
@@ -22,7 +21,6 @@ export default function SideBar({ children, onOpen, onClose }: any) {
                 {children} 
                 </div>
             </div>
-        
         </div>
     </nav>
 </div>
