@@ -16,9 +16,9 @@ function DateInputComp({ placeholder, mobile }: any) {
           mx="auto"
           maw={400}
           numberOfColumns={12}
-          weekendDays={[]}
+          weekendDays={[0]}
           //@ts-ignore
-          withSelectButtons
+          // withSelectButtons
         />
       ) : (
         <DatePickerInput
@@ -29,7 +29,7 @@ function DateInputComp({ placeholder, mobile }: any) {
           onChange={setValue}
           mx="auto"
           maw={400}
-          weekendDays={[]}
+          weekendDays={[0]}
           numberOfColumns={1}
           clearable
           className="bg-white"
