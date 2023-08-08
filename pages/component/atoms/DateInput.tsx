@@ -1,10 +1,9 @@
 "use client";
 import { useState } from "react";
-import { Group } from "@mantine/core";
 import { DatePicker } from "@mantine/dates";
-
 import { DatePickerInput } from "@mantine/dates";
 function DateInputComp({ placeholder, mobile }: any) {
+  
   const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
 
   return (
@@ -15,7 +14,6 @@ function DateInputComp({ placeholder, mobile }: any) {
           placeholder={placeholder}
           value={value}
           onChange={setValue}
-          // range
           mx="auto"
           maw={400}
           numberOfColumns={12}
@@ -33,7 +31,6 @@ function DateInputComp({ placeholder, mobile }: any) {
           mx="auto"
           maw={400}
           weekendDays={[]}
-
           numberOfColumns={1}
           clearable
           className="bg-white"

@@ -1,5 +1,4 @@
 "use client";
-
 import useFetch from "@/hooks/useFetch";
 import PaginationComponent from "../component/atoms/PaginationComponent";
 import BlogCardPage from "../component/mucles/BlogCardPage";
@@ -7,7 +6,6 @@ import BlogModal from "../component/mucles/BlogModal";
 import SideNavBlog from "../component/mucles/SideNavBlog";
 
 export default function BlogsMain() {
-
   const { data: Blogs } = useFetch<any>({
     endpoint: `api/section/blog`,
     queryKey: [`All-Blogs-page`],
@@ -29,7 +27,7 @@ export default function BlogsMain() {
       <div className="grid mt-3 mb-2 lg:grid-cols-12 lg:gap-10 sm:grid-cols-1 md:gap-0 sm:gap-0 ">
         <div className="mb-3 lg:col-span-9 md:col-span-9 sm:col-span-12 ">
           <div className="grid mt-3 mb-5 lg:grid-cols-12 md:grid-cols-12 sm:grid-cols-1 lg:gap-6 md:gap-3 sm:gap-0">
-              <BlogCardPage Blogs={Blogs}/>
+            <BlogCardPage Blogs={Blogs} />
           </div>
           <div className="pt-5 mt-3">
             <PaginationComponent />
