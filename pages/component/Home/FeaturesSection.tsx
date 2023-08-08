@@ -2,6 +2,7 @@
 
 import useFetch from "@/hooks/useFetch";
 import {
+  Accordion,
   Col,
   Grid,
   SimpleGrid,
@@ -21,6 +22,7 @@ import rich_feature_icon from "../../../public/assets/rich-features-icon.png";
 import richcontent_icon from "../../../public/assets/richcontent-icon.png";
 import support_icon from "../../../public/assets/support-icon.png";
 import user_level_icon from "../../../public/assets/user-level-icon.png";
+import { useEffect, useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -98,6 +100,18 @@ const featuresTow: Feature[] = [
 ];
 
 export default function FeaturesSection() {
+  const [windowSize, setWindowSize] = useState<number | any>();
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  console.log(windowSize);
   // Blogs
   interface Feature {
     name: string;
@@ -163,7 +177,7 @@ export default function FeaturesSection() {
             comfort and the best prices for your business and Events
           </p>
         </div>
-        <Grid gutter={100}>
+        <Grid gutter={100} className={windowSize <= 700 ? "hidden" : "block"}>
           <Col span={12} md={12} className="p-4">
             <Tabs
               radius="md" 
@@ -233,48 +247,22 @@ export default function FeaturesSection() {
             </Tabs>
           </Col>
       </Grid> 
-      {/* <Grid gutter={80}>
-        <div className="m-auto text-center">
-          <h1 className="m-auto mt-5 text-3xl font-bold text-center">
-            Save time and money
-          </h1>
-          <p className="text-gray-500">
-            comfort and the best prices for your business and Events
-          </p>
-        </div>
-
-        <Col span={12} md={12} className="p-4">
-          <Tabs
-            defaultValue={Feature?.data?.features[0]?.name}
-            orientation="vertical"
-           
-          >
-            {Feature?.data?.features.map((item: any) => (
-              <>
-                <Tabs.List className="w-full text-xl font-bold border-r-0 md:w-1/4 text-neutral-950">
-                  <Tabs.Tab
-                    value={item?.name}
-                    className="border-r-0 border-black "
-                  >
-                    <h5 className="flex items-center gap-2">
-                      <IconPackage className="text-blue-600" />
-                      {item?.name}
-                    </h5>
-                    <p className="py-1 text-sm font-normal text-gray-500">
-                      {item?.description}
-                    </p>
-                  </Tabs.Tab>
-                </Tabs.List>
-
-                <Tabs.Panel value={item?.name}>
-                  <SimpleGrid
-                    cols={2}
-                    spacing={20}
-                    breakpoints={[{ maxWidth: "md", cols: 1 }]}
-                    className="p-0 md:px-20"
-                  >
-                    {item.subfeatures.map((feature) => (
-                      <div key={feature?.title} className="p-3 m-2 shadow-sm">
+      <Grid gutter={100} className={windowSize > 700 ? "hidden" : "block"}>
+      {Feature?.data?.features.map((item: any) => (
+        <Accordion defaultValue={item[0]?.name}>
+          <Accordion.Item  value={item?.name} key={item?.name}>
+            <Accordion.Control>                      
+                      <h5 className="flex items-center gap-2 py-1 text-base font-medium">
+                        <IconPackage className=" text-bg_banfsgy" size="1.5rem" />
+                        {item?.name}
+                      </h5>
+                      <p className="py-1 text-sm font-normal text-gray-500">
+                        {item?.description}
+                      </p>
+              </Accordion.Control>
+            {item.subfeatures.map((feature:any) => (
+            <Accordion.Panel key={feature?.title}>
+               <div key={feature?.title} className="p-3 m-2 shadow-sm">
                         <div className="flex justify-between gap-2">
                           <Text fz="lg" mt="sm" fw={500}>
                             {feature.name}
@@ -288,7 +276,7 @@ export default function FeaturesSection() {
                           >
                           
                             <Image
-                              src={richcontent_icon?.src}
+                              src={feature?.icon}
                               alt="clud"
                               width="100"
                               height="100"
@@ -299,14 +287,14 @@ export default function FeaturesSection() {
                           {feature.description}
                         </Text>
                       </div>
-                    ))}
-                  </SimpleGrid>
-                </Tabs.Panel>
-              </>
+            </Accordion.Panel>
             ))}
-          </Tabs>
-        </Col>
-      </Grid> */}
+          </Accordion.Item>
+        </Accordion>
+      ))}
+    </Grid> 
+
+   
     </div>
   );
 }
