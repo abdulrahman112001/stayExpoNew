@@ -23,6 +23,7 @@ export default function SerachComponent() {
             <div className="grid grid-cols-2 mt-4">
               <div className="col-span-2">
                 <DateInputComp placeholder="Check-in - Check-out " />
+                
               </div>
             </div>
             <div className="mt-4">

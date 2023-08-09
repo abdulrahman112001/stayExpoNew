@@ -133,26 +133,19 @@ body{
 .mantine-Select-input {
   @apply max-sm:py-[25px] 
 }
-.mantine-1majj0f{
-  max-width: unset !important;
-  @apply mx-0 w-full 
-  
-}
 
-.mantine-Month-month{
-  @apply w-full
-}
+
 .mantine-1emfdtu{
-  max-width: unset;
+ 
   @apply bg-violet-200 rounded-lg 
 
 }
 .mantine-CalendarHeader-calendarHeaderLevel{
  @apply font-bold text-bg_banfsgy text-base
 }
-.mantine-7yisjr[data-selected]:first-child{
+/* .mantine-7yisjr[data-selected]:first-child{
     @apply w-full
-}
+} */
 .mantine-7yisjr[data-in-range]{
   @apply w-full bg-violet-200
 }
@@ -175,4 +168,21 @@ body{
 }
 .mantine-sg5nm5{
   @apply text-violet-500
+}
+
+@media only screen and (max-width: 768px) {
+  .mantine-1majj0f{
+    max-width: unset !important;
+    @apply mx-0 w-full 
+  }
+  .mantine-Month-month{
+    @apply w-full
+  }
+  .mantine-1emfdtu{
+    max-width: unset;
+  }
+  .mantine-7yisjr[data-selected]:first-child{
+    @apply w-full
+}
+
 }
