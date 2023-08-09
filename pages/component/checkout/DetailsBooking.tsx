@@ -19,7 +19,7 @@ export default function DetailsBooking() {
         <p>Enter your details and complete your booking now.</p>
       </div>
       <div className="p-3 border shadow-md rounded-xl">
-        <div className="flex gap-2 ">
+        <div className="flex max-md:flex-wrap gap-2 ">
           <Image
             alt="hotel img"
             width="266"

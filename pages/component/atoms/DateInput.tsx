@@ -16,7 +16,7 @@ function DateInputComp({ placeholder, mobile }: any) {
           mx="auto"
           maw={400}
           numberOfColumns={12}
-          weekendDays={[0]}
+          weekendDays={[]}
           //@ts-ignore
           // withSelectButtons
         />

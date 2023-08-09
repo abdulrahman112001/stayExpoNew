@@ -34,7 +34,8 @@ const data = [
 interface ItemProps extends React.ComponentPropsWithoutRef<"div"> {
   image?: string;
   label: string;
-  description: string;
+  description?: string;
+
 }
 
 // eslint-disable-next-line react/display-name
@@ -72,7 +73,7 @@ function SelectForm() {
     <div>
       <Group>
         <Select
-          className="w-full"
+          className="w-full "
           placeholder="Destination"
           itemComponent={SelectItem}
           searchable

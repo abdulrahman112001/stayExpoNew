@@ -2,13 +2,37 @@
 import { Button } from '@mantine/core'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import AccordionComp from '../component/accordion/Accordion';
+import MapIcon from '../component/icons/MapIcon';
+import FilterIcon from '../component/icons/FilterIcon';
+import SearchIcon from '../component/icons/SearchIcon';
+import { IconLayoutSidebarRight } from '@tabler/icons-react';
+import SideBar from '../component/template/SideBar';
 
 export default function page() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <div className="relative ">
+       <div className="flex justify-between bg-bg_banfsgy md:hidden">
+        <button className="inline-flex items-center ml-auto p-2 text-sm font-medium text-center text-white rounded-lg  bg-bg_banfsgy hover:bg-bg_banfsgy focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-bg_banfsgy dark:focus:bg-bg_banfsgy" 
+          onClick={() => setIsOpen(!isOpen)}
+          >
+            <div className="flex ">
+              <div className='m-auto'>
+               <IconLayoutSidebarRight />
+               </div>
+            </div>  
+        </button>
+   
+      <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
+      
+             <AccordionComp padding={false}/>
+    
+      </SideBar>
+      </div>
+      <div className=" ">
+          
         <div>
           <Image
             className="!w-full brightness-50 h-[60vh]"
@@ -25,14 +49,10 @@ export default function page() {
         </div>
       </div>
       <div className="grid grid-cols-12 pt-5 gap-5 bg-gray-50 ">
-        <div className="col-span-12  lg:col-span-3 ">
-          <div className="relative z-[100]   translate-y-[-70px]  bg-white  shadow rounded-xl">
-            <div className=''>
+        <div className="col-span-12 hidden lg:block  lg:col-span-3 relative z-[100]  translate-y-[-60px]  bg-white  shadow rounded-xl ">  
               <AccordionComp/>
-            </div>
-          </div>
         </div>
-        <div className="col-span-12  lg:col-span-6 relative z-[100]   translate-y-[-70px]  bg-white  shadow rounded-xl ">
+        <div className="col-span-12  lg:col-span-6 relative z-[100]   translate-y-[-60px]  bg-white  shadow rounded-xl ">
           <div className="grid grid-cols-12 p-5  align-middle border-b-2  ">
             <div className="col-span-3 ">
               <Image
@@ -48,7 +68,7 @@ export default function page() {
                 <Link href="/events/[id]" as="/events/123">
                   
                   gamescom 2023 </Link>
-                  <span className="bg-[#f30] p-1 rounded text-white">
+                  <span className="bg-[#f30] text-xs px-1  rounded text-white">
                     ⚑ Trending
                   </span>
                 </div>
@@ -62,7 +82,7 @@ export default function page() {
             </div>
             <div className="col-span-3">
               <div className="flex flex-col">
-                <Button  className="bg-[#f30] text-white p-2 px-3 rounded-2xl">
+                <Button  className="bg-[#f30]  text-white p-2 px-3 rounded-2xl">
                   Book Now
                 </Button>
                 <Button className="p-2 px-3 mt-3 text-black bg-white border rounded-2xl">
@@ -84,7 +104,7 @@ export default function page() {
               <div className="flex flex-col">
                 <div>
                   <Link href=""> gamescom 2023 </Link>
-                  <span className="bg-[#f30] px-1 rounded text-white">
+                  <span className="bg-[#f30] text-xs px-1  rounded text-white">
                     ⚑ Trending
                   </span>
                 </div>
@@ -98,7 +118,7 @@ export default function page() {
             </div>
             <div className="col-span-3">
               <div className="flex flex-col">
-                <Button className="bg-[#f30] text-white p-2 px-3 rounded-2xl">
+                <Button className="bg-[#f30]  text-white p-2 px-3 rounded-2xl">
                   Book Now
                 </Button>
                 <Button className="p-2 px-3 mt-3 text-black bg-white border rounded-2xl">
@@ -120,7 +140,7 @@ export default function page() {
               <div className="flex flex-col">
                 <div>
                   <Link href=""> gamescom 2023 </Link>
-                  <span className="bg-[#f30] px-1 rounded text-white">
+                  <span className="bg-[#f30] text-xs px-1 rounded text-white">
                     ⚑ Trending
                   </span>
                 </div>
@@ -134,7 +154,7 @@ export default function page() {
             </div>
             <div className="col-span-3">
               <div className="flex flex-col">
-                <Button className="bg-[#f30] text-white p-2 px-3 rounded-2xl">
+                <Button className="bg-[#f30]  text-white p-2 px-3 rounded-2xl">
                   Book Now
                 </Button>
                 <Button className="p-2 px-3 mt-3 text-black bg-white border rounded-2xl">
@@ -143,7 +163,7 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-12  p-5 mt-2 align-middle border-b-2">
+          <div className="grid grid-cols-12  p-5 mt-2 align-middle border-b-2 ">
             <div className="col-span-3">
               <Image
                 src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
@@ -156,7 +176,7 @@ export default function page() {
               <div className="flex flex-col">
                 <div>
                   <Link href=""> gamescom 2023 </Link>
-                  <span className="bg-[#f30] px-1 rounded text-white">
+                  <span className="bg-[#f30] text-xs px-1 rounded text-white">
                     ⚑ Trending
                   </span>
                 </div>
@@ -170,7 +190,7 @@ export default function page() {
             </div>
             <div className="col-span-3">
               <div className="flex flex-col">
-                <Button className="bg-[#f30] text-white p-2 px-3 rounded-2xl">
+                <Button className="bg-[#f30]  text-white p-2 px-3 rounded-2xl">
                   Book Now
                 </Button>
                 <Button className="p-2 px-3 mt-3 text-black bg-white border rounded-2xl">
@@ -180,8 +200,8 @@ export default function page() {
             </div>
           </div>
         </div>
-        <div className="col-span-12  p-5 md:col-span-3">
-          <div className="flex flex-col justify-center p-10 align-middle shadow ali rounded-xl">
+        <div className="col-span-12  p-5 md:col-span-3 relative z-[100]   translate-y-[-60px]  bg-white  shadow rounded-xl">
+          <div className="flex flex-col justify-center p-10 align-middle  ali rounded-xl">
             <div className="mt-2 text-center">
               <Image
                 alt="comp"

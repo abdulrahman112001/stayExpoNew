@@ -7,6 +7,7 @@ import Button from "../atoms/Button";
 import Link from "next/link";
 import { Input } from "@mantine/core";
 import ModalComp from "../template/Modal";
+import { IconArrowBigLeftLines, IconArrowNarrowLeft } from "@tabler/icons-react";
 
 export default function SerachComponent() {
   const [openDestniation, setOpenDestination] = useState(false);
@@ -16,7 +17,7 @@ export default function SerachComponent() {
   return (
     <>
       <div>
-        <div className="w-[100%] md:w-[60%] mt-10 md:ml-auto hidden  md:block">
+        <div className="w-[100%] lg:w-[60%] mt-10 md:ml-auto hidden  md:block">
           <div className="p-3 shadow-2xl rounded-xl">
             <SelectForm />
             <div className="grid grid-cols-2 mt-4">
@@ -69,17 +70,19 @@ export default function SerachComponent() {
       <ModalComp
         opened={openDestniation}
         isClose={() => setOpenDestination(false)}
-        title="Map"
+        title={<button className="px-5 py-2 rounded-lg bg-bg_banfsgy text-white " onClick={()=>setOpenDestination(false)}><IconArrowBigLeftLines className="text-white font-bold" /></button>}
         fullScreen={true}
+        withCloseButton={false}
       >
-       
+        
         <SelectForm />
       </ModalComp>
       <ModalComp
         opened={openDate}
         isClose={() => setOpenDate(false)}
-        title="Map"
+        title={<button className="px-5 py-2 rounded-lg bg-bg_banfsgy text-white " onClick={()=>setOpenDate(false)}><IconArrowBigLeftLines className="text-white font-bold" /></button>}
         fullScreen={true}
+        withCloseButton={false}
       >
         <DateInputComp placeholder="Check-in - Check-out " mobile={true} />
         {/* <CoustomDatePickerMobile/> */}
@@ -87,8 +90,9 @@ export default function SerachComponent() {
       <ModalComp
         opened={openGuest}
         isClose={() => setOpenGuest(false)}
-        title="Map"
+        title={<button className="px-5 py-2 rounded-lg bg-bg_banfsgy text-white " onClick={()=>setOpenGuest(false)}><IconArrowBigLeftLines className="text-white font-bold" /></button>}
         fullScreen={true}
+        withCloseButton={false}
       >
         <DropDown />
       </ModalComp>
