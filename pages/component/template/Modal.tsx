@@ -2,19 +2,21 @@ import { Modal } from "@mantine/core";
 import { ReactNode } from "react";
 
 type ModalComp_TP = {
-  children: ReactNode;
+  children?: ReactNode;
   opened: boolean;
   isClose: () => void;
-  title:string
-  fullScreen?:boolean
+  title?:any
+  fullScreen?:boolean;
+  withCloseButton?:boolean;
 };
 
-function ModalComp({ children, opened, isClose , title , fullScreen }: ModalComp_TP) {
+function ModalComp({ children, opened, isClose , title , fullScreen , withCloseButton}: ModalComp_TP) {
   //   const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <>
-      <Modal opened={opened} onClose={isClose} withCloseButton={true} title={title} fullScreen={fullScreen}>
+      <Modal withCloseButton={withCloseButton} opened={opened} onClose={isClose}  title={title} fullScreen={fullScreen}>
+  
         {children}
       </Modal>
     </>

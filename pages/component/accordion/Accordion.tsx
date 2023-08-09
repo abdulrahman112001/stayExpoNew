@@ -3,10 +3,10 @@ import { Accordion } from '@mantine/core';
 import SelectForm from "../atoms/SelectForm";
 import { IconArrowAutofitRight, IconArrowBadgeRight } from "@tabler/icons-react";
 
-export default function AccordionComp() {
+export default function AccordionComp({padding}:any) {
   return (
     <div className="">
-      <Accordion p={'xl'}  multiple defaultValue={['LOCATION', 'DATES','INDUSTRY']}>
+      <Accordion p={padding?'xl':'sm'}  multiple defaultValue={['LOCATION', 'DATES','INDUSTRY']}>
         <Accordion.Item  value="LOCATION">
           <Accordion.Control py={5} >LOCATION</Accordion.Control>
           <Accordion.Panel mt='md'>

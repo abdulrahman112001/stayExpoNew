@@ -16,13 +16,14 @@ import MapIcon from "../icons/MapIcon";
 import SearchIcon from "../icons/SearchIcon";
 import ModalComp from "../template/Modal";
 import SerachComponent from "./SerachComponent";
+import SideBar from "../template/SideBar";
 
 export default function CustomNavigatonDetails() {
   const [open, setOpen] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
   const [openMap, setOpenMap] = useState(false);
-
-
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <div className="bg-[#f4f6f8]">
       <div className="hidden grid-cols-4 m-auto md:grid md:p-2" >
@@ -59,14 +60,14 @@ export default function CustomNavigatonDetails() {
           </div>
         </button>
 
-        <button className="p-3" onClick={() => setOpenFilter(true)}>
+        <button className="p-3" onClick={() => setIsOpen(!isOpen)}>
           <div className="flex flex-col items-center justify-center ">
             <FilterIcon />
             <p className="text-white ">Filter</p>
           </div>
         </button>
       </div>
-      <FilterCustom isOpen={openFilter} isClosed={() => setOpenFilter(false)}>
+      <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
         <div className="col-span-3 ">
           <div className="mt-5">
             <p>Sort By</p>
@@ -185,7 +186,7 @@ export default function CustomNavigatonDetails() {
             </div>
           </div>
         </div>
-      </FilterCustom>
+      </SideBar>
 
       <ModalComp
         opened={open}

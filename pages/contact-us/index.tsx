@@ -23,7 +23,7 @@ function Contact_us() {
     <HeaderBanner label='Get In Touch' bannerImg={ContactImg.src} descriptionBoolean={true} />
      
       <div className="w-[100%] bg-gray-100 h-auto">
-        <div className=" grid lg:grid-cols-12 md:grid-cols-1   p-3 gap-10  relative z-[100]  -translate-y-14 ">
+        <div className=" grid lg:grid-cols-12 md:grid-cols-1   p-3 gap-10  relative z-[100] -translate-y-14 ">
             <div className="lg:col-span-4 md:col-span-12 sm:col-span-12">
                 <div className="rounded-md p-8 block bg-white h-auto  w-[100%]">
                   <h3 className="py-4 text-4xl font-light ">Give us a call</h3>

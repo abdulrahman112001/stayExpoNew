@@ -284,7 +284,7 @@ export default function Navbar() {
           </Group>
         </Header>
         <AuthinticationForm opened={opened} close={close} />
-        <SideBar onOpen={isOpen} onClose={setIsOpen}>
+        <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
           <Link
             href="/"
             className={classes.link}
@@ -319,7 +319,7 @@ export default function Navbar() {
             Events
           </Link>
           <Link
-            href="/Blogs"
+            href="/blogs"
             className={classes.link}
             onClick={() => setIsOpen(false)}
           >
