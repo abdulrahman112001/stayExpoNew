@@ -1,6 +1,6 @@
 import { Avatar, Group, Select, Text } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { IconBuilding } from "@tabler/icons-react";
+import { IconBuilding, IconSearch } from "@tabler/icons-react";
 import { forwardRef } from "react";
 
 const data = [
@@ -73,10 +73,12 @@ function SelectForm() {
     <div>
       <Group>
         <Select
+          radius={'lg'}
           className="w-full "
-          placeholder="Destination"
+          placeholder="City, Address,Landmark"
           itemComponent={SelectItem}
           searchable
+          icon={<IconSearch className="w-[20px] h-[20px] text-bg_banfsgy"/>}
           data={data}
           transitionProps={{
             transition: "pop-top-left",

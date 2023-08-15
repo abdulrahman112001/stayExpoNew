@@ -7,8 +7,9 @@ type SideBar_TP = {
   onClose?: any;
   closeButton?:any;
   backButton?:any;
+  widthSm?:any;
 };
-export default function SideBar({ children, onOpen, onClose,closeButton,backButton }: SideBar_TP) {
+export default function SideBar({ children, onOpen, onClose,closeButton,backButton,widthSm }: SideBar_TP) {
   return (
     <div>
       <div
@@ -21,7 +22,7 @@ export default function SideBar({ children, onOpen, onClose,closeButton,backButt
       <nav
         className={`${
           (onOpen && "!left-0 ") || ""
-        } bg-white fixed -left-[50%] top-0 bottom-0 w-full lg:max-w-[50%] z-[1000] sm:max-w-[80%]  sm:-left-[80%]   max-sm:max-w-[80%]  max-sm:-left-[80%]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[left] duration-700 p-4`}
+        } ${widthSm? "    sm:max-w-[50%]  sm:-left-[50%]   max-sm:max-w-[60%]  max-sm:-left-[60%] bg-white fixed -left-[50%] top-0 bottom-0 w-full lg:max-w-[50%] z-[1000]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[left] duration-700 p-4  " : "sm:max-w-[90%]  sm:-left-[90%]   max-sm:max-w-[90%]  max-sm:-left-[90%] bg-white fixed -left-[50%] top-0 bottom-0 w-full lg:max-w-[50%] z-[1000]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[left] duration-700 p-4 "} `}
       >
         <div className="h-full overflow-x-hidden overflow-y-auto perfect-scrollbar">
           <div className="relative pb-5">

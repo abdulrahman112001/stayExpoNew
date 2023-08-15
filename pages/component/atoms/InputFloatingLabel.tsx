@@ -5,18 +5,19 @@ import React, { useState } from 'react'
 const useStyles = createStyles((theme, { floating }: { floating: boolean }) => ({
     root: {
       position: 'relative',
-      width:"350px"
+      width: "100%"
     },
   
     label: {
       position: 'absolute',
       zIndex: 2,
-      top: rem(7),
+      top: rem(3),
       left: theme.spacing.sm,
       paddingLeft:"5px",
       paddingRight:"5px",
       paddingTop:"3px",
       paddingBottom:"3px",
+      borderRadius:"5px",
       pointerEvents: 'none',
       color: floating
         ? theme.colorScheme === 'dark'
@@ -26,7 +27,7 @@ const useStyles = createStyles((theme, { floating }: { floating: boolean }) => (
         ? theme.colors.dark[3]
         : theme.colors.gray[5],
       transition: 'transform 150ms ease, color 150ms ease, font-size 150ms ease',
-      transform: floating ? `translate(${theme.spacing.sm}, ${rem(-15)})` : 'none',
+      transform: floating ? `translate(${theme.spacing.xs}, ${rem(-15)})` : 'none',
       fontSize: floating ? theme.fontSizes.xs : theme.fontSizes.sm,
       fontWeight: floating ? 500 : 400,
       background : 'white'
@@ -51,14 +52,16 @@ const useStyles = createStyles((theme, { floating }: { floating: boolean }) => (
     },
   }));
   
-export const InputFloatingLabel = () => {
+export const InputFloatingLabel = ({placeholder,label,type}:any) => {
     const [focused, setFocused] = useState(false);
     const [value, setValue] = useState('');
     const { classes } = useStyles({ floating: value.trim().length !== 0 || focused });
   return (
     <TextInput
-    label="Search by Booking ID"
+    label={label}
     required
+    type={type}
+    placeholder={placeholder}
     classNames={classes}
     value={value}
     onChange={(event) => setValue(event.currentTarget.value)}

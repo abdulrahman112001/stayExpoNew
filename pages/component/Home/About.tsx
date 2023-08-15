@@ -1,8 +1,9 @@
-import { IconArrowBarToRight } from "@tabler/icons-react";
+import { IconArrowBarToRight, IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import imgAbout from "../../../public/assets/aboutUs.png";
 import shape from "../../../public/assets/primary-shape.png";
+
 function About() {
   return (
     <div className="relative p-5 overflow-hidden md:px-20 max-sm:px-2 md:py-10 ">
@@ -16,7 +17,7 @@ function About() {
             hotels reservation around convention centers.
           </p>
           <Link href="" className=" mt-2 read-link text-[#5d22d5] flex flex-row  font-bolder">
-            Read more <IconArrowBarToRight className="ml-2 read-icon" />
+            Read more <IconArrowRight className="ml-2 read-icon" />
           </Link>
         </div>
         <div className="w-[60%] max-sm:mr-[10px] max-sm:pt-0  flex md:pt-[30px]  col-span-2 md:col-span-1 m-auto">

@@ -32,8 +32,8 @@ export const HeaderBanner = ({
           backgroundPosition: "top center",
     
           [theme.fn.smallerThan("xs")]: {
-            paddingTop: rem(80),
-            paddingBottom: rem(50),
+            paddingTop: rem(100),
+            paddingBottom: rem(100),
           },
         },
     
@@ -54,7 +54,7 @@ export const HeaderBanner = ({
           fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     
           [theme.fn.smallerThan("xs")]: {
-            fontSize: rem(28),
+            fontSize: rem(40),
             textAlign: "left",
           },
         },

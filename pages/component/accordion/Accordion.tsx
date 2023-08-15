@@ -12,17 +12,17 @@ export default function AccordionComp({padding}:any) {
           <Accordion.Panel mt='md'>
           <SelectForm/>
 
-            <h3 className="text-red-600 flex py-3 mt-3 font-semibold cursor-pointer"> <IconArrowBadgeRight /> Anywhere</h3>
+            <h3 className="text-[#f30] flex py-3 mt-3 font-semibold cursor-pointer"> <IconArrowBadgeRight /> Anywhere</h3>
             <ul className="pl-1  ">
-                <li className="py-1 hover:text-red-600 ">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
 
             </ul>
           </Accordion.Panel>
@@ -31,17 +31,17 @@ export default function AccordionComp({padding}:any) {
         <Accordion.Item  value="DATES">
           <Accordion.Control>DATES</Accordion.Control>
           <Accordion.Panel mt='md'>
-          <h3 className="text-red-600 flex py-3 mt-3 font-semibold cursor-pointer"> <IconArrowBadgeRight /> All upcoming</h3>
+          <h3 className="text-[#f30] flex py-3 mt-3 font-semibold cursor-pointer"> <IconArrowBadgeRight /> All upcoming</h3>
             <ul>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
 
             </ul>
           </Accordion.Panel>
@@ -52,17 +52,17 @@ export default function AccordionComp({padding}:any) {
           <Accordion.Panel mt='md'>
           <SelectForm/>
 
-          <h3  className="text-red-600 flex py-3 mt-3 font-semibold cursor-pointer"> <IconArrowBadgeRight />All industries</h3>
+          <h3  className="text-[#f30] flex py-3 mt-3 font-semibold cursor-pointer"> <IconArrowBadgeRight />All industries</h3>
             <ul>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
-                <li className="py-1 hover:text-red-600">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
+                <li className="py-1 hover:text-bg_banfsgy">Paris</li>
 
             </ul>
           </Accordion.Panel>

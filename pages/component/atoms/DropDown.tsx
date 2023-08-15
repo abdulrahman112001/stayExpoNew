@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Button from "./Button"
 import Quantitiy from "./Quantitiy"
+import { IconUser } from "@tabler/icons-react"
 
 function DropDown() {
   const [open, setOpen] = useState(false)
@@ -10,12 +11,16 @@ function DropDown() {
       <div className="relative inline-block text-left w-[100%] ">
         <div>
           <button
+            
             type="button"
-            className="inline-flex w-full justify-between  gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-[#adb5bd] shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            className="inline-flex w-full rounded-2xl justify-between  focus:border-bg_banfsgy border   gap-x-1.5   border-gray-300 bg-white px-3 py-[12px]  text-sm font-semibold text-[#adb5bd] shadow-sm "
             id="menu-button"
             onClick={() => (!open ? setOpen(true) : setOpen(false))}
           >
-            0 travelr
+           <span className=" inline-flex items-center"> 
+              <IconUser className="w-[20px] h-[20px] mr-2  text-bg_banfsgy" /> 
+               0 Room
+            </span>
             <svg
               className="w-5 h-5 -mr-1 text-gray-400"
               viewBox="0 0 20 20"
@@ -23,9 +28,9 @@ function DropDown() {
               aria-hidden="true"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </button>
@@ -53,13 +58,13 @@ function DropDown() {
                   viewBox="0,0,256,256"
                   width="24px"
                   height="24px"
-                  fill-rule="nonzero"
+                  fillRule="nonzero"
                 >
                   <g
                     fill="#ff0000"
-                    fill-rule="nonzero"
+                    fillRule="nonzero"
                     stroke="none"
-                    stroke-width="1"
+                    strokeWidth="1"
                     stroke-linecap="butt"
                     stroke-linejoin="miter"
                     stroke-miterlimit="10"

@@ -12,7 +12,7 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
-import { IconPackage } from "@tabler/icons-react";
+import { IconArrowRight, IconPackage } from "@tabler/icons-react";
 import Image, { StaticImageData } from "next/image";
 import cloud_ico from "../../../public/assets/cloud-icon.png";
 import hotel_icon from "../../../public/assets/hotels-icon.png";
@@ -22,7 +22,8 @@ import rich_feature_icon from "../../../public/assets/rich-features-icon.png";
 import richcontent_icon from "../../../public/assets/richcontent-icon.png";
 import support_icon from "../../../public/assets/support-icon.png";
 import user_level_icon from "../../../public/assets/user-level-icon.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -101,6 +102,7 @@ const featuresTow: Feature[] = [
 
 export default function FeaturesSection() {
   const [windowSize, setWindowSize] = useState<number | any>();
+  const [tapDefault,setTapDefault] = useState<any>()
 
   useEffect(() => {
     function handleResize() {
@@ -129,15 +131,21 @@ export default function FeaturesSection() {
   }>({
     endpoint: `api/section/feature`,
     queryKey: [`All-Feature`],
-    // onSuccess : ()=>{
+    onSuccess : ()=>{
     //   notify("success", "done")
-    // }
+    setTapDefault(Feature?.data?.features[0]?.name)
+    }
   });
   console.log(
     "🚀 ~ file: FeaturesSection.tsx:108 ~ FeaturesSection ~ Feature:",
     Feature
   );
 
+  const ref = useRef<any>(null);
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   const { classes } = useStyles();
 
   const items = features.map((feature) => (
@@ -239,17 +247,25 @@ export default function FeaturesSection() {
                       </Text>
                     </div>
                   ))}
+                 
+                
                 </SimpleGrid>
+                <div  className=" p-0 md:px-20">
+                  <Link href="" className=" mt-2 p-3  read-link text-[#5d22d5] text-base float-right inline-flex items-center  font-bolder">
+                    Read more <IconArrowRight className="ml-2 read-icon w-6" />
+                  </Link>
+                  </div>
               </Tabs.Panel>
+              
             ))}
           </Tabs>
         </Col>
       </Grid>
-      <Grid gutter={100} className={windowSize > 700 ? "hidden" : "block"}>
+      <Grid gutter={100} pt={"lg"} className={windowSize > 700 ? "hidden" : "block"}>
         {Feature?.data?.features.map((item: any) => (
-          <Accordion defaultValue={item[0]?.name} key={item?.name}>
-            <Accordion.Item value={item?.name} >
-              <Accordion.Control>
+          <Accordion defaultValue={tapDefault} key={item?.name}>
+            <Accordion.Item ref={ref}   value={item?.name} onClick={handleClick}>
+              <Accordion.Control >
                 <h5 className="flex items-center gap-2 py-1 text-base font-medium">
                   <IconPackage className=" text-bg_banfsgy" size="1.5rem" />
                   {item?.name}
@@ -258,8 +274,10 @@ export default function FeaturesSection() {
                   {item?.description}
                 </p>
               </Accordion.Control>
-              {item.subfeatures.map((feature: any) => (
-                <Accordion.Panel key={feature?.title}>
+
+             
+                <Accordion.Panel  key={item?.name}>
+                {item.subfeatures.map((feature: any) => (
                   <div key={feature?.title} className="p-3 m-2 shadow-sm">
                     <div className="flex justify-between gap-2">
                       <Text fz="lg" mt="sm" fw={500}>
@@ -283,8 +301,16 @@ export default function FeaturesSection() {
                       {feature.description}
                     </Text>
                   </div>
-                </Accordion.Panel>
               ))}
+               <div  className=" p-0 md:px-20">
+                  <Link href="" className=" mt-2 p-3  read-link text-[#5d22d5] text-base float-right inline-flex items-center  font-bolder">
+                    Read more <IconArrowRight className="ml-2 read-icon w-6" />
+                  </Link>
+              </div>
+                  
+                </Accordion.Panel>
+ 
+             
             </Accordion.Item>
           </Accordion>
         ))}

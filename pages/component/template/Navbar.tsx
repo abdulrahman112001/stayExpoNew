@@ -53,7 +53,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 500,
     fontSize: theme.fontSizes.sm,
 
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       height: rem(42),
       display: "flex",
       alignItems: "center",
@@ -98,13 +98,13 @@ const useStyles = createStyles((theme) => ({
   },
 
   hiddenMobile: {
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       display: "none",
     },
   },
 
   hiddenDesktop: {
-    [theme.fn.largerThan("sm")]: {
+    [theme.fn.largerThan("md")]: {
       display: "none",
     },
   },

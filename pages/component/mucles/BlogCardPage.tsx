@@ -107,9 +107,9 @@ interface ArticleCardProps {
               {...others}
             >
               <Card.Section>
-                <a {...linkProps}>
+                <Link href={'/'} >
                   <Image src={item?.image} height={390} width={390} alt="img" />
-                </a>
+                </Link>
               </Card.Section>
 
               <div className="flex flex-row items-center justify-between pt-2 ">

@@ -24,7 +24,7 @@ export default function SelectNormal( {
       <Select
         icon={icon}
         placeholder={placeholder}
-        className={className}
+        className={`${className} py-5` }
         data={[
           { value: "react", label: "React" },
           { value: "ng", label: "Angular" },

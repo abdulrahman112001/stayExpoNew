@@ -1,6 +1,6 @@
 "use client";
 import { Button, Tabs } from "@mantine/core";
-import { IconPhone } from "@tabler/icons-react";
+import { IconPhone, IconSearch } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -17,6 +17,7 @@ import SearchIcon from "../icons/SearchIcon";
 import ModalComp from "../template/Modal";
 import SerachComponent from "./SerachComponent";
 import SideBar from "../template/SideBar";
+import FilterSearch from "../template/FilterSearch";
 
 export default function CustomNavigatonDetails() {
   const [open, setOpen] = useState(false);
@@ -26,166 +27,56 @@ export default function CustomNavigatonDetails() {
   
   return (
     <div className="bg-[#f4f6f8]">
-      <div className="hidden grid-cols-4 m-auto md:grid md:p-2" >
-        <div className="col-span-1 p-3">
+      <div className="hidden  container gap-3 grid-cols-10 m-auto lg:grid lg:px-10  lg:py-4" >
+        <div className="col-span-3 py-1 ">
           <SelectForm />
         </div>
-        <div className="col-span-1 p-3">
+        <div className="col-span-3  py-1">
           <DateInputComp placeholder="12/2/2022" />
         </div>
-        <div className="col-span-1 p-3">
+        <div className="col-span-3  py-1">
           <DropDown />
         </div>
-        <div className="col-span-1 p-3">
-          <Button className="p-1 px-4 w-[100%] bg-bg_banfsgy text-white">
+        <div className="col-span-1  py-2 ">
+          <Button className="py-1 px-[5px] text-base rounded-xl  font-semibold text-white  hover:bg-violet-600 bg-bg_banfsgy ">
             Update Search
           </Button>
         </div>
       </div>
-      <div className="flex justify-between bg-bg_banfsgy md:hidden">
+      <div className=" flex flex-row items-center justify-between bg-bg_banfsgy lg:hidden">
         <Button
           onClick={() => setOpen(true)}
-          className="h-auto p-3 m-2 rounded-xl text-white bg-[#c6badf2b]"
-          leftIcon={<SearchIcon />}
-        >
-          <div className="flex flex-col ">
-            <p>Miami, FL</p>
+          className="h-auto mr-auto w-[50%] max-sm:w-[60%] p-3 m-2 rounded-xl text-white bg-[#c6badf2b]"
+          leftIcon={
+            <>
+          <SearchIcon />
+          <div className="flex flex-col ml-2 ">
+            <p className=" text-lg">Miami, FL</p>
             <h3>Tue, Jul 18 – Thu, Jul 27 ....</h3>
           </div>
+          </>
+        }
+        >
+          
         </Button>
-        <button className="p-3" onClick={() => setOpenMap(true)}>
-          <div className="flex flex-col items-center justify-center ">
-            <MapIcon />
-            <p className="text-white ">Map</p>
-          </div>
-        </button>
+        <div>
+          <button className="p-3 hover:bg-[#c6badf2b]  rounded-xl" onClick={() => setOpenMap(true)}>
+            <div className="flex flex-col items-center justify-center ">
+              <MapIcon />
+              <p className="text-white ">Map</p>
+            </div>
+          </button>
 
-        <button className="p-3" onClick={() => setIsOpen(!isOpen)}>
-          <div className="flex flex-col items-center justify-center ">
-            <FilterIcon />
-            <p className="text-white ">Filter</p>
-          </div>
-        </button>
-      </div>
-      <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
-        <div className="col-span-3 ">
-          <div className="mt-5">
-            <p>Sort By</p>
-            <SelectForm />
-          </div>
-          <div className="mt-5">
-            <h3 className="my-2 border-b-[#ccc] border-b">Deals</h3>
-            <CheckboxComp
-              className="mt-3"
-              label="Retail - you pick the hotel"
-            />
-            <CheckboxComp
-              className="mt-3"
-              label="Express Deals & Pricebreakers"
-            />
-          </div>
-          <div className="mt-5">
-            <h3 className="my-2 border-b-[#ccc] border-b">Your Budget</h3>
-            <div className="flex items-center justify-between mt-3">
-              <CheckboxComp label="$$$$$" />
-              <p className="text-gray-500">($0 to $80 per night)</p>
+          <button className="p-3 hover:bg-[#c6badf2b] ml-3  rounded-xl" onClick={() => setIsOpen(!isOpen)}>
+            <div className="flex flex-col items-center justify-center ">
+              <FilterIcon />
+              <p className="text-white ">Filter</p>
             </div>
-            <div className="flex items-center justify-between mt-3">
-              <CheckboxComp label="$$$$$" />
-              <p className="text-gray-500">($0 to $80 per night)</p>
-            </div>
-            <div className="flex items-center justify-between mt-3">
-              <CheckboxComp label="$$$$$" />
-              <p className="text-gray-500">($0 to $80 per night)</p>
-            </div>
-          </div>
-          <div className="mt-5">
-            <h3 className="my-2 border-b-[#ccc] border-b">Rate Options</h3>
-            <div className="flex justify-between">
-              <CheckboxComp className="mt-3" label=" Free Cancellation" />
-              <p className="text-gray-500">(22)</p>
-            </div>
-            <div className="flex justify-between">
-              <CheckboxComp className="mt-3" label="Pay Later " />
-              <p className="text-gray-500">(31)</p>
-            </div>
-          </div>
-          <div className="mt-5">
-            <h3 className="my-2 border-b-[#ccc] border-b">Hotel Star Level </h3>
-            <div>
-              <Rating>
-                <Tabs.List>
-                  <Tabs.Tab
-                    value="five"
-                    // icon={<IconSettings size="1rem" />}
-                  >
-                    5+
-                  </Tabs.Tab>
-
-                  <Tabs.Tab
-                    value="six"
-                    // icon={<IconMessageCircle size="1rem" />}
-                  >
-                    6+
-                  </Tabs.Tab>
-
-                  <Tabs.Tab
-                    value="seven"
-                    // icon={<IconPhoto size="1rem" />}
-                  >
-                    7+
-                  </Tabs.Tab>
-                  <Tabs.Tab
-                    value="eight"
-                    // icon={<IconPhoto size="1rem" />}
-                  >
-                    8+
-                  </Tabs.Tab>
-                  <Tabs.Tab
-                    value="night"
-                    // icon={<IconPhoto size="1rem" />}
-                  >
-                    9+
-                  </Tabs.Tab>
-                </Tabs.List>
-              </Rating>
-            </div>
-          </div>
-          <div className="mt-5">
-            <h3 className="my-2 border-b-[#ccc] border-b">Property Type </h3>
-            <div className="flex justify-between">
-              <CheckboxComp className="mt-3" label="Hotels " />
-              <p className="text-gray-500">(9)</p>
-            </div>
-          </div>
-          <div className="mt-5 border border-[#5d22d5] rounded-xl p-3">
-            <h4>Best Price Guaranteed</h4>
-            <h4>Exclusively for Priceline members</h4>
-
-            <p>
-              Book now and well refund the difference if you find a lower price
-            </p>
-          </div>
-
-          <div className="mt-5">
-            <div className="p-4 m-auto text-center border rounded-xl">
-              <Image className="m-auto" src={imgCustomer} alt="customer" />
-              <h3 className="mt-3">Special discounts when you call</h3>
-              <p className="mt-3">
-                1 in 4 people saved 20% or more over the phone.
-              </p>
-              <p className="">
-                <span className="font-bold">StayExpo®</span> PHONE DEALS
-              </p>
-              <p className="flex justify-center ">
-                <span className="mt-3">
-                  <IconPhone />
-                </span>
-                <Link href="">+20 122 108 3507</Link>
-              </p>
-            </div>
-          </div>
+          </button>
         </div>
+      </div>
+      <SideBar widthSm={true} closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
+         <FilterSearch />
       </SideBar>
 
       <ModalComp
@@ -193,7 +84,7 @@ export default function CustomNavigatonDetails() {
         isClose={() => setOpen(false)}
         title="Edit Search"
       >
-                      <SerachComponent/>
+      <SerachComponent/>
 
       </ModalComp>
 

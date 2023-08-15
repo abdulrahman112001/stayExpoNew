@@ -17,6 +17,7 @@ import DateInputComp from "../component/atoms/DateInput";
 import DropDown from "../component/atoms/DropDown";
 import SelectForm from "../component/atoms/SelectForm";
 import ServiceFeature from "../component/atoms/ServiceFeature";
+import SerachComponent from "../component/mucles/SerachComponent";
 
 
 const useStyles = createStyles((theme) => ({
@@ -146,28 +147,7 @@ const Service = () => {
           description="You choose from over 2,000,000 hotels, guest houses, hostels, and apartments at great prices for corporate clients and travel agencies. We work with the world’s largest hotel suppliers and tens of thousands of hotels directly. This enables us to provide the best rates and save your money."
         />
         <div className="lg:col-span-6 md:col-span-1 max-sm:col-span-1">
-          <form
-            onSubmit={form.onSubmit((values) => {
-              //console.log(values)
-            })}
-          >
-            <div className="w-[100%] md:w-[60%] mt-10 md:ml-auto ">
-              <div className="p-3 shadow-2xl rounded-xl">
-                <SelectForm />
-                <div className="grid grid-cols-2 mt-4">
-                  <div className="col-span-2">
-                    <DateInputComp placeholder="Check-in - Check-out " />
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <DropDown />
-                </div>
-                <Button variant="primary" className="p-2 px-4 w-[100%] mt-5">
-                  <Link href="/search">Explore Hotels</Link>
-                </Button>
-              </div>
-            </div>
-          </form>
+          <SerachComponent />
         </div>
         <div className="absolute shapeOne">
           <Image alt="shape" src={shape.src} width={100} height={100} />

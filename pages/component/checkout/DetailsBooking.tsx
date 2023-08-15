@@ -19,7 +19,7 @@ export default function DetailsBooking() {
         <p>Enter your details and complete your booking now.</p>
       </div>
       <div className="p-3 border shadow-md rounded-xl">
-        <div className="flex max-md:flex-wrap gap-2 ">
+        <div className="flex  max-md:flex-wrap gap-2 ">
           <Image
             alt="hotel img"
             width="266"
@@ -32,18 +32,18 @@ export default function DetailsBooking() {
               Sonesta ES Suites Cincinnati - Sharonville East
             </h1>
             <small className="text-sm">Cincinnati North - Sharonville</small>
-            <div className="flex gap-3 mt-3">
+            <div className="flex  flex-row   gap-2 mt-3">
               <h3 className="font-bold text-white bg-[#f68013] text-xs p-1 px-3 rounded">
                 8.5
               </h3>
-              <h1 className="font-bold">Good</h1>
+              <h1 className="font-bold lg:text-base  md:text-xs ">Good</h1>
               <span>|</span>
-              <h1 className="font-bold">3-STAR HOTEL</h1>
+              <h1 className="font-bold lg:text-base md:text-xs">3-STAR HOTEL</h1>
             </div>
           </div>
         </div>
         <div className="bg-[#f4f6f8] p-3 rounded-xl mt-5">
-          <div className="flex justify-between">
+          <div className="flex lg:flex-row flex-col justify-between">
             <div>
               <h2 className="font-bold">CHECK-IN</h2>
               <h1 className="font-bold">Mon, Jun 19, 2023</h1>

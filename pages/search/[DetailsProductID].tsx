@@ -34,7 +34,7 @@ export default function Page() {
   return (
     <>
     <CustomNavigatonDetails/>
-    <div className="container md:m-auto md:px-20">
+    <div className="md:pt-5 md:m-auto md:px-10">
       <div className="hidden md:block">
         <div className="grid grid-cols-5">
           <div className="col-span-2">

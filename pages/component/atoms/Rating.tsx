@@ -1,8 +1,19 @@
+"use client"
 import { Tabs, TabsProps, rem } from "@mantine/core"
+import { useState } from "react";
 
 function Rating(props: TabsProps) {
+  const [activeTab, setActiveTab] = useState<string | null>('first');
+  
+   
+
+
   return (
     <Tabs
+    value={activeTab} 
+
+    radius='xs'
+    onTabChange={setActiveTab}
       unstyled
       styles={(theme) => ({
         tab: {
@@ -66,20 +77,3 @@ function Rating(props: TabsProps) {
 }
 export default Rating
 
-// function Demo() {
-//   return (
-//     <StyledTabs>
-//       <Tabs.List>
-//         <Tabs.Tab value="settings" icon={<IconSettings size="1rem" />}>
-//           Settings
-//         </Tabs.Tab>
-//         <Tabs.Tab value="messages" icon={<IconMessageCircle size="1rem" />}>
-//           Messages
-//         </Tabs.Tab>
-//         <Tabs.Tab value="gallery" icon={<IconPhoto size="1rem" />}>
-//           Gallery
-//         </Tabs.Tab>
-//       </Tabs.List>
-//     </StyledTabs>
-//   )
-// }

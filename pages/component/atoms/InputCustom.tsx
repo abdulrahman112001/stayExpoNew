@@ -23,7 +23,7 @@ export default function InputCustom({
         placeholder={placeholder}
         description={description}
         error={error}
-        className={`${className}`}
+        className={`${className} `}
         inputWrapperOrder={["label", "input", "description", "error"]}
         
       />

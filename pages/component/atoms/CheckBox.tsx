@@ -12,14 +12,14 @@ function CheckboxComp({ label, className, text }: CheckboxComp_TP) {
     <Checkbox
       label={
         <>
-          <div className="flex justify-between align-middle">
-            <p>{label}
-            <span className="text-gray-500 ml-1 ">{text}</span>
-            </p>
+          <div className=" flex  justify-between  ">
+            <span className="  text-xs ml-2">{label}</span>
+            <span className="text-gray-500  text-xs ">{text}</span>
+            
           </div>
         </>
       }
-      className={`${className} w-full`}
+      className={`${className} w-full text-sm hover:bg-[#5d22d529]  rounded p-2`}
     />
   );
 }

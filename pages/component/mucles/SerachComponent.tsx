@@ -9,7 +9,7 @@ import { Input } from "@mantine/core";
 import ModalComp from "../template/Modal";
 import { IconArrowBigLeftLines, IconArrowNarrowLeft } from "@tabler/icons-react";
 
-export default function SerachComponent() {
+export default function SerachComponent({width}:any) {
   const [openDestniation, setOpenDestination] = useState(false);
   const [openDate, setOpenDate] = useState(false);
   const [openGuest, setOpenGuest] = useState(false);
@@ -17,7 +17,7 @@ export default function SerachComponent() {
   return (
     <>
       <div>
-        <div className="w-[100%] lg:w-[60%] mt-10 md:ml-auto hidden  md:block">
+        <div className={ width? "w-[100%] mt-10 md:ml-auto hidden md:block" :"w-[100%] lg:w-[60%] mt-10 md:ml-auto hidden md:block"}>
           <div className="p-3 shadow-2xl rounded-xl">
             <SelectForm />
             <div className="grid grid-cols-2 mt-4">

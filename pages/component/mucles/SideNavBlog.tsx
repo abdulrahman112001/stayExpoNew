@@ -11,7 +11,7 @@ export const SideNavBlog = () => {
   return (
      <div className="">
         <div className="mt-2 mb-5">
-            <SerachComponent/>
+            <SerachComponent width='lg:w-[100%]'/>
         </div>
         <div className="mb-5 mt-7">
             <SearchInput  />
