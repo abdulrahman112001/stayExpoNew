@@ -46,7 +46,7 @@ export default function CustomNavigatonDetails() {
       <div className=" flex flex-row items-center justify-between bg-bg_banfsgy lg:hidden">
         <Button
           onClick={() => setOpen(true)}
-          className="h-auto mr-auto w-[50%] max-sm:w-[60%] p-3 m-2 rounded-xl text-white bg-[#c6badf2b]"
+          className="h-auto mr-auto w-[50%] max-sm:w-[60%] p-3 m-2 rounded-xl text-white bg-[#c6badf2b] focus:bg-bg_banfsgy "
           leftIcon={
             <>
           <SearchIcon />

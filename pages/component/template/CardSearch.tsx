@@ -7,7 +7,7 @@ import {
   getStylesRef,
   rem,
 } from "@mantine/core";
-import { IconArrowLeft, IconCheck, IconFileLike, IconLink, IconLocation, IconStar, IconStarFilled } from "@tabler/icons-react";
+import { IconArrowLeft, IconCheck, IconCoin, IconFileLike, IconLeaf, IconLink, IconLocation, IconPlant2, IconStar, IconStarFilled } from "@tabler/icons-react";
 import Button from "../atoms/Button";
 import { Carousel } from "@mantine/carousel";
 import Link from "next/link";
@@ -77,7 +77,7 @@ export default function CardSearch({
 
   const slides = image?.map((image) => (
     <Carousel.Slide key={image}>
-      <Image src={image} alt="img" height={250} />
+      <Image src={image} alt="img" height={270} className="max-sm:h-[210px]"/>
     </Carousel.Slide>
   ));
 
@@ -111,33 +111,39 @@ export default function CardSearch({
               className={`py-0 px-1 col-span-8 md:col-span-6`}
             >
               <Link href="/search/[DetailsProductID]" as="/search/123">
-              <div className="p-2">
+                 <div className="p-2 h-[82%] max-sm:pb-0">
                 <Group className="flex gap-1">
-                  <div className="flex bg-[#5d22d529]  px-1 rounded-lg items-center">
-                    <IconStar className="text-xs text-[#5d22d5] fill-bg_banfsgy w-[12px] md:w-[15px] " />
-                    <p className="text-[#5d22d5] font-semibold px-1 text-[9px] md:text-[13px]">
-                      Luxury
+                  {/* <div className="flex bg-[#F4F6F8]  px-1 rounded-lg items-center">
+                    <IconCoin className="text-xs text-white   fill-[#004499] w-[12px] md:w-[18px] " />
+                    <p className="text-[#004499] font-semibold px-1 text-[8px] md:text-[12px]">
+                      BEST DEAL
+                    </p>
+                  </div> */}
+                  <div className="flex bg-[#ddffdd]  px-1 rounded-lg items-center">
+                    <IconLeaf className="text-xs text-[#16b116]  w-[12px] md:w-[15px] " />
+                    <p className="text-[#16b116]  font-semibold px-1 text-[8px] md:text-[12px]">
+                       TRAVEL SUSTAINABLE
+                    </p>
+                  </div>
+                  <div className="flex bg-[#F4F6F8]  px-1 rounded-lg items-center">
+                    <IconPlant2 className="text-xs text-[#004499]  w-[12px] md:w-[15px] " />
+                    <p className="text-[#004499]  font-semibold px-1 text-[8px] md:text-[12px]">
+                        SPA & WELLNESS
                     </p>
                   </div>
                   <div className="flex bg-[#5d22d529]  px-1 rounded-lg items-center">
-                    <IconStar className="text-xs text-[#5d22d5] fill-bg_banfsgy w-[12px] md:w-[15px] " />
-                    <p className="text-[#5d22d5] font-semibold px-1 text-[9px] md:text-[13px]">
-                      Spa and Wellness
-                    </p>
-                  </div>
-                  <div className="flex bg-[#5d22d529]  px-1 rounded-lg items-center">
-                    <IconStar className="text-xs text-[#5d22d5] fill-bg_banfsgy w-[12px] md:w-[15px] " />
-                    <p className="text-[#5d22d5] font-semibold px-1 text-[9px] md:text-[13px]">
+                    <IconCoin className="text-xs  text-white   fill-[#5d22d5]  w-[12px] md:w-[18px] max-sm:w-[15px] " />
+                    <p className="text-[#5d22d5]  font-semibold  px-1 text-[8px] md:text-[12px]">
                       Best Deal
                     </p>
                   </div>
+           
                 </Group>
                 <Text
                   transform="uppercase"
                   color="black"
-                  pt='xs'
                   weight={700}
-                  className=" text-sm md:text-xl cursor-pointer  hover:text-[#5d22d5] "
+                  className="pt-[0.625rem] max-sm:pt-[0.1rem]  text-sm md:text-xl cursor-pointer  hover:text-[#5d22d5] "
                 >
                   {category}
                 </Text>
@@ -151,15 +157,15 @@ export default function CardSearch({
                      </span>
                 </span>
                 <Text
-                  className={`${classes.title}  flex items-center`}
-                  my='xs'
+                  className={`${classes.title}  flex items-center my-[0.625rem] max-sm:my-[0.1rem] `}
+                  
                 >
                   <IconLocation
                     className=" text-xs fill-[#5d22d5] text-[#5d22d5]"
                     width="12px"
                     height="12px"
                   />
-                  <Link href='/' className="mx-2 hover:underline text-[#5d22d5] text-xs">{title}</Link>
+                  <Link href='/' className="mx-2  hover:underline text-[#5d22d5] text-xs">{title}</Link>
                 </Text>
                 <Group noWrap >
                   <div className="flex flex-col items-center">
@@ -177,28 +183,24 @@ export default function CardSearch({
                     </Text>
                   </div>
                 </Group>
-                <Group className="mt-2">
-                  <p className="text-[#00aa00] text-xs font-bold px-4">
-                    Travel Sustainable
-                  </p>
-                </Group>
-                <Group className=" inline-flex items-center ">
-                  <h3 className="font-bold text-white bg-yellow-400 text-xs p-1 mt-2 px-3 rounded">
+                </div>
+                <Group className="px-2 pb-4  h-[15%]  inline-flex items-center ">
+                  <h3 className="font-bold text-white bg-[#5d22d5] text-xs p-1 mt-2 max-sm:font-semibold px-3 max-sm:mt-1  rounded-lg">
                     8.5
                   </h3>
-                  <p className="text-xs md:text-sm mt-2">
+                  <p className="text-xs md:text-sm mt-2 max-sm:mt-1 ">
                     1,426 Reviews 
                     
                   </p>
                 </Group>
-              </div>
+              
               </Link>
              </div>
             <div
-              className={` p-1  border-l border-t md:border-l-gray-500-500  col-span-12 md:col-span-3`}
+              className={` p-1 max-sm:px-2 border-l border-t md:border-l-gray-500-500  col-span-12 md:col-span-3`}
             >
-              <div className="flex  md:flex-col items-center justify-between md:text-center md:gap-[68px]">
-                <div>
+              <div className="flex  md:flex-col  items-center md:justify-between justify-end  md:text-center lg:gap-[100px] md:gap-[70px]">
+                <div className="hidden md:block">
                   <p className="text-[#5e22d5bd] font-bold text-sm ">
                     Stay Expo
                   </p>
@@ -207,15 +209,17 @@ export default function CardSearch({
                   </p>
                 </div>
 
-                <div className=" text-end md:text-center px-2">
+                <div className=" text-end md:text-center px-2 ">
                   {/* تعمل الخصم  */}
-                  <p className="text-sm">50$</p>
-                  <h1 className="text-[#5d22d5] font-bold text-lg md:text-2xl">
-                    30$
-                  </h1>
-                  <p className="text-xs text-gray-500">price per night</p>
+                  {/* <p className="text-sm">50$</p> */}
+                 
+                  <h6 className="text-[#5d22d5] md:p-2 p-1  relative font-extrabold  text-xl md:text-4xl">
+                    <span className=" lg:text-lg absolute -top-0 lg:left-8 md:left-9 text-sm left-3 z-10">$</span>
+                    145
+                  </h6>
+                  <p className="text-xs text-gray-500">Total: $125</p>
                   <Button className="px-2 py-1 my-2 rounded-full bg-[#05ac05] hidden md:block">
-                    <Link href="/checkout">Choose your room</Link>
+                    <Link href="/checkout" className="text-base font-semibold">Choose your room</Link>
                   </Button>
                 </div>
               </div>

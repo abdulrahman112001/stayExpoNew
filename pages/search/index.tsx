@@ -28,12 +28,12 @@ export default function Search() {
   return (
     <>
       <CustomNavigatonDetails/>
-    <div className=" m-auto lg:px-10 px-3 p-2">
+    <div className=" m-auto lg:px-10 px-2 p-2">
 
 
 
-      <div className="grid grid-cols-12 p-2 md:p-0">
-        <div className="hidden col-span-3  pt-5 lg:block">
+      <div className="grid grid-cols-12 py-2 px-2  md:px-6">
+        <div className="hidden col-span-3  py-5 lg:block">
           <div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2503345.0294716563!2d5.27937025!3d52.21299185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2snl!4v1686505162649!5m2!1sar!2snl"
