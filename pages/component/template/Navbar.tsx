@@ -216,6 +216,15 @@ export default function Navbar() {
               <Link href="/blogs" className={classes.link}>
                 Blogs
               </Link>
+              <Link href="/Service" className={classes.link}>
+                Service
+              </Link>
+              <Link href="/freq-questions" className={classes.link}>
+                Freq Questions
+              </Link>
+              <Link href="/privacy-policy" className={classes.link}>
+                Privacy Policy
+              </Link>
               <Link href="/contact-us" className={classes.link}>
                 Contact Us
               </Link>
@@ -308,9 +317,9 @@ export default function Navbar() {
             checkout
           </Link>
           <Collapse in={linksOpened}>{links}</Collapse>
-          {/* <Link href="/about" className={classes.link}>
+          <Link href="/about" className={classes.link}>
             About Us
-          </Link> */}
+          </Link>
           <Link
             href="/events"
             className={classes.link}
@@ -324,6 +333,27 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             Blogs
+          </Link>
+          <Link
+            href="/Service"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
+            Service
+          </Link>
+          <Link
+            href="/freq-questions"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
+            Freq Questions
+          </Link>
+          <Link
+            href="/privacy-policy"
+            className={classes.link}
+            onClick={() => setIsOpen(false)}
+          >
+            Privacy Policy
           </Link>
           <Link
             href="/contact-us"

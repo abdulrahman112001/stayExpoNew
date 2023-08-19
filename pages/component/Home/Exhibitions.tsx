@@ -10,8 +10,8 @@ interface EventData {
   image: string;
   title: string;
   content: string;
-  avatar:string
-  start_date:string
+  avatar: string;
+  start_date: string;
 }
 
 function Exhibitions() {
@@ -23,17 +23,29 @@ function Exhibitions() {
   const eventsData = (Events as { data?: { events: EventData[] } })?.data
     ?.events;
 
+  const { data: EventSection } = useFetch({
+    endpoint: `api/dashboard/part/show/Events_page`,
+    queryKey: [`Events-section`],
+  });
 
   // const sanitizedData = removeHTMLTags(terms?.content);
   return (
     <div className="px-20 m-auto my-5 md:px-20 max-sm:px-2">
       <div className="col-span-1 p-5">
-        <h1 className="relative  mt-5 py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
-          Upcoming Events
+        <h1 className="relative mt-5 py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
+          {
+            //@ts-ignore
+
+            EventSection?.data?.parts[0]?.Events_title
+          }
         </h1>
         <p className="w-full py-2 md:w-1/2">
-          We take part in the most important international industry events in
-          London, Paris, Dubai, and Singapore. Come and visit our stand!
+          {" "}
+          {
+            //@ts-ignore
+
+            EventSection?.data?.parts[1]?.Events_body
+          }
         </p>
       </div>
       <div className="px-5 mt-4">
@@ -53,13 +65,13 @@ function Exhibitions() {
           {eventsData?.map((item: EventData) => (
             <Carousel.Slide key={item?.id}>
               <Link href={`/events/${item?.id}`}>
-              <BlogCard
-                image={item?.image}
-                avatar={item?.avatar}
-                name={item?.title}
-                Date={item?.start_date}
-                title={item?.content?.slice(0, 30)}
-              />
+                <BlogCard
+                  image={item?.image}
+                  avatar={item?.avatar}
+                  name={item?.title}
+                  Date={item?.start_date}
+                  title={item?.content?.slice(0, 30)}
+                />
               </Link>
             </Carousel.Slide>
           ))}

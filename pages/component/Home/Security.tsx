@@ -13,28 +13,34 @@ function Security() {
 
     // Add more properties if needed...
   }
-  const { data: Partners } = useFetch<{
-    data: {
-      [x: string]: any;
-      blogs: Partner[];
-    };
-  }>({
-    endpoint: `api/section/partner`,
-    queryKey: [`partner`],
+  const { data: SecuritySection } = useFetch({
+    endpoint: `api/dashboard/part/show/Security_page`,
+    queryKey: [`Security-section`],
   });
 
-  console.log("🚀 ~ file: Security.tsx:21 ~ Security ~ Partners:", Partners);
   return (
     <div className="bg-[#f8f8f8] p-5 md:p-20 mt-10">
-      <h4 className="relative  mt-5 py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
-        Security
-      </h4>
-      <p className="w-full py-2 md:w-1/2">
-        Our partners guarantee the security of your data and payments with their
-        global reputation.
-      </p>
+      <div>
+        <h4
+          className="relative  mt-5 py-5 text-3xl font-bold  
+        after:w-[50px] after:absolute after:left-[0px]
+        after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]"
+        >
+          {
+                        //@ts-ignore
+
+          SecuritySection?.data?.parts[0]?.Security_title}
+        </h4>
+        <p className="w-full py-2 md:w-1/2">
+          {
+                        //@ts-ignore
+
+          SecuritySection?.data?.parts[1]?.Security_body}
+        </p>
+      </div>
+
       <div className="grid items-center justify-center grid-cols-5 mt-8">
-        {Partners?.data?.partners?.map((item:any) => (
+        {/* {SecuritySection?.data?.parts?.map((item: any) => (
           <div className="w-[60%]" key={item?.image}>
             <Image
               className="w-full"
@@ -44,7 +50,7 @@ function Security() {
               alt="lazy"
             />
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

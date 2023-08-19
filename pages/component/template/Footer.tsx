@@ -92,7 +92,7 @@ function Footer() {
                 <li className="">
                   <Link
                     className="text-sm font-semibold text-gray-600 hover:text-white "
-                    href="/advantage"
+                    href="/Service"
                   >
                     {" "}
                     Services
