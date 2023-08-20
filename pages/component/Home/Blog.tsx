@@ -22,16 +22,28 @@ function Blog() {
     queryKey: [`All-Blogs`],
   });
 
+  const { data: BlogSection } = useFetch({
+    endpoint: `api/dashboard/part/show/Blogs_page`,
+    queryKey: [`Blogs_page`],
+  });
+
   return (
     <div className="pb-5 bg-gray-100 ">
       <div className="px-10 pb-5 m-auto mt-5 md:px-20 max-sm:px-2">
         <div className="col-span-1 p-5">
           <h4 className="relative  mt-5 py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
-            Blogs
+          {
+                        //@ts-ignore
+
+          BlogSection?.data?.parts[0]?.Blogs_title}
+
           </h4>
           <p className="w-full py-2 md:w-1/2">
-            Here we share news about the travel industry and life-hacks for
-            professionals. Follow us, read us and enjoy!
+          {
+                        //@ts-ignore
+
+          BlogSection?.data?.parts[1]?.Blogs_body}
+
           </p>
         </div>
         <div className="px-5 mt-4">

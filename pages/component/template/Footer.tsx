@@ -92,7 +92,7 @@ function Footer() {
                 <li className="">
                   <Link
                     className="text-sm font-semibold text-gray-600 hover:text-white "
-                    href="/advantage"
+                    href="/Service"
                   >
                     {" "}
                     Services
@@ -110,9 +110,9 @@ function Footer() {
                 <li className="">
                   <Link
                     className="text-sm font-semibold text-gray-600 hover:text-white"
-                    href="/terms-of-use"
+                    href="/terms-condition"
                   >
-                    Terms of Use
+                   terms of condition
                   </Link>
                 </li>
                 <li className="">
