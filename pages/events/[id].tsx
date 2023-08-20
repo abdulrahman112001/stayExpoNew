@@ -9,6 +9,7 @@ import Button from "../component/atoms/Button";
 
 
 export default function Events() {
+  
   return (
     <div>
       <div className="relative ">

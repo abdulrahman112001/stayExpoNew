@@ -210,9 +210,11 @@ export default function Navbar() {
               <Link href="/about" className={classes.link}>
                 About Us
               </Link>
+              {user && (
               <Link href="/events" className={classes.link}>
                 Events
               </Link>
+              )}
               <Link href="/blogs" className={classes.link}>
                 Blogs
               </Link>
@@ -320,13 +322,15 @@ export default function Navbar() {
           <Link href="/about" className={classes.link}>
             About Us
           </Link>
-          <Link
-            href="/events"
-            className={classes.link}
-            onClick={() => setIsOpen(false)}
-          >
-            Events
-          </Link>
+          {user && (
+            <Link
+              href="/events"
+              className={classes.link}
+              onClick={() => setIsOpen(false)}
+            >
+              Events
+            </Link>
+          )}
           <Link
             href="/blogs"
             className={classes.link}

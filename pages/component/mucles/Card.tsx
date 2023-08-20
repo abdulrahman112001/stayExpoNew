@@ -98,9 +98,7 @@ export default function BadgeCard({
           </Text>
         </Group>
         <Text fz="sm">
-        <div dangerouslySetInnerHTML={{ __html: description }} className="">
-          
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: description }} className=""></div>
         </Text>
       </Card.Section>
       {/* 
