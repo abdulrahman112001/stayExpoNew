@@ -4,11 +4,11 @@ import {
   IconArrowRight,
   IconCalendar,
   IconFlag,
-  IconWifi
+  IconWifi,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import Button from "../component/atoms/Button";
 import CheckboxComp from "../component/atoms/CheckBox";
 import DateInputComp from "../component/atoms/DateInput";
@@ -44,10 +44,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const  DetailsEvent = ()=> {
+const DetailsEvent = () => {
   // const router = useRouter()
   // const id = router?.query?.id
-  
+
   const [isOpen, setIsOpen] = useState(false);
   const { classes } = useStyles();
 
@@ -111,11 +111,9 @@ const  DetailsEvent = ()=> {
                       Interior construction
                     </span>
                     <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2 ">
-                      
                       Paints
                     </span>
                     <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2">
-                      
                       Chemical industry
                     </span>
                   </div>
@@ -125,7 +123,6 @@ const  DetailsEvent = ()=> {
                       <IconCalendar className="ml-2" />
                     </p>
                     <p className="text-base text-center text-white lg:pt-2 lg:text-left ">
-                      
                       Guangzhou, China 382 Yuejiang Middle Rd, Haizhu,
                       Guangzhou, Guangdong, China
                     </p>
@@ -139,165 +136,161 @@ const  DetailsEvent = ()=> {
                 </div>
                 <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
                   <div>
+                    <h3 className="py-5 text-2xl font-light lg:text-4xl ">
+                      Book your Hotel
+                    </h3>
 
-                  <h3 className="py-5 text-2xl font-light lg:text-4xl ">
-                    Book your Hotel
-                  </h3>
+                    <div className="grid grid-cols-1 gap-2 p-2 bg-gray-100 rounded-lg lg:grid-cols-12">
+                      <div className="col-span-1 lg:col-span-5">
+                        <InputFloatingLabel
+                          label="Campany Name"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-2">
+                        <SelectNormal
+                          placeholder="Gander"
+                          className="pt-4 rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-5">
+                        <InputFloatingLabel
+                          label="Contact name"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-4">
+                        <InputFloatingLabel
+                          label="Country"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-4">
+                        <InputFloatingLabel
+                          label="Phone number"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-4">
+                        <InputFloatingLabel
+                          label="Email"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
 
-                  <div className="grid grid-cols-1 gap-2 p-2 bg-gray-100 rounded-lg lg:grid-cols-12">
-                    <div className="col-span-1 lg:col-span-5">
-                      <InputFloatingLabel
-                        label="Campany Name"
-                        className="rounded-md focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="col-span-1 lg:col-span-2">
-                      <SelectNormal
-                        placeholder="Gander"
-                        className="pt-4 rounded-md focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="col-span-1 lg:col-span-5">
-                      <InputFloatingLabel
-                        label="Contact name"
-                        className="rounded-md focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="col-span-1 lg:col-span-4">
-                      <InputFloatingLabel
-                        label="Country"
-                        className="rounded-md focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="col-span-1 lg:col-span-4">
-                      <InputFloatingLabel
-                        label="Phone number"
-                        className="rounded-md focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="col-span-1 lg:col-span-4">
-                      <InputFloatingLabel
-                        label="Email"
-                        className="rounded-md focus:border-bg_banfsgy"
-                      />
-                    </div>
-
-                    {arr?.map((item, index) => (
-                      <>
-                        <div className="col-span-1 lg:col-span-3">
-                          <SelectNormal
-                            placeholder="Room Type "
-                            className="pt-4 rounded-md focus:border-bg_banfsgy"
-                          />
-                        </div>
-                        <div className="col-span-1 lg:col-span-3">
-                          <InputFloatingLabel
-                            type="number"
-                            label="Room Count"
-                            className="pt-4 rounded-md focus:border-bg_banfsgy"
-                          />
-                        </div>
-                        <div className="col-span-1 pt-4 lg:col-span-6">
-                          <div className="grid grid-cols-12 gap-2">
-                            <div className="col-span-11">
-                              <DateInputComp placeholder="Check-in - Check-out " />
-                            </div>
-                            <div className="col-span-1 py-2">
-                              <button
-                                className="text-red-600"
-                                disabled={arr?.length > 1 ? false : true}
-                                onClick={() => {
-                                  removeInputFields(index);
-                                }}
-                              >
-                                X
-                              </button>
+                      {arr?.map((item, index) => (
+                        <>
+                          <div className="col-span-1 lg:col-span-3">
+                            <SelectNormal
+                              placeholder="Room Type "
+                              className="pt-4 rounded-md focus:border-bg_banfsgy"
+                            />
+                          </div>
+                          <div className="col-span-1 lg:col-span-3">
+                            <InputFloatingLabel
+                              type="number"
+                              label="Room Count"
+                              className="pt-4 rounded-md focus:border-bg_banfsgy"
+                            />
+                          </div>
+                          <div className="col-span-1 pt-4 lg:col-span-6">
+                            <div className="grid grid-cols-12 gap-2">
+                              <div className="col-span-11">
+                                <DateInputComp placeholder="Check-in - Check-out " />
+                              </div>
+                              <div className="col-span-1 py-2">
+                                <button
+                                  className="text-red-600"
+                                  disabled={arr?.length > 1 ? false : true}
+                                  onClick={() => {
+                                    removeInputFields(index);
+                                  }}
+                                >
+                                  X
+                                </button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </>
-                    ))}
-                    <div className="col-span-1 pt-2 lg:col-span-6">
-                      <button
-                        className="text-white bg-[#f30] rounded-2xl py-1 px-2"
-                        onClick={addInput}
-                      >
-                        +add room
-                      </button>
-                    </div>
-                    <div className="col-span-1 pt-3 lg:col-span-12">
-                      <Accordion variant="separated">
-                        <Accordion.Item
-                          className={classes.item}
-                          value="another-account"
+                        </>
+                      ))}
+                      <div className="col-span-1 pt-2 lg:col-span-6">
+                        <button
+                          className="text-white bg-[#f30] rounded-2xl py-1 px-2"
+                          onClick={addInput}
                         >
-                          <Accordion.Control fz="sm">
-                            Send us more details to get an even more
-                            personalised offer
-                            <span className="text-red-600 "> *</span>Optional
-                          </Accordion.Control>
-                          <Accordion.Panel>
-                            <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">
-                              <div className="col-span-1 lg:col-span-4">
-                                <SelectNormal
-                                  placeholder="Preferred Contact Time"
-                                  className="pt-2 rounded-md focus:border-bg_banfsgy"
-                                />
+                          +add room
+                        </button>
+                      </div>
+                      <div className="col-span-1 pt-3 lg:col-span-12">
+                        <Accordion variant="separated">
+                          <Accordion.Item
+                            className={classes.item}
+                            value="another-account"
+                          >
+                            <Accordion.Control fz="sm">
+                              Send us more details to get an even more
+                              personalised offer
+                              <span className="text-red-600 "> *</span>Optional
+                            </Accordion.Control>
+                            <Accordion.Panel>
+                              <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">
+                                <div className="col-span-1 lg:col-span-4">
+                                  <SelectNormal
+                                    placeholder="Preferred Contact Time"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-4">
+                                  <SelectNormal
+                                    placeholder="Desired Area"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-4">
+                                  <SelectNormal
+                                    placeholder="Budget"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-6">
+                                  <SelectNormal
+                                    placeholder="Favourite Hotel/Hotel Chain"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-6">
+                                  <SelectNormal
+                                    placeholder="Additional Services"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-12">
+                                  <TextereaCustom />
+                                </div>
+                                <div className="col-span-1 mt-3 lg:col-span-12">
+                                  <CheckboxComp
+                                    label={`I am OK with ExpoBeds'`}
+                                    text="Privacy Policy"
+                                    className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 mt-3 lg:col-span-12">
+                                  <CheckboxComp
+                                    label={`Receive news and special offers via email`}
+                                    className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
                               </div>
-                              <div className="col-span-1 lg:col-span-4">
-                                <SelectNormal
-                                  placeholder="Desired Area"
-                                  className="pt-2 rounded-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="col-span-1 lg:col-span-4">
-                                <SelectNormal
-                                  placeholder="Budget"
-                                  className="pt-2 rounded-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="col-span-1 lg:col-span-6">
-                                <SelectNormal
-                                  placeholder="Favourite Hotel/Hotel Chain"
-                                  className="pt-2 rounded-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="col-span-1 lg:col-span-6">
-                                <SelectNormal
-                                  placeholder="Additional Services"
-                                  className="pt-2 rounded-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="col-span-1 lg:col-span-12">
-                                <TextereaCustom />
-                              </div>
-                              <div className="col-span-1 mt-3 lg:col-span-12">
-                                <CheckboxComp
-                                  label={`I am OK with ExpoBeds'`}
-                                  text="Privacy Policy"
-                                  className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="col-span-1 mt-3 lg:col-span-12">
-                                <CheckboxComp
-                                  label={`Receive news and special offers via email`}
-                                  className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                             
-                            </div>
-                          </Accordion.Panel>
-                        </Accordion.Item>
-                      </Accordion>
-                      <div className="col-span-1 py-5 mt-5 text-center lg:col-span-12">
-                                <Button
-                                  children="Send Request"
-                                  className="px-5 py-1 text-base font-light text-white bg-bg_banfsgy rounded-2xl lg:text-xl"
-                                />
+                            </Accordion.Panel>
+                          </Accordion.Item>
+                        </Accordion>
+                        <div className="col-span-1 py-5 mt-5 text-center lg:col-span-12">
+                          <Button className="px-5 py-1 text-base font-light text-white bg-bg_banfsgy rounded-2xl lg:text-xl">
+                            Send Request
+                          </Button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
                   </div>
                 </SideBar>
               </div>
@@ -306,13 +299,11 @@ const  DetailsEvent = ()=> {
               <div className="flex flex-col ">
                 <div className=" bg-[#0006]  p-5  rounded-2xl ">
                   <p className="py-5 font-light text-white lg:text-5xl ">
-                    
                     Need <span className="text-[#f30]"> 5</span> or less rooms?
                   </p>
                   <div className="flex flex-row items-center justify-between">
                     <div>
                       <p className="font-light text-white lg:text-2xl ">
-                        
                         Try our online
                       </p>
                       <p className="font-light text-white lg:text-2xl ">
@@ -320,7 +311,10 @@ const  DetailsEvent = ()=> {
                       </p>
                     </div>
                     <div>
-                      <Link href='/search' className="text-white text-base font-light bg-[#f30] py-1 px-2 rounded-2xl">
+                      <Link
+                        href="/search"
+                        className="text-white text-base font-light bg-[#f30] py-1 px-2 rounded-2xl"
+                      >
                         Book Now
                       </Link>
                     </div>
@@ -443,16 +437,13 @@ const  DetailsEvent = ()=> {
             </div>
             <div className="col-span-1 text-center rounded-lg w-[100%] py-3 bg-bg_banfsgy text-white">
               <p className="flex items-center justify-around text-3xl font-light text-white">
-                
                 <IconWifi className="text-white " /> Live Availability
                 <IconArrowRight className="text-white hover:translate-x-2" />
               </p>
             </div>
             <div className="col-span-1 mt-5 mb-5">
               <div className="rounded-xl p-8 block bg-white h-auto   w-[100%]">
-                <h3 className="py-4 text-4xl font-light ">
-                  Important Facts .
-                </h3>
+                <h3 className="py-4 text-4xl font-light ">Important Facts .</h3>
                 <ul className="pl-4 list-disc">
                   <li className="py-1">538 German exhibitors in 2016</li>
                   <li className="py-1">538 German exhibitors in 2016</li>
@@ -490,7 +481,6 @@ const  DetailsEvent = ()=> {
             <div className="col-span-1 pb-5 mt-5 mb-5">
               <div className="rounded-xl p-8 block bg-white h-auto   w-[100%]">
                 <h3 className="py-5 text-4xl font-light ">
-                  
                   Trade fair location .
                 </h3>
                 <div className="flex flex-col">
@@ -529,9 +519,7 @@ const  DetailsEvent = ()=> {
                   root: classes.inputWrapper,
                 }}
               />
-              <Button className={` bg-[#f30]  text-white`}>
-                Subscribe
-                </Button>
+              <Button className={` bg-[#f30]  text-white`}>Subscribe</Button>
             </div>
           </div>
           <div className="flex col-span-1 lg:col-span-4">
@@ -645,6 +633,6 @@ const  DetailsEvent = ()=> {
       </div>
     </div>
   );
-}
+};
 
-export default DetailsEvent
+export default DetailsEvent;
