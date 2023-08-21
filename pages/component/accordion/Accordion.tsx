@@ -1,7 +1,6 @@
-import React from "react";
 import { Accordion } from '@mantine/core';
+import { IconArrowBadgeRight } from "@tabler/icons-react";
 import SelectForm from "../atoms/SelectForm";
-import { IconArrowAutofitRight, IconArrowBadgeRight } from "@tabler/icons-react";
 
 export default function AccordionComp({padding}:any) {
   return (
@@ -13,7 +12,7 @@ export default function AccordionComp({padding}:any) {
           <SelectForm/>
 
             <h3 className="text-[#f30] flex py-3 mt-3 font-semibold cursor-pointer"> <IconArrowBadgeRight /> Anywhere</h3>
-            <ul className="pl-1  ">
+            <ul className="pl-1 ">
                 <li className="py-1 hover:text-bg_banfsgy">Paris</li>
                 <li className="py-1 hover:text-bg_banfsgy">Paris</li>
                 <li className="py-1 hover:text-bg_banfsgy">Paris</li>

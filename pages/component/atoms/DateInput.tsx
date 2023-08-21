@@ -27,6 +27,7 @@ function DateInputComp({ placeholder, mobile,setOpen }: any) {
         <>
         <DatePicker
           type="range"
+          //@ts-ignore
           placeholder={<><IconCalendar  className="w-[20px] h-[20px] text-bg_banfsgy" /> {placeholder}</>}
           value={date}
           onChange={setDate}
@@ -46,6 +47,8 @@ function DateInputComp({ placeholder, mobile,setOpen }: any) {
           type="range"
           radius={"lg"}
           // label="Pick dates range"
+                    //@ts-ignore
+
           placeholder={<span className=" inline-flex items-center h-[100%]"><IconCalendar  className="w-[20px] h-[20px] text-bg_banfsgy mr-2" /> {placeholder}</span>}
           value={date}
           onChange={setDate}

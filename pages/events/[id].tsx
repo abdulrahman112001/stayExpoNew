@@ -1,28 +1,21 @@
-"use client";
-
-import React, { useState } from "react";
-
-import Image from "next/image";
-import Link from "next/link";
-import AccordionComp from "../component/accordion/Accordion";
-import Button from "../component/atoms/Button";
+import { useState } from "react";
+import { Accordion, TextInput, createStyles, rem } from "@mantine/core";
 import {
-  IconArrowBarRight,
   IconArrowRight,
   IconCalendar,
   IconFlag,
-  IconInfoCircle,
   IconWifi,
 } from "@tabler/icons-react";
-import { IconArrowAutofitRight } from "@tabler/icons-react";
-import { Accordion, Select, TextInput, createStyles, rem } from "@mantine/core";
-import SideBar from "../component/template/SideBar";
-import InputCustom from "../component/atoms/InputCustom";
-import SelectNormal from "../component/atoms/Select";
-import InputFloatingLabel from "../component/atoms/InputFloatingLabel";
-import DateInputComp from "../component/atoms/DateInput";
-import TextereaCustom from "../component/atoms/Texterea";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Button from "../component/atoms/Button";
 import CheckboxComp from "../component/atoms/CheckBox";
+import DateInputComp from "../component/atoms/DateInput";
+import InputFloatingLabel from "../component/atoms/InputFloatingLabel";
+import SelectNormal from "../component/atoms/Select";
+import TextereaCustom from "../component/atoms/Texterea";
+import SideBar from "../component/template/SideBar";
 
 const useStyles = createStyles((theme) => ({
   controls: {
@@ -51,7 +44,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function Event() {
+const DetailsEvent = () => {
+  // const router = useRouter()
+  // const id = router?.query?.id
+
   const [isOpen, setIsOpen] = useState(false);
   const { classes } = useStyles();
 
@@ -83,7 +79,7 @@ export default function Event() {
 
   return (
     <div>
-      <div className="relative bg-gray-50  ">
+      <div className="relative bg-gray-50 ">
         <div>
           <Image
             className="!w-full brightness-50 lg:h-[70vh] h-[90vh]"
@@ -94,10 +90,10 @@ export default function Event() {
           />
         </div>
         <div className="absolute lg:top-[70px] top-[10px] w-[100%] ">
-          <div className="grid lg:grid-cols-12  grid-cols-1  lg:gap-10 gap-5">
-            <div className="lg:col-span-8 col-span-1 lg:p-10 p-5">
-              <div className="grid lg:grid-cols-12 lg:gap-10 gap-5 grid-cols-1 ">
-                <div className="lg:col-span-4 col-span-1 ">
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-10">
+            <div className="col-span-1 p-5 lg:col-span-8 lg:p-10">
+              <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-10 ">
+                <div className="col-span-1 lg:col-span-4 ">
                   <Image
                     src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
                     width={150}
@@ -106,35 +102,32 @@ export default function Event() {
                     className=" rounded-lg lg:h-[200px] m-auto h-[150px] lg:w-[90%] w-[150px] "
                   />
                 </div>
-                <div className="lg:col-span-7 col-span-1">
-                  <h4 className="text-white  text-3xl font-semibold lg:text-left  text-center leading-6 pb-3 ">
+                <div className="col-span-1 lg:col-span-7">
+                  <h4 className="pb-3 text-3xl font-semibold leading-6 text-center text-white lg:text-left ">
                     gamescom 2023
                   </h4>
-                  <div className="lg:text-left text-center">
+                  <div className="text-center lg:text-left">
                     <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2 ">
                       Interior construction
                     </span>
                     <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2 ">
-                      
                       Paints
                     </span>
                     <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2">
-                      
                       Chemical industry
                     </span>
                   </div>
-                  <div className="lg:text-left text-center">
-                    <p className="text-white lg:py-5 py-2 text-2xl lg:text-left text-center inline-flex items-center ">
+                  <div className="text-center lg:text-left">
+                    <p className="inline-flex items-center py-2 text-2xl text-center text-white lg:py-5 lg:text-left ">
                       Aug 14, 2023 - Aug 16, 2023
                       <IconCalendar className="ml-2" />
                     </p>
-                    <p className="text-white text-base lg:pt-2 lg:text-left text-center ">
-                      
+                    <p className="text-base text-center text-white lg:pt-2 lg:text-left ">
                       Guangzhou, China 382 Yuejiang Middle Rd, Haizhu,
                       Guangzhou, Guangdong, China
                     </p>
                     <button
-                      className="text-white text-base lg:text-left text-center font-light bg-bg_banfsgy py-1 mt-5 px-2 rounded-2xl"
+                      className="px-2 py-1 mt-5 text-base font-light text-center text-white lg:text-left bg-bg_banfsgy rounded-2xl"
                       onClick={() => setIsOpen(!isOpen)}
                     >
                       Group Booking
@@ -142,185 +135,186 @@ export default function Event() {
                   </div>
                 </div>
                 <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
-                  <h3 className="py-5 lg:text-4xl text-2xl font-light ">
-                    Book your Hotel
-                  </h3>
+                  <div>
+                    <h3 className="py-5 text-2xl font-light lg:text-4xl ">
+                      Book your Hotel
+                    </h3>
 
-                  <div className="bg-gray-100 grid lg:grid-cols-12 grid-cols-1 gap-2 p-2 rounded-lg">
-                    <div className="lg:col-span-5 col-span-1">
-                      <InputFloatingLabel
-                        label="Campany Name"
-                        className="rounded-md  focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="lg:col-span-2 col-span-1">
-                      <SelectNormal
-                        placeholder="Gander"
-                        className="rounded-md pt-4  focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="lg:col-span-5  col-span-1">
-                      <InputFloatingLabel
-                        label="Contact name"
-                        className="rounded-md  focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="lg:col-span-4  col-span-1">
-                      <InputFloatingLabel
-                        label="Country"
-                        className="rounded-md  focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="lg:col-span-4  col-span-1">
-                      <InputFloatingLabel
-                        label="Phone number"
-                        className="rounded-md  focus:border-bg_banfsgy"
-                      />
-                    </div>
-                    <div className="lg:col-span-4  col-span-1">
-                      <InputFloatingLabel
-                        label="Email"
-                        className="rounded-md  focus:border-bg_banfsgy"
-                      />
-                    </div>
+                    <div className="grid grid-cols-1 gap-2 p-2 bg-gray-100 rounded-lg lg:grid-cols-12">
+                      <div className="col-span-1 lg:col-span-5">
+                        <InputFloatingLabel
+                          label="Campany Name"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-2">
+                        <SelectNormal
+                          placeholder="Gander"
+                          className="pt-4 rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-5">
+                        <InputFloatingLabel
+                          label="Contact name"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-4">
+                        <InputFloatingLabel
+                          label="Country"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-4">
+                        <InputFloatingLabel
+                          label="Phone number"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
+                      <div className="col-span-1 lg:col-span-4">
+                        <InputFloatingLabel
+                          label="Email"
+                          className="rounded-md focus:border-bg_banfsgy"
+                        />
+                      </div>
 
-                    {arr?.map((item, index) => (
-                      <>
-                        <div className="lg:col-span-3  col-span-1">
-                          <SelectNormal
-                            placeholder="Room Type "
-                            className="rounded-md pt-4  focus:border-bg_banfsgy"
-                          />
-                        </div>
-                        <div className="lg:col-span-3  col-span-1">
-                          <InputFloatingLabel
-                            type="number"
-                            label="Room Count"
-                            className="rounded-md pt-4  focus:border-bg_banfsgy"
-                          />
-                        </div>
-                        <div className="lg:col-span-6 pt-4  col-span-1">
-                          <div className="grid grid-cols-12 gap-2">
-                            <div className="col-span-11">
-                              <DateInputComp placeholder="Check-in - Check-out " />
-                            </div>
-                            <div className="col-span-1 py-2">
-                              <button
-                                className="text-red-600"
-                                disabled={arr?.length > 1 ? false : true}
-                                onClick={() => {
-                                  removeInputFields(index);
-                                }}
-                              >
-                                X
-                              </button>
+                      {arr?.map((item, index) => (
+                        <>
+                          <div className="col-span-1 lg:col-span-3">
+                            <SelectNormal
+                              placeholder="Room Type "
+                              className="pt-4 rounded-md focus:border-bg_banfsgy"
+                            />
+                          </div>
+                          <div className="col-span-1 lg:col-span-3">
+                            <InputFloatingLabel
+                              type="number"
+                              label="Room Count"
+                              className="pt-4 rounded-md focus:border-bg_banfsgy"
+                            />
+                          </div>
+                          <div className="col-span-1 pt-4 lg:col-span-6">
+                            <div className="grid grid-cols-12 gap-2">
+                              <div className="col-span-11">
+                                <DateInputComp placeholder="Check-in - Check-out " />
+                              </div>
+                              <div className="col-span-1 py-2">
+                                <button
+                                  className="text-red-600"
+                                  disabled={arr?.length > 1 ? false : true}
+                                  onClick={() => {
+                                    removeInputFields(index);
+                                  }}
+                                >
+                                  X
+                                </button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </>
-                    ))}
-                    <div className="lg:col-span-6 pt-2  col-span-1">
-                      <button
-                        className="text-white bg-[#f30] rounded-2xl py-1 px-2"
-                        onClick={addInput}
-                      >
-                        +add room
-                      </button>
-                    </div>
-                    <div className="lg:col-span-12 pt-3  col-span-1">
-                      <Accordion variant="separated">
-                        <Accordion.Item
-                          className={classes.item}
-                          value="another-account"
+                        </>
+                      ))}
+                      <div className="col-span-1 pt-2 lg:col-span-6">
+                        <button
+                          className="text-white bg-[#f30] rounded-2xl py-1 px-2"
+                          onClick={addInput}
                         >
-                          <Accordion.Control fz="sm">
-                            Send us more details to get an even more
-                            personalised offer
-                            <span className=" text-red-600 "> *</span>Optional
-                          </Accordion.Control>
-                          <Accordion.Panel>
-                            <div className="grid lg:grid-cols-12 grid-cols-1 gap-2">
-                              <div className="lg:col-span-4 col-span-1">
-                                <SelectNormal
-                                  placeholder="Preferred Contact Time"
-                                  className="rounded-md pt-2  focus:border-bg_banfsgy"
-                                />
+                          +add room
+                        </button>
+                      </div>
+                      <div className="col-span-1 pt-3 lg:col-span-12">
+                        <Accordion variant="separated">
+                          <Accordion.Item
+                            className={classes.item}
+                            value="another-account"
+                          >
+                            <Accordion.Control fz="sm">
+                              Send us more details to get an even more
+                              personalised offer
+                              <span className="text-red-600 "> *</span>Optional
+                            </Accordion.Control>
+                            <Accordion.Panel>
+                              <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">
+                                <div className="col-span-1 lg:col-span-4">
+                                  <SelectNormal
+                                    placeholder="Preferred Contact Time"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-4">
+                                  <SelectNormal
+                                    placeholder="Desired Area"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-4">
+                                  <SelectNormal
+                                    placeholder="Budget"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-6">
+                                  <SelectNormal
+                                    placeholder="Favourite Hotel/Hotel Chain"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-6">
+                                  <SelectNormal
+                                    placeholder="Additional Services"
+                                    className="pt-2 rounded-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 lg:col-span-12">
+                                  <TextereaCustom />
+                                </div>
+                                <div className="col-span-1 mt-3 lg:col-span-12">
+                                  <CheckboxComp
+                                    label={`I am OK with ExpoBeds'`}
+                                    text="Privacy Policy"
+                                    className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
+                                <div className="col-span-1 mt-3 lg:col-span-12">
+                                  <CheckboxComp
+                                    label={`Receive news and special offers via email`}
+                                    className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
+                                  />
+                                </div>
                               </div>
-                              <div className="lg:col-span-4 col-span-1">
-                                <SelectNormal
-                                  placeholder="Desired Area"
-                                  className="rounded-md pt-2  focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="lg:col-span-4 col-span-1">
-                                <SelectNormal
-                                  placeholder="Budget"
-                                  className="rounded-md pt-2  focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="lg:col-span-6 col-span-1">
-                                <SelectNormal
-                                  placeholder="Favourite Hotel/Hotel Chain"
-                                  className="rounded-md pt-2  focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="lg:col-span-6 col-span-1">
-                                <SelectNormal
-                                  placeholder="Additional Services"
-                                  className="rounded-md pt-2  focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="lg:col-span-12 col-span-1">
-                                <TextereaCustom />
-                              </div>
-                              <div className="lg:col-span-12 col-span-1 mt-3">
-                                <CheckboxComp
-                                  label={`I am OK with ExpoBeds'`}
-                                  text="Privacy Policy"
-                                  className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                              <div className="lg:col-span-12 col-span-1 mt-3">
-                                <CheckboxComp
-                                  label={`Receive news and special offers via email`}
-                                  className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
-                                />
-                              </div>
-                             
-                            </div>
-                          </Accordion.Panel>
-                        </Accordion.Item>
-                      </Accordion>
-                      <div className="lg:col-span-12 col-span-1 py-5 text-center mt-5">
-                                <Button
-                                  children="Send Request"
-                                  className="text-white font-light bg-bg_banfsgy rounded-2xl text-base lg:text-xl py-1 px-5"
-                                />
+                            </Accordion.Panel>
+                          </Accordion.Item>
+                        </Accordion>
+                        <div className="col-span-1 py-5 mt-5 text-center lg:col-span-12">
+                          <Button className="px-5 py-1 text-base font-light text-white bg-bg_banfsgy rounded-2xl lg:text-xl">
+                            Send Request
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </SideBar>
               </div>
             </div>
-            <div className="lg:col-span-4 lg:block hidden  lg:pt-10 p-5 ">
+            <div className="hidden p-5 lg:col-span-4 lg:block lg:pt-10 ">
               <div className="flex flex-col ">
                 <div className=" bg-[#0006]  p-5  rounded-2xl ">
-                  <p className="text-white  lg:text-5xl py-5  font-light ">
-                    
+                  <p className="py-5 font-light text-white lg:text-5xl ">
                     Need <span className="text-[#f30]"> 5</span> or less rooms?
                   </p>
-                  <div className="flex flex-row justify-between items-center">
+                  <div className="flex flex-row items-center justify-between">
                     <div>
-                      <p className="text-white lg:text-2xl font-light ">
-                        
+                      <p className="font-light text-white lg:text-2xl ">
                         Try our online
                       </p>
-                      <p className="text-white lg:text-2xl font-light  ">
+                      <p className="font-light text-white lg:text-2xl ">
                         booking tool
                       </p>
                     </div>
                     <div>
-                      <Link href='/search' className="text-white text-base font-light bg-[#f30] py-1 px-2 rounded-2xl">
+                      <Link
+                        href="/search"
+                        className="text-white text-base font-light bg-[#f30] py-1 px-2 rounded-2xl"
+                      >
                         Book Now
                       </Link>
                     </div>
@@ -331,12 +325,12 @@ export default function Event() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-12 gap-5 bg-gray-50 p-4  first-letter:">
+      <div className="grid grid-cols-12 gap-5 p-4 bg-gray-50 first-letter:">
         <div className="col-span-12  md:col-span-8 relative z-[100] px-2  translate-y-[-60px]  ">
           <div className="grid grid-cols-1">
             <div className="col-span-1 bg-white shadow rounded-xl">
               <div className="p-5">
-                <h4 className="pb-3 pt-1 text-2xl  ">About gamescom 2023</h4>
+                <h4 className="pt-1 pb-3 text-2xl ">About gamescom 2023</h4>
 
                 <p className="py-2">
                   Everyone in the gaming world, from developers, to cosplay
@@ -381,7 +375,7 @@ export default function Event() {
               </div>
             </div>
 
-            <div className="col-span-1 mt-5  ">
+            <div className="col-span-1 mt-5 ">
               <iframe
                 src="https://www.youtube.com/embed/_gTCqw5S2VU"
                 title="YouTube video player"
@@ -442,18 +436,15 @@ export default function Event() {
               </div>
             </div>
             <div className="col-span-1 text-center rounded-lg w-[100%] py-3 bg-bg_banfsgy text-white">
-              <p className="text-white text-3xl  flex items-center  justify-around font-light">
-                
-                <IconWifi className=" text-white" /> Live Availability
-                <IconArrowRight className=" text-white hover:translate-x-2" />
+              <p className="flex items-center justify-around text-3xl font-light text-white">
+                <IconWifi className="text-white " /> Live Availability
+                <IconArrowRight className="text-white hover:translate-x-2" />
               </p>
             </div>
-            <div className="col-span-1 mb-5 mt-5">
+            <div className="col-span-1 mt-5 mb-5">
               <div className="rounded-xl p-8 block bg-white h-auto   w-[100%]">
-                <h3 className="py-4 text-4xl font-light ">
-                  Important Facts .
-                </h3>
-                <ul className="list-disc pl-4">
+                <h3 className="py-4 text-4xl font-light ">Important Facts .</h3>
+                <ul className="pl-4 list-disc">
                   <li className="py-1">538 German exhibitors in 2016</li>
                   <li className="py-1">538 German exhibitors in 2016</li>
                   <li className="py-1">538 German exhibitors in 2016</li>
@@ -462,10 +453,10 @@ export default function Event() {
                 </ul>
               </div>
             </div>
-            <div className="col-span-1 mb-5 mt-5">
+            <div className="col-span-1 mt-5 mb-5">
               <div className="rounded-xl p-8 block bg-white h-auto   w-[100%]">
                 <h3 className="py-4 text-4xl font-light ">Next editions . </h3>
-                <div className="flex flex-row items-center  ">
+                <div className="flex flex-row items-center ">
                   <Image
                     src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
                     width={100}
@@ -479,7 +470,7 @@ export default function Event() {
                     <p className="text-sm ">Dates are not know yet</p>
                     <Link
                       href=""
-                      className="px-1 rounded-lg text-xs bg-gray-700 text-white"
+                      className="px-1 text-xs text-white bg-gray-700 rounded-lg"
                     >
                       Notify Now
                     </Link>
@@ -487,10 +478,9 @@ export default function Event() {
                 </div>
               </div>
             </div>
-            <div className="col-span-1 mb-5 mt-5 pb-5">
+            <div className="col-span-1 pb-5 mt-5 mb-5">
               <div className="rounded-xl p-8 block bg-white h-auto   w-[100%]">
                 <h3 className="py-5 text-4xl font-light ">
-                  
                   Trade fair location .
                 </h3>
                 <div className="flex flex-col">
@@ -501,12 +491,12 @@ export default function Event() {
                     loading="lazy"
                     className="w-full rounded-xl"
                   ></iframe>
-                  <h6 className="text-lg font-semibold mt-2">Messe Munich</h6>
+                  <h6 className="mt-2 text-lg font-semibold">Messe Munich</h6>
                   <p>Messegland Munich Germany</p>
                   <p className="mb-5">
                     <strong>Coordinats:</strong> 48.5134.11.232
                   </p>
-                  <button className="bg-bg_banfsgy m-auto rounded-full px-2 py-1 text-white">
+                  <button className="px-2 py-1 m-auto text-white rounded-full bg-bg_banfsgy">
                     Learn More
                   </button>
                 </div>
@@ -515,12 +505,12 @@ export default function Event() {
           </div>
         </div>
       </div>
-      <div className=" ">
-        <div className="grid lg:grid-cols-12 grid-cols-1 bg-bg_banfsgy  text-white gap-10 p-5">
-          <div className="lg:col-span-3 col-span-1 pl-5 flex">
-            <h3 className="text-3xl m-auto">Stay in touch</h3>
+      <div className="">
+        <div className="grid grid-cols-1 gap-10 p-5 text-white lg:grid-cols-12 bg-bg_banfsgy">
+          <div className="flex col-span-1 pl-5 lg:col-span-3">
+            <h3 className="m-auto text-3xl">Stay in touch</h3>
           </div>
-          <div className="lg:col-span-4 col-span-1">
+          <div className="col-span-1 lg:col-span-4">
             <div className={classes.controls}>
               <TextInput
                 placeholder="Your email"
@@ -532,16 +522,16 @@ export default function Event() {
               <Button className={` bg-[#f30]  text-white`}>Subscribe</Button>
             </div>
           </div>
-          <div className="lg:col-span-4 col-span-1 flex">
-            <p className="text-white pt-1 m-auto ">
+          <div className="flex col-span-1 lg:col-span-4">
+            <p className="pt-1 m-auto text-white ">
               Sign up for mailing list and be the first to find out about our
               best deals, news and more
             </p>
           </div>
         </div>
-        <div className=" bg-gray-100 py-10">
-          <h3 className="text-3xl p-5 m-auto">Similar events</h3>
-          <div className="grid lg:grid-cols-8 grid-cols-4  max-sm:grid-cols-2  gap-10 px-8">
+        <div className="py-10 bg-gray-100 ">
+          <h3 className="p-5 m-auto text-3xl">Similar events</h3>
+          <div className="grid grid-cols-4 gap-10 px-8 lg:grid-cols-8 max-sm:grid-cols-2">
             <div className="col-span-1">
               <div className="flex flex-col">
                 <Image
@@ -552,7 +542,7 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
             <div className="col-span-1">
               <div className="flex flex-col">
@@ -564,7 +554,7 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
             <div className="col-span-1">
               <div className="flex flex-col">
@@ -576,7 +566,7 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center  py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
             <div className="col-span-1">
               <div className="flex flex-col">
@@ -588,7 +578,7 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
             <div className="col-span-1 w-[100%]">
               <div className="flex flex-col">
@@ -600,7 +590,7 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
             <div className="col-span-1">
               <div className="flex flex-col">
@@ -612,7 +602,7 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
             <div className="col-span-1">
               <div className="flex flex-col">
@@ -624,7 +614,7 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center  py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
             <div className="col-span-1">
               <div className="flex flex-col">
@@ -636,11 +626,13 @@ export default function Event() {
                   className=" rounded-lg h-[100px] w-[100%]"
                 />
               </div>
-              <h6 className="text-base text-center py-2">Parts2Clean</h6>
+              <h6 className="py-2 text-base text-center">Parts2Clean</h6>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default DetailsEvent;
