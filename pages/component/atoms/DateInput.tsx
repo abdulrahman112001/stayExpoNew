@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { DatePickerInput  , DatePicker} from "@mantine/dates";
 import { Icon123, IconCalendar } from "@tabler/icons-react";
-function DateInputComp({ placeholder, mobile }: any) {
+function DateInputComp({ placeholder, mobile,setOpen }: any) {
   
   const [date, setDate] = useState<[Date | null, Date | null]>([null, null]);
   const [range,setRange] = useState<number|null>(null)
@@ -38,7 +38,7 @@ function DateInputComp({ placeholder, mobile }: any) {
           // withSelectButtons
         />
         <div className="py-2 px-2  sticky bottom-0 bg-white">
-           <button className="w-[100%] bg-bg_banfsgy py-2 rounded-lg text-lg text-white font-semibold "> {range?  `OK (${range})`: `OK(0)`} </button>
+           <button onClick={()=>{setOpen(false)}}  className="w-[100%] bg-bg_banfsgy py-2 rounded-lg text-lg text-white font-semibold  "> {range ?  `OK (${range} Nights)`: `OK(0 Night)`} </button>
         </div>
         </>
       ) : (
@@ -50,7 +50,6 @@ function DateInputComp({ placeholder, mobile }: any) {
           value={date}
           onChange={setDate}
           mx="auto"
-          
           maw={400}
           weekendDays={[]}
           numberOfColumns={1}

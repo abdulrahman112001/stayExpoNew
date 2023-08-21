@@ -1,7 +1,6 @@
 
 import SearchInput from "../atoms/SearchInput"
 import facebookIcon from "./../../../public/assets/facebook.svg"
-import linkdlnIcon from "./../../../public/assets/linkdln.svg"
 import youtubeIcon from "./../../../public/assets/youtube.svg"
 import Image from "next/image"
 import Link from "next/link"
@@ -50,7 +49,6 @@ export const SideNavBlog = () => {
             </h6>
             <div className="flex flex-row items-center">
               <Link href="/as"><Image src={facebookIcon.src} className="p-1" height={40} width={40} alt="facebookIcon" /> </Link>
-               <Link href="/as"><Image src={linkdlnIcon.src} className="p-1" height={40} width={40} alt="linkdlnIcon" /></Link>
                <Link href="/as"><Image src={youtubeIcon.src} className="p-1" height={40} width={40} alt="youtubeIcon" /></Link>
             </div>
         </div>

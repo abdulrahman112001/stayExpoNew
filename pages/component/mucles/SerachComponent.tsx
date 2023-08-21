@@ -85,7 +85,7 @@ export default function SerachComponent({width}:any) {
         fullScreen={true}
         withCloseButton={false}
       >
-        <DateInputComp placeholder="Check-in - Check-out " mobile={true} />
+        <DateInputComp placeholder="Check-in - Check-out " mobile={true} setOpen={setOpenDate}/>
         {/* <CoustomDatePickerMobile/> */}
       </ModalComp>
       <ModalComp
