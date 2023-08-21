@@ -27,6 +27,7 @@ function DateInputComp({ placeholder, mobile }: any) {
         <>
         <DatePicker
           type="range"
+          //@ts-ignore
           placeholder={<><IconCalendar  className="w-[20px] h-[20px] text-bg_banfsgy" /> {placeholder}</>}
           value={date}
           onChange={setDate}
@@ -37,7 +38,7 @@ function DateInputComp({ placeholder, mobile }: any) {
           //@ts-ignore
           // withSelectButtons
         />
-        <div className="py-2 px-2  sticky bottom-0 bg-white">
+        <div className="sticky bottom-0 px-2 py-2 bg-white">
            <button className="w-[100%] bg-bg_banfsgy py-2 rounded-lg text-lg text-white font-semibold "> {range?  `OK (${range})`: `OK(0)`} </button>
         </div>
         </>
@@ -46,6 +47,8 @@ function DateInputComp({ placeholder, mobile }: any) {
           type="range"
           radius={"lg"}
           // label="Pick dates range"
+                    //@ts-ignore
+
           placeholder={<span className=" inline-flex items-center h-[100%]"><IconCalendar  className="w-[20px] h-[20px] text-bg_banfsgy mr-2" /> {placeholder}</span>}
           value={date}
           onChange={setDate}
