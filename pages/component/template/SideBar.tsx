@@ -15,14 +15,15 @@ export default function SideBar({ children, onOpen, onClose,closeButton,backButt
       <div
         className={`${
           (onOpen && "!block") || ""
-        } fixed inset-0 bg-[black]/60 z-[1000] px-4 hidden transition-[display]`}
+        } fixed inset-0 bg-[black]/60 z-[150] px-4 hidden transition-[display]`}
         onClick={() => onClose(false)}
       ></div>
 
       <nav
         className={`${
           (onOpen && "!left-0 ") || ""
-        } ${widthSm? "    sm:max-w-[50%]  sm:-left-[50%]   max-sm:max-w-[60%]  max-sm:-left-[60%] bg-white fixed -left-[50%] top-0 bottom-0 w-full lg:max-w-[50%] z-[1000]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[left] duration-700 p-4  " : "sm:max-w-[90%]  sm:-left-[90%]   max-sm:max-w-[90%]  max-sm:-left-[90%] bg-white fixed -left-[50%] top-0 bottom-0 w-full lg:max-w-[50%] z-[1000]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[left] duration-700 p-4 "} `}
+        } ${widthSm? "    sm:max-w-[50%]  sm:-left-[50%]   max-sm:max-w-[65%]  max-sm:-left-[65%] bg-white fixed -left-[50%] top-0 bottom-0 w-full lg:max-w-[50%] z-[150]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[left] duration-700 p-4  " 
+                : "sm:max-w-[90%]  sm:-left-[90%]   max-sm:max-w-[90%]  max-sm:-left-[90%] bg-white fixed -left-[50%] top-0 bottom-0 w-full lg:max-w-[50%] z-[150]   shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[left] duration-700 p-4 "} `}
       >
         <div className="h-full overflow-x-hidden overflow-y-auto perfect-scrollbar">
           <div className="relative pb-5">

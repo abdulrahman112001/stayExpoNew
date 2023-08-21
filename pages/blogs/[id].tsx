@@ -14,6 +14,9 @@ import imageBlog from "../../public/assets/blog3.png";
 import useFetch from "@/hooks/useFetch";
 import BlogModal from "../component/mucles/BlogModal";
 import SideNavBlog from "../component/mucles/SideNavBlog";
+import SideBar from "../component/template/SideBar";
+import SerachComponent from "../component/mucles/SerachComponent";
+import SearchInput from "../component/atoms/SearchInput";
 
 const useStyles = createStyles((theme) => ({
   action: {
@@ -53,15 +56,19 @@ interface DetailsBlogsProps {
   };
 }
 
+
 const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
   const id = params?.params?.Id;
+  
   const { classes } = useStyles();
+  console.log(id,'idddd')
   type Blog = {};
   const { data: Blog } = useFetch<any>({
     endpoint: `api/section/blog/${id}`,
     queryKey: [`Details-Blog-page/${id}`],
+    
   });
-
+   console.log(Blog,'b')
   return (
     <>
       <section className="p-5">
@@ -76,7 +83,7 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
           </div>
         </div>
         <div className="grid mt-3 mb-2 lg:grid-cols-12 lg:gap-10 sm:grid-cols-1 md:gap-0 sm:gap-0 ">
-          <div className="mb-3 lg:col-span-9 md:col-span-9 sm:col-span-12 ">
+          <div className="mb-3 mt-10 lg:col-span-9 md:col-span-9 sm:col-span-12 ">
             <div>
               <Image
                 src={Blog?.data?.blog?.image || imageBlog?.src}
@@ -136,13 +143,13 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
                 color="dimmed"
                 lineClamp={3}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit?
+              {Blog?.data?.blog?.title}
               </Text>
               <p
                 className="mt-1 mb-5 text-sm leading-2 text-stone-600"
                 color="dimmed"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab
                 mollitia dignissimos ex ducimus{" "}
                 <strong>
                   {" "}
@@ -267,7 +274,52 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
           </div>
 
           <div className="lg:col-span-3 md:col-span-3 sm:col-span-1 lg:block md:hidden sm:hidden max-sm:hidden ">
-            <SideNavBlog />
+            <SideBar >
+            <div className="mt-2 mb-5">
+            <SerachComponent width='lg:w-[100%]'/>
+           </div>
+              <div className="mb-5 mt-5">
+                  <SearchInput  />
+              </div>
+              <div className="mt-4 mb-4">
+                  <h6 className="mt-4 mb-2 font-bold leading-6 text-gray-900 ">
+                    Categories 
+                  </h6>
+                  <div className="mt-4 mb-4">
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#javascript</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#javs</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#jSDSFSDFDSFDGDFGs</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#javt</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#jcript</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#jaddasdavacript</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border bg- border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#js</span></Link>
+                  </div>
+              </div>
+              <div className="mt-4 mb-4">
+                  <h6 className="mt-4 mb-2 font-bold leading-6 text-gray-900 ">
+                    Popular Tags 
+                  </h6>
+                  <div className="">
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#javascript</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#javs</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#jSDSFSDFDSFDGDFGs</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#javt</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#jcript</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#jaddasdavacript</span></Link>
+                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg- bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#js</span></Link>
+                  </div>
+              </div>
+              <div className="mt-4 mb-4">
+                  <h6 className="mt-4 mb-2 font-bold leading-6 text-gray-900 ">
+                      Follow Us For The lastest news
+                  </h6>
+                  <div className="flex flex-row items-center">
+                    {/* <Link href="/as"><Image src={facebookIcon.src} className="p-1" height={40} width={40} alt="facebookIcon" /> </Link>
+                    <Link href="/as"><Image src={linkdlnIcon.src} className="p-1" height={40} width={40} alt="linkdlnIcon" /></Link>
+                    <Link href="/as"><Image src={youtubeIcon.src} className="p-1" height={40} width={40} alt="youtubeIcon" /></Link> */}
+                  </div>
+              </div>
+            </SideBar>
           </div>
         </div>
       </section>

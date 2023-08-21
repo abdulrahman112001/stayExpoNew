@@ -12,7 +12,7 @@ import SideBar from '../component/template/SideBar';
 import HeaderBanner from '../component/mucles/HeaderBanner';
 import Header from "./../../public/assets/banner.png"
 import { IconChevronRight } from '@tabler/icons-react';
-export default function page() {
+export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>

@@ -9,11 +9,11 @@ import SerachComponent from "./SerachComponent"
 
 export const SideNavBlog = () => {
   return (
-     <div className="">
+        <>
         <div className="mt-2 mb-5">
             <SerachComponent width='lg:w-[100%]'/>
         </div>
-        <div className="mb-5 mt-7">
+        <div className="mb-5 mt-5">
             <SearchInput  />
         </div>
         <div className="mt-4 mb-4">
@@ -54,7 +54,7 @@ export const SideNavBlog = () => {
                <Link href="/as"><Image src={youtubeIcon.src} className="p-1" height={40} width={40} alt="youtubeIcon" /></Link>
             </div>
         </div>
-    </div>
+    </>
     
   )
 }

@@ -295,7 +295,7 @@ export default function Navbar() {
           </Group>
         </Header>
         <AuthinticationForm opened={opened} close={close} />
-        <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
+        <SideBar widthSm={true} closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
           <Link
             href="/"
             className={classes.link}
