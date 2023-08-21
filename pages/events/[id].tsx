@@ -1,29 +1,21 @@
-"use client";
-
-import React, { useState } from "react";
-
-import Image from "next/image";
-import Link from "next/link";
-import AccordionComp from "../component/accordion/Accordion";
-import Button from "../component/atoms/Button";
+import { useState } from "react";
+import { Accordion, TextInput, createStyles, rem } from "@mantine/core";
 import {
-  IconArrowBarRight,
   IconArrowRight,
   IconCalendar,
   IconFlag,
-  IconInfoCircle,
-  IconWifi,
+  IconWifi
 } from "@tabler/icons-react";
-import { IconArrowAutofitRight } from "@tabler/icons-react";
-import { Accordion, Select, TextInput, createStyles, rem } from "@mantine/core";
-import SideBar from "../component/template/SideBar";
-import InputCustom from "../component/atoms/InputCustom";
-import SelectNormal from "../component/atoms/Select";
-import InputFloatingLabel from "../component/atoms/InputFloatingLabel";
-import DateInputComp from "../component/atoms/DateInput";
-import TextereaCustom from "../component/atoms/Texterea";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from 'next/router';
+import Button from "../component/atoms/Button";
 import CheckboxComp from "../component/atoms/CheckBox";
-import { useRouter } from 'next/router'
+import DateInputComp from "../component/atoms/DateInput";
+import InputFloatingLabel from "../component/atoms/InputFloatingLabel";
+import SelectNormal from "../component/atoms/Select";
+import TextereaCustom from "../component/atoms/Texterea";
+import SideBar from "../component/template/SideBar";
 
 const useStyles = createStyles((theme) => ({
   controls: {
