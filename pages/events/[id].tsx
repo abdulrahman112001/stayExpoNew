@@ -44,7 +44,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function Event() {
+const  DetailsEvent = ()=> {
   // const router = useRouter()
   // const id = router?.query?.id
   
@@ -646,3 +646,5 @@ export default function Event() {
     </div>
   );
 }
+
+export default DetailsEvent
