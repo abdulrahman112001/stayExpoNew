@@ -45,8 +45,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function Event() {
-  const router = useRouter()
-  const id = router?.query?.id
+  // const router = useRouter()
+  // const id = router?.query?.id
   
   const [isOpen, setIsOpen] = useState(false);
   const { classes } = useStyles();
@@ -138,6 +138,8 @@ export default function Event() {
                   </div>
                 </div>
                 <SideBar closeButton={true} onOpen={isOpen} onClose={setIsOpen}>
+                  <div>
+
                   <h3 className="py-5 text-2xl font-light lg:text-4xl ">
                     Book your Hotel
                   </h3>
@@ -294,6 +296,8 @@ export default function Event() {
                                 />
                       </div>
                     </div>
+                  </div>
+                  
                   </div>
                 </SideBar>
               </div>
@@ -525,7 +529,9 @@ export default function Event() {
                   root: classes.inputWrapper,
                 }}
               />
-              <Button className={` bg-[#f30]  text-white`}>Subscribe</Button>
+              <Button className={` bg-[#f30]  text-white`}>
+                Subscribe
+                </Button>
             </div>
           </div>
           <div className="flex col-span-1 lg:col-span-4">
