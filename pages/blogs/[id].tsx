@@ -1,5 +1,6 @@
 "use client";
 
+import useFetch from "@/hooks/useFetch";
 import { ActionIcon, Group, Text, createStyles } from "@mantine/core";
 import {
   IconBrandFacebook,
@@ -9,14 +10,13 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FC, useEffect } from "react";
+import { useRouter } from 'next/router';
+import { FC } from "react";
 import imageBlog from "../../public/assets/blog3.png";
-import useFetch from "@/hooks/useFetch";
-import BlogModal from "../component/mucles/BlogModal";
-import SideNavBlog from "../component/mucles/SideNavBlog";
-import SideBar from "../component/template/SideBar";
-import SerachComponent from "../component/mucles/SerachComponent";
 import SearchInput from "../component/atoms/SearchInput";
+import BlogModal from "../component/mucles/BlogModal";
+import SerachComponent from "../component/mucles/SerachComponent";
+import SideBar from "../component/template/SideBar";
 
 const useStyles = createStyles((theme) => ({
   action: {
@@ -57,11 +57,13 @@ interface DetailsBlogsProps {
 }
 
 
-const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
-  const id = params?.params?.Id;
+const DetailsBlogs: FC<DetailsBlogsProps> = (promis: any) => {
+ 
+  const router = useRouter()
+  const id = router?.query?.id
   
   const { classes } = useStyles();
-  console.log(id,'idddd')
+
   type Blog = {};
   const { data: Blog } = useFetch<any>({
     endpoint: `api/section/blog/${id}`,
@@ -83,7 +85,7 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
           </div>
         </div>
         <div className="grid mt-3 mb-2 lg:grid-cols-12 lg:gap-10 sm:grid-cols-1 md:gap-0 sm:gap-0 ">
-          <div className="mb-3 mt-10 lg:col-span-9 md:col-span-9 sm:col-span-12 ">
+          <div className="mt-10 mb-3 lg:col-span-9 md:col-span-9 sm:col-span-12 ">
             <div>
               <Image
                 src={Blog?.data?.blog?.image || imageBlog?.src}
@@ -278,7 +280,7 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
             <div className="mt-2 mb-5">
             <SerachComponent width='lg:w-[100%]'/>
            </div>
-              <div className="mb-5 mt-5">
+              <div className="mt-5 mb-5">
                   <SearchInput  />
               </div>
               <div className="mt-4 mb-4">
