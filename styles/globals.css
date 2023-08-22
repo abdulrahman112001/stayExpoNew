@@ -210,7 +210,9 @@ body{
 .mantine-o00rr2 [data-month-level]:not(:last-of-type){
   margin: 0;
 }
-
+.mantine-13qt2rl {
+  max-width: 100%;
+}
 .mantine-1emfdtu{
  
   @apply bg-violet-200 rounded-lg 

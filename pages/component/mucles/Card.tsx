@@ -93,12 +93,12 @@ export default function BadgeCard({
 
       <Card.Section className={classes.section} mt="md">
         <Group position="apart">
-          <Text fz="xs" className="text-gray-500">
-            u AIGUST 18,2023
+          <Text fz="xs" fw={'lg'} className="text-gray-500">
+            AIGUST 18,2023
           </Text>
         </Group>
-        <Text fz="sm">
-        <div dangerouslySetInnerHTML={{ __html: description }} className=""></div>
+        <Text fz="sm" className="">
+           {title}
         </Text>
       </Card.Section>
       {/* 

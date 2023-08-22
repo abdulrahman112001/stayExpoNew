@@ -16,8 +16,8 @@ function About() {
         <div className="col-span-2 p-5 md:col-span-1 max-sm:pt-0 md:p-1">
           <h4
             className="relative  mt-5 py-5 text-3xl font-bold  
-        after:w-[50px] after:absolute after:left-[0px]
-        after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]"
+            after:w-[50px] after:absolute after:left-[0px]
+          after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]"
           >
             {
               //@ts-ignore
@@ -33,7 +33,7 @@ function About() {
             }
           </p>
           <Link href="" className=" mt-2 read-link text-[#5d22d5] flex flex-row  font-bolder">
-            Read more <IconArrowRight className="ml-2 read-icon" />
+            Read more <IconArrowRight className="ml-2 read-icon duration-200" />
           </Link>
         </div>
 

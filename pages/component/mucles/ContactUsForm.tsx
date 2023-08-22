@@ -15,10 +15,10 @@ export const ContactUsForm = () => {
             className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
           />
         </div>
-        <div className="lg:col-span-1 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12 ">
+        <div className="lg:col-span-2 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12 ">
           <SelectNormal />
         </div>
-        <div className="lg:col-span-4 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12">
+        <div className="lg:col-span-3 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12">
           <InputCustom
             placeholder="Contact name"
             className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
@@ -44,16 +44,16 @@ export const ContactUsForm = () => {
         </div>
         <div className="col-span-5 mt-3">
           <CheckboxComp
-            label={`I am OK with ExpoBeds''`}
+            label={`I am OK with StayExpo''`}
             text="Privacy Policy"
             className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
           />
         </div>
         <div className="col-span-5 mt-3"></div>
       </div>
-      <div className="flex">
+      <div className="flex pb-5">
         <Button
-          className="py-3 m-auto text-xl font-light px-14 rounded-3xl"
+          className="py-2  m-auto text-xl font-light px-14 rounded-3xl"
         >
           Send
         </Button>

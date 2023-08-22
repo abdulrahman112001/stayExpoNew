@@ -1,6 +1,5 @@
 "use client";
 
-import useFetch from "@/hooks/useFetch";
 import { ActionIcon, Group, Text, createStyles } from "@mantine/core";
 import {
   IconBrandFacebook,
@@ -10,15 +9,13 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router';
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import imageBlog from "../../public/assets/blog3.png";
-import SearchInput from "../component/atoms/SearchInput";
+import useFetch from "@/hooks/useFetch";
 import BlogModal from "../component/mucles/BlogModal";
 import SideNavBlog from "../component/mucles/SideNavBlog";
-import SideBar from "../component/template/SideBar";
-import SerachComponent from "../component/mucles/SerachComponent";
-import SearchInput from "../component/atoms/SearchInput";
+import { useRouter } from "next/router";
+
 
 const useStyles = createStyles((theme) => ({
   action: {
@@ -59,39 +56,41 @@ interface DetailsBlogsProps {
 }
 
 
-const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
-  const id = params?.params?.Id;
-  
+const DetailsBlogs: FC<DetailsBlogsProps> = (promis: any) => {
+ 
+  const router = useRouter()
+  const id = router?.query?.id
   const { classes } = useStyles();
-
+  console.log(id,'idddd')
   type Blog = {};
   const { data: Blog } = useFetch<any>({
     endpoint: `api/section/blog/${id}`,
     queryKey: [`Details-Blog-page/${id}`],
     
   });
-   console.log(Blog,'b')
+  console.log(Blog?.data?.blog?.category?.name,'cat')
+  
   return (
     <>
       <section className="p-5">
         <div className="flex flex-row items-center justify-between">
-          <div>
-            <h2 className="mt-2 text-2xl font-medium text-stone-800">
+          {/* <div>
+            <h2 className="mt-2 text-2xl capitalize font-medium text-stone-800">
               {Blog?.data?.blog?.title}
             </h2>
-          </div>
+          </div> */}
           <div className="lg:hidden md:block sm:block ">
             <BlogModal />
           </div>
         </div>
         <div className="grid mt-3 mb-2 lg:grid-cols-12 lg:gap-10 sm:grid-cols-1 md:gap-0 sm:gap-0 ">
-          <div className="mb-3 mt-10 lg:col-span-9 md:col-span-9 sm:col-span-12 ">
+          <div className="mb-3 lg:mt-10 lg:col-span-9 md:col-span-9 sm:col-span-12 ">
             <div>
               <Image
                 src={Blog?.data?.blog?.image || imageBlog?.src}
                 width={0}
                 height={0}
-                sizes="100vw"
+                sizes="80vw"
                 style={{
                   width: "100%",
                   height: "auto",
@@ -100,7 +99,7 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
                 alt=""
               />
             </div>
-            <div className="container lg:w-[80%] md:w-[80%] sm:w-[90%] mt-2 mb-2 ml-auto mx-auto pr-12 pl-12 pt-5">
+            <div className="container lg:w-[80%] md:w-[80%] sm:w-[90%] mt-2 mb-2 ml-auto mx-auto  lg:px-12 pt-5">
               <div className="flex flex-row items-center justify-between pt-2 ">
                 <Text
                   fz="sm"
@@ -110,18 +109,16 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
                   {Blog?.data?.blog?.title}
                 </Text>
                 <span className="text-xs font-normal uppercase text-stone-500">
-                  {Blog?.data?.blogs?.created_at}
+                  {Blog?.data?.blog?.created_at.slice(0, 10)}
                 </span>
               </div>
               {/* <Text  className="pt-2 mb-2 text-lg font-bold leading-7 capitalize text-stone-800" color="dimmed" lineClamp={3}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab mollitia dignissimos ex ducimus, eligendi praesentium repellat maxime, nobis quod, doloribus obcaecati? Illum ab doloribus, fuga laboriosam id tenetur? Voluptatibus!
                 </Text> */}
-              <p
-                className="pt-2 mt-2 text-sm leading-2 text-stone-600"
-                color="dimmed"
-              >
-                {Blog?.data?.blog?.content}
-              </p>
+             
+                 <div dangerouslySetInnerHTML={{ __html: Blog?.data?.blog?.content }} className="pt-2 mt-2 text-sm leading-2 text-stone-600"></div>
+            
+           
 
               <Group className={`${classes.footer} p-0`}>
                 <div className="flex flex-row items-center ">
@@ -140,105 +137,25 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
                 </div>
               </Group>
               <hr />
-              <Text
-                className="pt-5 pb-3 font-semibold leading-7 text-md text-stone-700"
-                color="dimmed"
-                lineClamp={3}
-              >
-              {Blog?.data?.blog?.title}
-              </Text>
+          
               <p
-                className="mt-1 mb-5 text-sm leading-2 text-stone-600"
+                className="mt-5 mb-5 text-sm leading-2 text-stone-600"
                 color="dimmed"
               >
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab
-                mollitia dignissimos ex ducimus{" "}
                 <strong>
                   {" "}
-                  eligendi praesentium repellat maxime, nobis quod, doloribus
-                  obcaecati? Illum ab doloribus, fuga laboriosam id tenetur?
-                  Voluptatibus{" "}
+                  Category
                 </strong>
               </p>
-              <hr />
-              <h5
-                className=" w-[70%] mt-2 mb-2 ml-auto  tracking-wider  mr-auto  pr-10 pl-10 text-xl  leading-10  text-stone-800 font-light "
-                color="dimmed"
-              >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elite sit
-                amet consectetur adipisicing elite!
-              </h5>
-              <hr />
-              <p
-                className="pt-2 mt-2 text-sm leading-2 text-stone-600"
-                color="dimmed"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ab
-                mollitia dignissimos ex duci Voluptatibus Ut ab mollitia
-                dignissimos ex duci Voluptatibus sccsdcsdc!
-              </p>
-              <p
-                className="pt-2 mt-2 mb-2 text-sm leading-2 text-stone-600"
-                color="dimmed"
-              >
-                Lorem ipsum dolor sit amet elit.
-              </p>
-              <p
-                className="pt-5 pb-5 mt-4 text-xl leading-3 text-stone-800"
-                color="dimmed"
-              >
-                Lorem ipsum dolor elit.
-              </p>
-              <p
-                className="pt-1 mt-1 text-sm leading-2 text-stone-600"
-                color="dimmed"
-              >
-                Lorem ipsum dolor sit amet{" "}
-                <strong>Ut ab mollitia dignissimos</strong> ex duci Voluptatibus
-                Ut ab mollitia dignissimos ex duci Voluptatibus sccsdcsdc:
-              </p>
-              <ul className="pt-3 ml-4 list-disc ">
-                <li className="p-1">dsdfhcfsudfcfsd</li>
-                <li className="p-1">dsdfhcfsudfcfsd</li>
-                <li className="p-1">dsdfhcfsudfcfsd</li>
-                <li className="p-1">dsdfhcfsudfcfsd</li>
+
+            
+              <ul className="ml-4 list-disc ">
+                <li className=""> {Blog?.data?.blog?.category?.name}</li>
+             
               </ul>
-              <p
-                className="pt-5 pb-5 mt-4 text-xl leading-3 text-stone-800"
-                color="dimmed"
-              >
-                Lorem ipsum dolor elit Lorem ipsum dolor elit .
-              </p>
-              <p
-                className="pt-1 mt-1 text-sm leading-2 text-stone-600"
-                color="dimmed"
-              >
-                Lorem ipsum dolor sit amet{" "}
-                <strong>Ut ab mollitia dignissimos</strong> ex duci Voluptatibus
-                Ut ab mollitia dignissimos ex duci Voluptatibus sccsdcsdc
-              </p>
-              <p
-                className="pt-1 mt-2 mb-5 text-sm leading-2 text-stone-600"
-                color="dimmed"
-              >
-                Lorem ipsum dolor sit amet{" "}
-                <Link href="" className="text-blue-600 ">
-                  Ut ab mollitia dignissimos
-                </Link>{" "}
-                ex duci Voluptatibus Ut ab mollitia dignissimos ex duci
-                Voluptatibus sccsdcsdc fdsfs
-              </p>
-              <hr />
-              <p
-                className="pt-1 mt-5 text-sm leading-2 text-stone-600"
-                color="dimmed"
-              >
-                Lorem ipsum dolor sit amet asd dasdas diusad ex duci
-                Voluptatibus Ut ab mollitia dignissimos ex duci Voluptatibus
-                sccsdcsdc!
-              </p>
+         
               <div className="w-[100%]  border-rounded flex p-10 mt-3 mb-5  bg-gray-200">
-                <button className="p-3 m-auto text-black bg-orange-300 rounded-lg">
+                <button className="p-2 text-sm m-auto text-black bg-orange-300 rounded-lg">
                   GOOD LUCK!
                 </button>
               </div>
@@ -273,52 +190,7 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (params: any) => {
           </div>
 
           <div className="lg:col-span-3 md:col-span-3 sm:col-span-1 lg:block md:hidden sm:hidden max-sm:hidden ">
-            <SideBar >
-            <div className="mt-2 mb-5">
-            <SerachComponent width='lg:w-[100%]'/>
-           </div>
-              <div className="mb-5 mt-5">
-                  <SearchInput  />
-              </div>
-              <div className="mt-4 mb-4">
-                  <h6 className="mt-4 mb-2 font-bold leading-6 text-gray-900 ">
-                    Categories 
-                  </h6>
-                  <div className="mt-4 mb-4">
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#javascript</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#javs</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#jSDSFSDFDSFDGDFGs</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#javt</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#jcript</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#jaddasdavacript</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border bg- border-neutral-300 hover:border-bg_banfsgy rounded-2xl">#js</span></Link>
-                  </div>
-              </div>
-              <div className="mt-4 mb-4">
-                  <h6 className="mt-4 mb-2 font-bold leading-6 text-gray-900 ">
-                    Popular Tags 
-                  </h6>
-                  <div className="">
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#javascript</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#javs</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#jSDSFSDFDSFDGDFGs</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#javt</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#jcript</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#jaddasdavacript</span></Link>
-                  <Link href=""><span className="inline-block p-2 mt-1 mb-1 ml-1 mr-1 text-sm border rounded-md bg- bg-neutral-200 border-neutral-300 hover:border-bg_banfsgy">#js</span></Link>
-                  </div>
-              </div>
-              <div className="mt-4 mb-4">
-                  <h6 className="mt-4 mb-2 font-bold leading-6 text-gray-900 ">
-                      Follow Us For The lastest news
-                  </h6>
-                  <div className="flex flex-row items-center">
-                    {/* <Link href="/as"><Image src={facebookIcon.src} className="p-1" height={40} width={40} alt="facebookIcon" /> </Link>
-                    <Link href="/as"><Image src={linkdlnIcon.src} className="p-1" height={40} width={40} alt="linkdlnIcon" /></Link>
-                    <Link href="/as"><Image src={youtubeIcon.src} className="p-1" height={40} width={40} alt="youtubeIcon" /></Link> */}
-                  </div>
-              </div>
-            </SideBar>
+            <SideNavBlog />
           </div>
         </div>
       </section>

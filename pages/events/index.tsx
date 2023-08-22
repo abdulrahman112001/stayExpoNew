@@ -12,8 +12,14 @@ import AccordionComp from "../component/accordion/Accordion";
 import HeaderBanner from "../component/mucles/HeaderBanner";
 import SideBar from "../component/template/SideBar";
 import Header from "./../../public/assets/banner.png";
+import useFetch from "@/hooks/useFetch";
+import EventCart from "../component/mucles/EventCart";
 export default function Events() {
   const [isOpen, setIsOpen] = useState(false);
+  const { data: Events } = useFetch<any>({
+    endpoint: `api/section/event`,
+    queryKey: [`All-Events-page`],
+  });
   
   return (
     <div>
@@ -70,186 +76,12 @@ export default function Events() {
               </div>
               <hr />
             </div>
+            <div className="col-span-12 ">
+            <EventCart Events={Events} />
+            </div>
 
-            <div className="col-span-12 lg:col-span-3 ">
-              <Image
-                src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
-                width="100"
-                height="100"
-                alt="company"
-                className="lg:w-[100px] lg:h-[100px] w-[150px] h-[150px] m-auto "
-              />
-            </div>
-            <div className="col-span-12 lg:col-span-6">
-              <div className="flex flex-col ">
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <Link
-                    className="text-2xl lg:text-lg "
-                    href="/events/[id]"
-                    as="/events/123"
-                  >
-                    gamescom 2023{" "}
-                  </Link>
-                  <span className="bg-#f30][ lg:text-xs text-base px-1  rounded text-white">
-                    ⚑ Trending
-                  </span>
-                </div>
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <small className="text-base lg:text-sm">Aug 23, 2023</small>
-                  <small className="text-base lg:text-sm">Aug 27, 2023</small>
-                  <p className="text-lg lg:text-base">Messe Cologne </p>
-                  <p className="text-sm text-gray-500 lg:text-sm">
-                    Information technology
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-12 lg:col-span-3 max-md:pt-5 md:pt-5">
-              <div className="flex flex-col lg:p-0 max-sm:px-[50px] max-md:px-[100px] md:px-[100px]">
-                <Button className="text-white border bg-bg_banfsgy hover:bg-white hover:text-bg_banfsgy hover:border-bg_banfsgy rounded-2xl">
-                  Book Now
-                </Button>
-                <Button className=" mt-3 text-[#f30] hover:text-[#f30] hover:bg-white border-gray-300 bg-white border  rounded-2xl">
-                  Explore
-                </Button>
-              </div>
-            </div>
           </div>
-          <div className="grid grid-cols-12 p-5 align-middle border-b border-gray-200 ">
-            <div className="col-span-12 lg:col-span-3 ">
-              <Image
-                src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
-                width="100"
-                height="100"
-                alt="company"
-                className="lg:w-[100px] lg:h-[100px] w-[150px] h-[150px] m-auto "
-              />
-            </div>
-            <div className="col-span-12 lg:col-span-6">
-              <div className="flex flex-col ">
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <Link
-                    className="text-2xl lg:text-lg "
-                    href="/events/[id]"
-                    as="/events/123"
-                  >
-                    gamescom 2023
-                  </Link>
-                  <span className="bg-[#f30] lg:text-xs text-base px-1  rounded text-white">
-                    ⚑ Trending
-                  </span>
-                </div>
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <small className="text-base lg:text-sm">Aug 23, 2023</small>
-                  <small className="text-base lg:text-sm">Aug 27, 2023</small>
-                  <p className="text-lg lg:text-base">Messe Cologne </p>
-                  <p className="text-sm text-gray-500 lg:text-sm">
-                    Information technology
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-12 lg:col-span-3 max-md:pt-5 md:pt-5">
-              <div className="flex flex-col lg:p-0 max-sm:px-[50px] max-md:px-[100px] md:px-[100px]">
-                <Button className="text-white border bg-bg_banfsgy hover:bg-white hover:text-bg_banfsgy hover:border-bg_banfsgy rounded-2xl">
-                  Book Now
-                </Button>
-                <Button className=" mt-3 text-[#f30] hover:text-[#f30] hover:bg-white border-gray-300 bg-white border  rounded-2xl">
-                  Explore
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-12 p-5 align-middle border-b border-gray-200 ">
-            <div className="col-span-12 lg:col-span-3 ">
-              <Image
-                src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
-                width="100"
-                height="100"
-                alt="company"
-                className="lg:w-[100px] lg:h-[100px] w-[150px] h-[150px] m-auto "
-              />
-            </div>
-            <div className="col-span-12 lg:col-span-6">
-              <div className="flex flex-col ">
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <Link
-                    className="text-2xl lg:text-lg "
-                    href="/events/[id]"
-                    as="/events/123"
-                  >
-                    gamescom 2023{" "}
-                  </Link>
-                  <span className="bg-[#f30] lg:text-xs text-base px-1  rounded text-white">
-                    ⚑ Trending
-                  </span>
-                </div>
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <small className="text-base lg:text-sm">Aug 23, 2023</small>
-                  <small className="text-base lg:text-sm">Aug 27, 2023</small>
-                  <p className="text-lg lg:text-base">Messe Cologne </p>
-                  <p className="text-sm text-gray-500 lg:text-sm">
-                    Information technology
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-12 lg:col-span-3 max-md:pt-5 md:pt-5">
-              <div className="flex flex-col lg:p-0 max-sm:px-[50px] max-md:px-[100px] md:px-[100px]">
-                <Button className="text-white border bg-bg_banfsgy hover:bg-white hover:text-bg_banfsgy hover:border-bg_banfsgy rounded-2xl">
-                  Book Now
-                </Button>
-                <Button className=" mt-3 text-[#f30] hover:text-[#f30] hover:bg-white border-gray-300 bg-white border  rounded-2xl">
-                  Explore
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-12 p-5 align-middle border-b border-gray-200 ">
-            <div className="col-span-12 lg:col-span-3 ">
-              <Image
-                src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
-                width="100"
-                height="100"
-                alt="company"
-                className="lg:w-[100px] lg:h-[100px] w-[150px] h-[150px] m-auto "
-              />
-            </div>
-            <div className="col-span-12 lg:col-span-6">
-              <div className="flex flex-col ">
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <Link
-                    className="text-2xl lg:text-lg "
-                    href="/events/[id]"
-                    as="/events/123"
-                  >
-                    gamescom 2023{" "}
-                  </Link>
-                  <span className="bg-[#f30] lg:text-xs text-base px-1  rounded text-white">
-                    ⚑ Trending
-                  </span>
-                </div>
-                <div className="max-md:m-auto md:m-auto lg:m-0 ">
-                  <small className="text-base lg:text-sm">Aug 23, 2023</small>
-                  <small className="text-base lg:text-sm">Aug 27, 2023</small>
-                  <p className="text-lg lg:text-base">Messe Cologne </p>
-                  <p className="text-sm text-gray-500 lg:text-sm">
-                    Information technology
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-12 lg:col-span-3 max-md:pt-5 md:pt-5">
-              <div className="flex flex-col lg:p-0 max-sm:px-[50px] max-md:px-[100px] md:px-[100px]">
-                <Button className="text-white border bg-bg_banfsgy hover:bg-white hover:text-bg_banfsgy hover:border-bg_banfsgy rounded-2xl">
-                  Book Now
-                </Button>
-                <Button className=" mt-3 text-[#f30] hover:text-[#f30] hover:bg-white border-gray-300 bg-white border  rounded-2xl">
-                  Explore
-                </Button>
-              </div>
-            </div>
-          </div>
+          
         </div>
         <div className="col-span-12  p-5 lg:col-span-3 relative z-[100]   translate-y-[-60px]  bg-white  shadow rounded-xl">
           <div className="flex flex-col justify-center p-10 align-middle ali rounded-xl">

@@ -38,10 +38,10 @@ function Contact_us() {
                 </div>
             </div>
             <div className="lg:col-span-8 md:col-span-12 sm:col-span-12 ">
-                <div className="rounded-md p-10 max-sm:p-10  bg-white w-[100%]">
+                <div className="rounded-md lg:p-10 p-4   bg-white w-[100%]">
                   <h3 className="py-4 text-4xl font-light max-sm:text-3xl">Send us a message</h3>
                   <p className="font-light ">If you prefer you can send us a quick message using the form below and we will get back to you within 24 hours.</p>
-                  <div className="h-auto p-8 mt-3 bg-gray-100 rounded-md max-sm:p-3">
+                  <div className="h-auto lg:p-8 p-2 mt-3 bg-gray-100 rounded-md ">
                       <ContactUsForm />
 
                   </div>

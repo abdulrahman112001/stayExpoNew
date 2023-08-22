@@ -12,7 +12,7 @@ export default function BlogsMain() {
   });
 
   return (
-    <div className="p-5 ">
+    <div className="lg:p-10 p-5 ">
       <div className="flex flex-row items-center justify-between">
         <div>
           <h2 className="mt-2 text-2xl font-medium text-stone-800">

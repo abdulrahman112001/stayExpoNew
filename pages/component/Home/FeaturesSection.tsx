@@ -251,8 +251,8 @@ export default function FeaturesSection() {
                 
                 </SimpleGrid>
                 <div  className=" p-0 md:px-20">
-                  <Link href="" className=" mt-2 p-3  read-link text-[#5d22d5] text-base float-right inline-flex items-center  font-bolder">
-                    Read more <IconArrowRight className="ml-2 read-icon w-6" />
+                  <Link href="" className=" mt-2 p-3  read-link text-[#5d22d5] text-base float-right inline-flex items-center   font-bolder">
+                    Read more <IconArrowRight className="ml-2 read-icon duration-200 w-6" />
                   </Link>
                   </div>
               </Tabs.Panel>

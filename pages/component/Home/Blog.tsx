@@ -29,7 +29,7 @@ function Blog() {
 
   return (
     <div className="pb-5 bg-gray-100 ">
-      <div className="px-10 pb-5 m-auto mt-5 md:px-20 max-sm:px-2">
+      <div className="px-10 pb-5 m-auto  md:px-20 max-sm:px-2">
         <div className="col-span-1 p-5">
           <h4 className="relative  mt-5 py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
           {
@@ -67,6 +67,7 @@ function Blog() {
                     rating="rating"
                     image={item?.image}
                     description={item?.content}
+                    title={item?.title}
                   />
                 </Link>
               </Carousel.Slide>

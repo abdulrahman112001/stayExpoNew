@@ -285,7 +285,7 @@ export default function Navbar() {
                   )}
                 </>
               ) : (
-                <Button onClick={open} className="text-white bg-bg_banfsgy">
+                <Button onClick={open} className="text-white bg-bg_banfsgy hover:bg-bg_banfsgy hover:bg-opacity-[.9]" >
                   Login
                 </Button>
               )}

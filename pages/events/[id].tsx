@@ -16,6 +16,7 @@ import InputFloatingLabel from "../component/atoms/InputFloatingLabel";
 import SelectNormal from "../component/atoms/Select";
 import TextereaCustom from "../component/atoms/Texterea";
 import SideBar from "../component/template/SideBar";
+import useFetch from "@/hooks/useFetch";
 
 const useStyles = createStyles((theme) => ({
   controls: {
@@ -47,9 +48,21 @@ const useStyles = createStyles((theme) => ({
 const DetailsEvent = () => {
   // const router = useRouter()
   // const id = router?.query?.id
+  
+  const router = useRouter()
+  const id = router?.query?.id
+  const { classes } = useStyles();
+  console.log(id,'idddd')
+  type Event = {};
+  const { data: Event } = useFetch<any>({
+    endpoint: `api/section/event/${id}`,
+    queryKey: [`Details-Event-page/${id}`],
+    
+  });
+  console.log(Event?.data?.event,'cat')
 
   const [isOpen, setIsOpen] = useState(false);
-  const { classes } = useStyles();
+
 
   const inputArr = [
     {
@@ -95,7 +108,7 @@ const DetailsEvent = () => {
               <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-10 ">
                 <div className="col-span-1 lg:col-span-4 ">
                   <Image
-                    src="https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"
+                    src={Event?.data?.event?.image || "https://ik.imagekit.io/etg/tr:w-82,h-82,cm-pad_resize,bg-FFFFFF/event-web/gamescom/gamescom-DpIZ-logo.jpg"}
                     width={150}
                     height={150}
                     alt="eventImg"
@@ -104,7 +117,7 @@ const DetailsEvent = () => {
                 </div>
                 <div className="col-span-1 lg:col-span-7">
                   <h4 className="pb-3 text-3xl font-semibold leading-6 text-center text-white lg:text-left ">
-                    gamescom 2023
+                  {Event?.data?.event?.title}
                   </h4>
                   <div className="text-center lg:text-left">
                     <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2 ">
@@ -119,12 +132,11 @@ const DetailsEvent = () => {
                   </div>
                   <div className="text-center lg:text-left">
                     <p className="inline-flex items-center py-2 text-2xl text-center text-white lg:py-5 lg:text-left ">
-                      Aug 14, 2023 - Aug 16, 2023
+                    from {Event?.data?.event?.start_date} - to {Event?.data?.event?.end_date}
                       <IconCalendar className="ml-2" />
                     </p>
                     <p className="text-base text-center text-white lg:pt-2 lg:text-left ">
-                      Guangzhou, China 382 Yuejiang Middle Rd, Haizhu,
-                      Guangzhou, Guangdong, China
+                    {Event?.data?.event?.location}
                     </p>
                     <button
                       className="px-2 py-1 mt-5 text-base font-light text-center text-white lg:text-left bg-bg_banfsgy rounded-2xl"
@@ -330,48 +342,11 @@ const DetailsEvent = () => {
           <div className="grid grid-cols-1">
             <div className="col-span-1 bg-white shadow rounded-xl">
               <div className="p-5">
-                <h4 className="pt-1 pb-3 text-2xl ">About gamescom 2023</h4>
+  
 
-                <p className="py-2">
-                  Everyone in the gaming world, from developers, to cosplay
-                  enthusiasts, will gather in Cologne for the upcoming
-                  <strong>gamescom 2023</strong> in-person edition scheduled
-                  from <strong>22th to 27th August 2023.</strong> As usual, the
-                  Opening Night Live - ONL will take place on the 22nd, followed
-                  by a five-day epic-action-packed exhibition and conference
-                  programme offering novelties for everyone from all corners of
-                  the gaming world at Koelnmesse.
-                </p>
-                <p className="py-2">
-                  With over ten gamescom areas, the gaming trade show will guide
-                  all visitors through a wealth of sensory experiences at the
-                  entertainment, indie, retro, cosplay village, business,
-                  gamescom event area and many others. There is a section for
-                  action, RPG, adventure, strategy, multiplayers, VR/AR,
-                  simulation and never-seen-before games at the indie
-                  developers’ area. The showcase and merchandise area, powered
-                  by MINI, is supported by critical educational events going
-                  beyond the pure entertainment expo portfolio and diving into
-                  education, industry, healthcare and social coexistence topics.
-                  Everyone in the gaming world, from developers, to cosplay
-                  enthusiasts, will gather in Cologne for the upcoming
-                  <strong>gamescom 2023</strong> in-person edition scheduled
-                  from <strong>22th to 27th August 2023.</strong> As usual, the
-                  Opening Night Live - ONL will take place on the 22nd, followed
-                  by a five-day epic-action-packed exhibition and conference
-                  programme offering novelties for everyone from all corners of
-                  the gaming world at Koelnmesse.
-                </p>
-                <p className="py-2">
-                  Everyone in the gaming world, from developers, to cosplay
-                  enthusiasts, will gather in Cologne for the upcoming
-                  <strong>gamescom 2023</strong> in-person edition scheduled
-                  from <strong>22th to 27th August 2023.</strong> As usual, the
-                  Opening Night Live - ONL will take place on the 22nd, followed
-                  by a five-day epic-action-packed exhibition and conference
-                  programme offering novelties for everyone from all corners of
-                  the gaming world at Koelnmesse.
-                </p>
+                <div className="py-2" dangerouslySetInnerHTML={{ __html:  Event?.data?.event?.content }}>
+             
+                 </div>
               </div>
             </div>
 
