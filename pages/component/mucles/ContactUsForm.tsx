@@ -12,11 +12,11 @@ export const ContactUsForm = () => {
         <div className="lg:col-span-4 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12 ">
           <InputCustom
             placeholder="Campany name"
-            className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
+            className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy "
           />
         </div>
-        <div className="lg:col-span-2 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12 ">
-          <SelectNormal />
+        <div className="lg:col-span-2 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12 select-ContactUs ">
+          <SelectNormal  />
         </div>
         <div className="lg:col-span-3 max-md:col-span-6 sm:col-span-6 max-sm:col-span-12">
           <InputCustom
@@ -30,13 +30,13 @@ export const ContactUsForm = () => {
             className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
           />
         </div>
-        <div className="col-span-12 mt-3">
+        <div className="col-span-12 lg:mt-[9px] mt-[4px]">
           <InputCustom
             placeholder="Email"
             className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"
           />
         </div>
-        <div className="col-span-12 mt-3">
+        <div className="col-span-12 lg:mt-3 mt-2">
           <TextereaCustom
             placeholder="Message"
             className="rounded-md border-bg_banfsgy placeholder:text-md focus:border-bg_banfsgy"

@@ -30,34 +30,34 @@ function Footer() {
                 <div className="flex flex-row items-center max-sm:mt-3 ">
                   <Link
                     href="/"
-                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full "
+                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full hover:text-white  "
                   >
-                    <IconBrandFacebook className="text-gray-600 " />
+                    <IconBrandFacebook className="text-gray-600 hover:text-white" />
                   </Link>
 
                   <Link
                     href="/"
-                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full "
+                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full hover:text-white "
                   >
-                    <IconBrandYoutube className="text-gray-600" />
+                    <IconBrandYoutube className="text-gray-600 hover:text-white" />
                   </Link>
                   <Link
                     href="/"
-                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full "
+                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full hover:text-white  "
                   >
-                    <IconBrandInstagram className="text-gray-600" />
+                    <IconBrandInstagram className="text-gray-600 hover:text-white" />
                   </Link>
                   <Link
                     href="/"
-                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full "
+                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full hover:text-white "
                   >
-                    <IconBrandTelegram className="text-gray-600" />
+                    <IconBrandTelegram className="text-gray-600 hover:text-white" />
                   </Link>
                   <Link
                     href="/"
-                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full "
+                    className="p-1 mr-2 border border-gray-600 border-solid rounded-full hover:text-white "
                   >
-                    <IconBrandTwitter className="text-gray-600" />
+                    <IconBrandTwitter className="text-gray-600 hover:text-white" />
                   </Link>
                 </div>
               </div>
@@ -214,8 +214,8 @@ function Footer() {
               <ul className="lg:col-span-8 md:col-span-2 sm:col-span-1 lg:mt-5 lg:mb-5 ">
                 <li className="pt-2 ">
                   <div className="p-5 border border-gray-600 rounded-lg ">
-                    <fieldset>
-                      <legend>DISCLAIMER</legend>
+                    <fieldset className=" relative">
+                      <legend className="font-semibold  text-gray-600 test-xsm  absolute -top-[31px] z-100 left-[15px] bg-[#0F172A] px-2">DISCLAIMER</legend>
                       <p className="font-semibold text-gray-600 test-xsm ">
                         StayExpo is an independent and privately owned tour
                         operator. Any names or logos of hotel properties, events

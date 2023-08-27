@@ -1,10 +1,11 @@
 "use client"
-import { Image, Tabs, createStyles, rem } from '@mantine/core';
-import { useState } from 'react';
+import {  Tabs, createStyles, rem } from '@mantine/core';
+import { useEffect, useState } from 'react';
 import HeaderCustom from '../component/mucles/HeaderAboutUs';
-import aboutImg from "./../../public/assets/aboutUsBg.283634d46aaffe882099641c82cb1b7c.webp";
+import aboutImg from "./../../public/assets/aboutUs.png";
 import careerImg from "./../../public/assets/career.png";
 import shape from "./../../public/assets/primary-shape.png";
+import Image from 'next/image';
 const useStyles = createStyles((theme) => ({
   wrapper: {
     display: 'flex',
@@ -22,13 +23,7 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  image: {
-    maxWidth: '80%',
-    marginRight:'-130px',
-    [theme.fn.smallerThan('sm')]: {
-      maxWidth: '100%',
-    },
-  },
+  
 
   body: {
     paddingRight: `calc(${theme.spacing.xl} * 4)`,
@@ -73,6 +68,15 @@ const useStyles = createStyles((theme) => ({
  const AboutUs = () => {
   const { classes } = useStyles();
   const [showShape,setShowShape] = useState(false)
+  const [windowSize, setWindowSize] = useState<number | any>();
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
      <div className='w-[100%] h-auto relative overflow-hidden' >
@@ -83,7 +87,7 @@ const useStyles = createStyles((theme) => ({
     
            <div className="absolute shapeOne">
               
-              <Image alt="shape" src={shape.src} width={100} height={100} />
+              <Image alt="shape" src={shape.src} width={200} height={200} />
             </div>
             <div className="absolute shapTwo">
               
@@ -94,15 +98,19 @@ const useStyles = createStyles((theme) => ({
               <Image width={150} height={150} alt="shape" src={shape.src} />
             </div> */}
     </div>
-   
-    <div className='p-5 ' >
-        <div className='grid gap-5 lg:grid-cols-12 md:grid-cols-1 sm:grid-cols-1 '>
-        <div className='rounded-md lg:col-span-6 md:col-span-1 sm:col-span-1'>
+     
+     
+    
+ 
+    <div className=' lg:-translate-y-[60px] ' >
+        <div className='grid  lg:grid-cols-12 md:grid-cols-1 sm:grid-cols-1 '>
+          
+        <div className='rounded-md lg:col-span-6 hidden lg:block'>
               
-              <Image src={careerImg.src} alt='img' height={500} width={500}  />
+              <Image src={careerImg.src} alt='img' height={400} width={700}   />
              
           </div>
-            <div className='lg:col-span-6 md:col-span-1 sm:col-span-1'>
+            <div className='lg:col-span-6 md:col-span-1 sm:col-span-1 px-3'>
                <h2 className=' font-extrabold text-[28px] mb-5'>Career</h2>
                 <p className=' lg:text-xl lg:mb-[40px] font-[500] py-3 '> 
                   RateHawk is one of the fastest-growing platforms for travel professionals in the world; hence we constantly search for talents in Europe, Asia, North and South America, and Africa.
@@ -114,62 +122,70 @@ const useStyles = createStyles((theme) => ({
                   Our team develops the platform, grows the business, and supports B2С and B2B clients in eight languages. And we all share the same principles and values — this distinguishes us from the rest of the market.
                 </p>
             </div>
-            {/* <div className="absolute lg:-bottom-[5%]  sm:hidden md:hidden left-[15%] z-10">
-                  
-                  <Image width={150} height={150} alt="shape"  src={shape.src} />
-              </div> */}
-       
            
         </div>
            
           
     </div> 
-
-    <div className='container my-5 p-7'>
-        <Tabs color="violet" variant="pills" radius="lg" defaultValue="2022">
+    <div className=' py-10 px-5   lg:-translate-y-[60px]  relative overflow-hidden flex'>
+      <div className='lg:px-10 lg:ml-10 px-2'>
+        <Tabs color="violet"  defaultValue="2022">
         <Tabs.List>
-          <Tabs.Tab value="2022" className='text-lg font-semibold '>2022</Tabs.Tab>
-          <Tabs.Tab value="2021"  className='text-lg font-semibold '>2021</Tabs.Tab>
-          <Tabs.Tab value="2020"  className='text-lg font-semibold '>2020</Tabs.Tab>
-          <Tabs.Tab value="2019"  className='text-lg font-semibold '>2019</Tabs.Tab>
+          <Tabs.Tab value="2022" className='text-xl font-semibold '   p="lg" >2022</Tabs.Tab>
+          <Tabs.Tab value="2021"  className='text-xl font-semibold '  p="lg">2021</Tabs.Tab>
+          <Tabs.Tab value="2020"  className='text-xl font-semibold '  p="lg">2020</Tabs.Tab>
+          <Tabs.Tab value="2019"  className='text-xl font-semibold ' p="lg">2019</Tabs.Tab>
         </Tabs.List>
 
         <Tabs.Panel value="2022" pt="xs">
           <ul className='mx-5 list-disc '>
-            <li className='p-1 text-lg font-semibold'>became a member of SMAL</li>
-            <li className='p-1 text-lg font-semibold '>hired more staff – there are now more than 1,000 people on our team</li>
-            <li className='p-1 text-lg font-semibold'>added a new payment method – by payment link</li>
-            <li className='p-1 text-lg font-semibold'>entered the Latin American market</li>
+            <li className='p-1 py-2 text-lg font-semibold'>became a member of SMAL</li>
+            <li className='p-1 py-2 text-lg font-semibold '>hired more staff – there are now more than 1,000 people on our team</li>
+            <li className='p-1 py-2 text-lg font-semibold'>added a new payment method – by payment link</li>
+            <li className='p-1 py-2 text-lg font-semibold'>entered the Latin American market</li>
           </ul>
         </Tabs.Panel>
 
         <Tabs.Panel value="2021" pt="xs">
         <ul className='mx-5 list-disc '>
-            <li className='p-1 text-lg font-semibold'>launched online service for booking flights and transfers</li>
-            <li className='p-1 text-lg font-semibold'>hired more staff – there are now more than 1,000 people on our team</li>
-            <li className='p-1 text-lg font-semibold'>added a new payment method – by payment link</li>
-            <li className='p-1 text-lg font-semibold'>entered the Latin American market</li>
+            <li className='p-1 py-2 text-lg font-semibold'>launched online service for booking flights and transfers</li>
+            <li className='p-1 py-2 text-lg font-semibold'>hired more staff – there are now more than 1,000 people on our team</li>
+            <li className='p-1 py-2 text-lg font-semibold'>added a new payment method – by payment link</li>
+            <li className='p-1 py-2 text-lg font-semibold'>entered the Latin American market</li>
           </ul>
         </Tabs.Panel>
 
         <Tabs.Panel value="2020" pt="xs">
         <ul className='mx-5 list-disc '>
-            <li className='p-1 text-lg font-semibold'>opened legal entities in Kazakhstan, Great Britain, and Germany</li>
-            <li className='p-1 text-lg font-semibold'>hired more staff – there are now more than 1,000 people on our team</li>
-            <li className='p-1 text-lg font-semibold'>added a new payment method – by payment link</li>
-            <li className='p-1 text-lg font-semibold'>entered the Latin American market</li>
+            <li className='p-1 py-2 text-lg font-semibold'>opened legal entities in Kazakhstan, Great Britain, and Germany</li>
+            <li className='p-1 py-2 text-lg font-semibold'>hired more staff – there are now more than 1,000 people on our team</li>
+            <li className='p-1 py-2 text-lg font-semibold'>added a new payment method – by payment link</li>
+            <li className='p-1 py-2 text-lg font-semibold'>entered the Latin American market</li>
           </ul>
         </Tabs.Panel>
           <Tabs.Panel value="2019" pt="xs">
         <ul className='mx-5 list-disc '>
-            <li className='p-1 text-lg font-semibold'>added a new payment method – by payment link</li>
-            <li className='p-1 text-lg font-semibold'>hired more staff – there are now more than 1,000 people on our team</li>
-            <li className='p-1 text-lg font-semibold'>added a new payment method – by payment link</li>
-            <li className='p-1 text-lg font-semibold'>entered the Latin American market</li>
+            <li className='p-1 py-2 text-lg font-semibold'>added a new payment method – by payment link</li>
+            <li className='p-1 py-2 text-lg font-semibold'>hired more staff – there are now more than 1,000 people on our team</li>
+            <li className='p-1 py-2 text-lg font-semibold'>added a new payment method – by payment link</li>
+            <li className='p-1 py-2 text-lg font-semibold'>entered the Latin American market</li>
           </ul>
         </Tabs.Panel>
       </Tabs>
+      </div>
+            <div className="absolute shapeOne">
+              
+              <Image alt="shape" src={shape.src} width={200} height={200} />
+            </div>
+            <div className="absolute shapTwo">
+              
+              <Image alt="shape" src={shape.src} className="w-1/2"  width={100} height={100}/>
+            </div>
     </div>      
+    
+
+    
+     
     
      </>
   )

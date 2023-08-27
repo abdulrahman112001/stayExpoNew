@@ -22,10 +22,12 @@ const useStyles = createStyles((theme) => ({
     border: `${rem(1)} solid ${
       theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[3]
     }`,
+    gap: "140px",
 
     [theme.fn.smallerThan("sm")]: {
       flexDirection: "column-reverse",
       padding: theme.spacing.xl,
+      gap: "10px",
     },
   },
 
@@ -33,7 +35,7 @@ const useStyles = createStyles((theme) => ({
     maxWidth: "40%",
 
     [theme.fn.smallerThan("sm")]: {
-      maxWidth: "100%",
+      maxWidth: "80%",
     },
   },
 
@@ -42,7 +44,7 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("sm")]: {
       paddingRight: 0,
-      marginTop: theme.spacing.xl,
+      marginTop: theme.spacing.sm,
     },
   },
 
@@ -72,6 +74,8 @@ const useStyles = createStyles((theme) => ({
   control: {
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
+    padding: "10px",
+    
   },
 }));
 
@@ -84,7 +88,7 @@ export default function Subscribe() {
   });
   return (
     <div
-      className={`${classes.wrapper} border-0 p-5 md:px-20 md:py-10 m-auto `}
+      className={`${classes.wrapper} border-0 p-5 md:px-20 md:py-10 m-auto subscribtion`}
     >
       <div className={`${classes.body} justify-between`}>
         <Title className="relative  mt-5 py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
@@ -110,11 +114,13 @@ export default function Subscribe() {
         </Text>
 
         <div className={classes.controls}>
+          
           <TextInput
+             
             placeholder="Your email"
             classNames={{ input: classes.input, root: classes.inputWrapper }}
           />
-          <Button className={`${classes.control} bg-bg_banfsgy`}>
+          <Button className={`${classes.control} bg-bg_banfsgy  hover:bg-bg_banfsgy border `}>
             Subscribe
           </Button>
         </div>

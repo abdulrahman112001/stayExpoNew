@@ -182,6 +182,17 @@ body{
   -webkit-justify-content: unset !important
 }
 
+.loader{
+  @apply text-bg_banfsgy
+}
+.mantine-TextInput-input{
+  padding-top: 23px !important;
+  padding-bottom: 23px !important;
+  @apply rounded-lg
+}
+.date-event .mantine-1tmqxv8{
+  @apply rounded-md
+}
 
 @media(max-width: 768px) {
   
@@ -214,9 +225,23 @@ body{
   max-width: 100%;
 }
 .mantine-1emfdtu{
- 
   @apply bg-violet-200 rounded-lg 
-
+}
+.drop-down_avatar .mantine-Menu-dropdown{
+  width: 8.5rem !important;
+  top: 72px !important;
+  /* position: relative; */
+}
+.drop-down_avatar .mantine-Menu-dropdown::after{
+  position: absolute;
+  left: 34%;
+  top: -10px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #fff;
 }
 .mantine-CalendarHeader-calendarHeaderLevel{
  @apply font-bold text-bg_banfsgy text-base
@@ -280,7 +305,39 @@ body{
   .mantine-7yisjr[data-selected]:first-child{
     @apply w-full
 }
+.shapeOne , .shapTwo {
+  top: -144px;
+  z-index: -29;
+  filter: blur(7px);
+}
+.shapeOne{
+  left: -300px;
+}
+.shapTwo{
+  left: 75%;
+  top: -30px;
+}
+.shapTwo img{
+  width: 200px !important;
+}
 
+}
+@media only screen and (max-width: 900px) {
+  .Hero-section-overflow{
+    @apply overflow-hidden
+  }
+}
+.subscribtion .mantine-TextInput-input  {
+   padding-top: 15px !important;
+   padding-bottom: 15px !important;
+   border-top-right-radius: 0px !important;
+   border-bottom-right-radius: 0px !important;
 
+}
+.subscribtion .mantine-TextInput-input:focus  {
+  border-color: #5d22d5 !important ;
 
+}
+.mantine-n78pn3{
+  margin-top: 0px !important;
 }

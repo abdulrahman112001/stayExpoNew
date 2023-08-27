@@ -27,7 +27,8 @@ import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    padding: `calc(${theme.spacing.xl} * 3) ${theme.spacing.xl}`,
+    backgroundColor :"#F8F8F8"
   },
 
   title: {
@@ -176,9 +177,9 @@ export default function FeaturesSection() {
   ));
 
   return (
-    <div className={`${classes.wrapper}   p-20 `}>
+    <div className={`${classes.wrapper}  px-20  `}>
       <div className="  text-center py-5 mb-[50px]">
-        <h4 className="relative m-auto w-[200px]  lg:w-[350px] mt-5 py-5 text-3xl font-bold text-center after:w-[50px] after:absolute after:left-[10px] lg:after:left-[25px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
+        <h4 className="relative m-auto w-[200px]  lg:w-[350px]  py-5 text-3xl font-bold text-center after:w-[50px] after:absolute after:left-[10px] lg:after:left-[25px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
           Save time and money
         </h4>
         <p className="text-gray-500">
@@ -223,8 +224,8 @@ export default function FeaturesSection() {
                   className="p-0 md:px-20"
                 >
                   {item.subfeatures.map((feature: any) => (
-                    <div key={feature?.title} className="p-3 m-2 shadow-sm">
-                      <div className="flex justify-between gap-2">
+                    <div key={feature?.title} className="p-3 rounded-lg shadow-sm bg-white">
+                      <div className="flex justify-between ">
                         <Text fz="lg" mt="sm" fw={500}>
                           {feature.name}
                         </Text>

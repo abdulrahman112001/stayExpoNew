@@ -26,9 +26,7 @@ const EventCart = ({Events}:EventCart_TP) => {
                 <div className="max-md:m-auto  md:m-auto lg:m-0  max-sm:text-center ">
                   <Link
                     className="text-2xl hover:text-bg_banfsgy lg:text-lg "
-                    href={`/events/${item.id}`}
-                    
-                  >
+                    href={`/events/${item.id}`}>
                     {item?.title}
                   </Link>
                   <span className="bg-[#f30] lg:text-xs lg:ml-2 text-base px-1 max-sm:block max-sm:w-[80px] max-sm:m-auto max-sm:my-1 max-sm:text-sm rounded text-white">
@@ -39,9 +37,11 @@ const EventCart = ({Events}:EventCart_TP) => {
                   <small className="text-base lg:text-sm ">from {item?.start_date}</small>
                   <small className="text-base lg:text-sm"> to {item?.end_date}</small>
                   <p className="text-lg lg:text-base truncate w-[250px]"> {item?.location} </p>
-                  <p className="text-sm text-gray-500 lg:text-sm">
-                    Information technology
-                  </p>
+                  {item?.domains.map((domain:any)=>(
+                  <span className="text-xs text-gray-500 pr-2 lg:text-sm">
+                    {domain?.name}
+                  </span>
+                  ))}
                 </div>
               </div>
             </div>

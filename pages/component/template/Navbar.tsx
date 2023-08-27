@@ -27,6 +27,7 @@ import {
   IconCode,
   IconCoin,
   IconFingerprint,
+  IconLogin,
   IconLogout,
   IconNotification,
   IconSettings,
@@ -189,7 +190,7 @@ export default function Navbar() {
   return (
     <>
       <Box>
-        <Header height={60} px="md" className="flex justify-between">
+        <Header height={60} px="md" className="flex justify-between shadow-lg">
           <Group sx={{ height: "100%" }}>
             <Link href="/" className={`${classes.link} w-[70%] md:w-auto `}>
               <Logo />
@@ -233,9 +234,14 @@ export default function Navbar() {
             </Group>
           </Group>
           <Group>
-            <Group className={classes.hiddenMobile}>
+            <Group >
               {user ? (
-                <>
+                <div className="drop-down_avatar flex flex-row items-center">
+                 {user?.type && (
+                    <div className=" text-gray-600 text-xs  capitalize mr-2 ">
+                      {user?.type}
+                    </div>
+                  )}
                   <Menu
                     position="bottom"
                     transitionProps={{
@@ -277,13 +283,7 @@ export default function Navbar() {
                       </Link>
                     </Menu.Dropdown>
                   </Menu>
-
-                  {user?.type && (
-                    <Button className="text-white capitalize border bg-bg_banfsgy hover:border-bg_banfsgy hover:bg-white hover:text-bg_banfsgy">
-                      {user?.type}
-                    </Button>
-                  )}
-                </>
+                </div>
               ) : (
                 <Button onClick={open} className="text-white bg-bg_banfsgy hover:bg-bg_banfsgy hover:bg-opacity-[.9]" >
                   Login
@@ -366,6 +366,26 @@ export default function Navbar() {
           >
             Contact Us
           </Link>
+         
+          {user ? (
+            <Link href="/">
+               <Button unstyled onClick={() => logout()}>
+                 <div className="flex items-center gap-2 p-3">
+                   <IconLogout size={rem(18)} />
+                     Logout
+                 </div>
+               </Button>
+           </Link>
+            ) : (
+              <Link href="/">
+              <Button unstyled onClick={open}>
+                <div className="flex items-center gap-2 p-3">
+                  <IconLogin size={rem(18)} />
+                    Login
+                </div>
+              </Button>
+          </Link>
+            )}
           <Divider
             my="sm"
             color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}

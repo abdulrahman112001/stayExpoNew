@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Accordion, TextInput, createStyles, rem } from "@mantine/core";
 import {
+  IconArrowBigLeftLines,
   IconArrowRight,
   IconCalendar,
   IconFlag,
@@ -17,6 +18,8 @@ import SelectNormal from "../component/atoms/Select";
 import TextereaCustom from "../component/atoms/Texterea";
 import SideBar from "../component/template/SideBar";
 import useFetch from "@/hooks/useFetch";
+import { Input } from "@mantine/core";
+import ModalComp from "../component/template/Modal";
 
 const useStyles = createStyles((theme) => ({
   controls: {
@@ -48,7 +51,17 @@ const useStyles = createStyles((theme) => ({
 const DetailsEvent = () => {
   // const router = useRouter()
   // const id = router?.query?.id
-  
+  const [windowSize, setWindowSize] = useState<number | any>();
+
+    useEffect(() => {
+        function handleResize() {
+          setWindowSize(window.innerWidth);
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+  const [openDate, setOpenDate] = useState(false);
   const router = useRouter()
   const id = router?.query?.id
   const { classes } = useStyles();
@@ -116,30 +129,28 @@ const DetailsEvent = () => {
                   />
                 </div>
                 <div className="col-span-1 lg:col-span-7">
-                  <h4 className="pb-3 text-3xl font-semibold leading-6 text-center text-white lg:text-left ">
+                  <h4 className="pb-3 text-3xl max-sm:text-xl font-semibold leading-6 text-center text-white lg:text-left ">
                   {Event?.data?.event?.title}
                   </h4>
                   <div className="text-center lg:text-left">
-                    <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2 ">
-                      Interior construction
-                    </span>
-                    <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2 ">
-                      Paints
-                    </span>
-                    <span className=" text-[#9E9E9E] font-semibold text-base  lg:mr-2">
-                      Chemical industry
-                    </span>
+    
+                    {Event?.data?.event?.domains.map((domain:any)=>(
+                      <span className="font-semibold  text-[#9E9E9E]  pr-2 text-sm   ">
+                        {domain?.name}
+                      </span>
+                  ))}
+                
                   </div>
                   <div className="text-center lg:text-left">
-                    <p className="inline-flex items-center py-2 text-2xl text-center text-white lg:py-5 lg:text-left ">
+                    <p className="inline-flex items-center py-2 text-2xl max-sm:text-sm text-center text-white lg:py-5 lg:text-left ">
                     from {Event?.data?.event?.start_date} - to {Event?.data?.event?.end_date}
                       <IconCalendar className="ml-2" />
                     </p>
-                    <p className="text-base text-center text-white lg:pt-2 lg:text-left ">
+                    <p className="text-base text-center max-sm:text-sm text-white lg:pt-2 lg:text-left ">
                     {Event?.data?.event?.location}
                     </p>
                     <button
-                      className="px-2 py-1 mt-5 text-base font-light text-center text-white lg:text-left bg-bg_banfsgy rounded-2xl"
+                      className="px-2 py-1 mt-5 text-base max-sm:text-sm font-light text-center text-white lg:text-left bg-bg_banfsgy rounded-2xl"
                       onClick={() => setIsOpen(!isOpen)}
                     >
                       Group Booking
@@ -205,10 +216,32 @@ const DetailsEvent = () => {
                               className="pt-4 rounded-md focus:border-bg_banfsgy"
                             />
                           </div>
+                          <ModalComp
+                            opened={openDate}
+                            isClose={() => setOpenDate(false)}
+                            title={<button className="px-5 py-2 rounded-lg bg-bg_banfsgy text-white " onClick={()=>setOpenDate(false)}><IconArrowBigLeftLines className="text-white font-bold" /></button>}
+                            fullScreen={true}
+                            withCloseButton={false}
+                          >
+                            <DateInputComp placeholder="Check-in - Check-out " mobile={true} setOpen={setOpenDate}/>
+                            {/* <CoustomDatePickerMobile/> */}
+                          </ModalComp>
                           <div className="col-span-1 pt-4 lg:col-span-6">
                             <div className="grid grid-cols-12 gap-2">
-                              <div className="col-span-11">
-                                <DateInputComp placeholder="Check-in - Check-out " />
+                              <div className="col-span-11 date-event">
+                                {windowSize < 800 ? 
+                                  <Input
+                                    component="button"
+                                    className="p-0 text-[#adb5bd]"
+                                    onClick={() => setOpenDate(true)}
+                                  >
+                                    Check-in - Check-out
+                                  </Input>
+
+                                  :
+                                  <DateInputComp placeholder="Check-in - Check-out " />
+                                }
+                        
                               </div>
                               <div className="col-span-1 py-2">
                                 <button
@@ -276,7 +309,7 @@ const DetailsEvent = () => {
                                     className="pt-2 rounded-md focus:border-bg_banfsgy"
                                   />
                                 </div>
-                                <div className="col-span-1 lg:col-span-12">
+                                <div className="col-span-1 lg:col-span-12 mt-2">
                                   <TextereaCustom />
                                 </div>
                                 <div className="col-span-1 mt-3 lg:col-span-12">
@@ -308,24 +341,24 @@ const DetailsEvent = () => {
               </div>
             </div>
             <div className="hidden p-5 lg:col-span-4 lg:block lg:pt-10 ">
-              <div className="flex flex-col ">
+              <div className="flex lg:flex-col flex-row justify-between items-center">
                 <div className=" bg-[#0006]  p-5  rounded-2xl ">
                   <p className="py-5 font-light text-white lg:text-5xl ">
                     Need <span className="text-[#f30]"> 5</span> or less rooms?
                   </p>
                   <div className="flex flex-row items-center justify-between">
                     <div>
-                      <p className="font-light text-white lg:text-2xl ">
+                      <p className="font-light text-white lg:text-2xl text-base ">
                         Try our online
                       </p>
-                      <p className="font-light text-white lg:text-2xl ">
+                      <p className="font-light text-white lg:text-2xl  text-base  ">
                         booking tool
                       </p>
                     </div>
                     <div>
                       <Link
                         href="/search"
-                        className="text-white text-base font-light bg-[#f30] py-1 px-2 rounded-2xl"
+                        className="text-white lg:text-base font-light bg-[#f30] py-1 px-2 rounded-2xl"
                       >
                         Book Now
                       </Link>

@@ -22,10 +22,10 @@ function HeroSection() {
   });
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative Hero-section-overflow">
       <div className="container p-0 m-auto md:p-20">
-        <div className="grid grid-cols-2 px-5">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-2 px-5 ">
+          <div className="col-span-2 md:col-span-1 ">
           
                   <h1 className="pt-5 mt-2 text-2xl font-semibold">
                     {
@@ -39,7 +39,7 @@ function HeroSection() {
                   HeroSection?.data?.parts[1].hero_body}</p>
    
           </div>
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 md:col-span-1 pb-5 ">
             <form
               onSubmit={form.onSubmit((values) => {
                 //console.log(values)

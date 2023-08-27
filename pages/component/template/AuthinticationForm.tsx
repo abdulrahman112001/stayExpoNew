@@ -117,7 +117,7 @@ export default function AuthinticationForm({ opened, close }:any) {
     <div>
       <Modal opened={opened} onClose={close} title={`${"Sign in"}`} size={"lg"}>
         <div className="grid grid-cols-2">
-          <div className="col-span-1">
+          <div className="lg:col-span-1 col-span-2">
             <Paper radius="md" p="xl">
               <div className="flex flex-col ">
                 <ButtonWithIcons
@@ -318,7 +318,7 @@ export default function AuthinticationForm({ opened, close }:any) {
             </Paper>
           </div>
 
-          <div className="col-span-1 ">
+          <div className="lg:col-span-1 lg:block hidden ">
             <Image
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKrxE2DcG3hDJ9W19P1Rp9ezqR-7nP8RcNKA&usqp=CAU"
               width="100"

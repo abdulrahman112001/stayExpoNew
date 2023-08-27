@@ -77,7 +77,7 @@ export default function CardSearch({
 
   const slides = image?.map((image) => (
     <Carousel.Slide key={image}>
-      <Image src={image} alt="img" height={270} className="max-sm:h-[210px]"/>
+      <Image src={image} alt="img" height={280} className="max-sm:h-[240px]"/>
     </Carousel.Slide>
   ));
 

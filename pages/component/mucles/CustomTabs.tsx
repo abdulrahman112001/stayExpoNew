@@ -9,31 +9,33 @@ import {
   IconFilter,
   IconFlag,
   IconMan,
+  IconMap,
+  IconMapBolt,
   IconStar,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import imgCompany from "../../../public/assets/agoda_preferred_logo.png";
+import { IconLocation } from "@tabler/icons-react";
 const CustomTabs = () => {
   const [activeTab, setActiveTab] = useState<string>("tab1");
 
   const handleTabClick = () => {
     // scroll.scrollTo("content", {
     //   // smooth: true as boolean ,
-
-
     // });
   };
 
   return (
     <div className="mt-3">
-      <div className="flex items-center justify-between p-3 border ">
-        <ul className="hidden gap-10 md:flex">
+      <div className="flex items-center justify-between p-3 border rounded ">
+        <ul className="hidden gap-10 md:flex ">
           <li>
             <Link
               activeClass="active"
-              to="content"
+              to="Overview"
+              className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-4"
               spy={true}
               smooth={true}
               // offset={-50}
@@ -45,7 +47,8 @@ const CustomTabs = () => {
           <li>
             <Link
               activeClass="active"
-              to="content2"
+              to="Rooms"
+              className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-4"
               spy={true}
               smooth={true}
               // offset={-50}
@@ -58,6 +61,7 @@ const CustomTabs = () => {
             <Link
               activeClass="active"
               to="content"
+              className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-4"
               spy={true}
               smooth={true}
               // offset={-50}
@@ -69,6 +73,7 @@ const CustomTabs = () => {
           <li>
             <Link
               activeClass="active"
+              className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-4"
               to="content"
               spy={true}
               smooth={true}
@@ -81,6 +86,7 @@ const CustomTabs = () => {
           <li>
             <Link
               activeClass="active"
+              className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-4"
               to="content"
               spy={true}
               smooth={true}
@@ -93,6 +99,7 @@ const CustomTabs = () => {
           <li>
             <Link
               activeClass="active"
+              className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-4"
               to="content"
               spy={true}
               smooth={true}
@@ -104,15 +111,15 @@ const CustomTabs = () => {
           </li>
         </ul>
         <div className="flex items-center gap-2">
-          <small>from</small>
+          <small className="text-xs text-gray-600">from</small>
           <span className="text-lg text-red-600">$ 72</span>
-          <button className="p-1 text-white rounded bg-bg_banfsgy">
-            VIEW THIS DEAL
+          <button className="p-1 text-white text-sm font-medium rounded bg-bg_banfsgy">
+            Select Room
           </button>
         </div>
       </div>
 
-      <div id="content">
+      <div id="Overview">
         <div className="grid grid-cols-6 mt-4">
           <div className="col-span-6 md:col-span-4">
             <div className="p-4 border rounded-sm">
@@ -128,30 +135,39 @@ const CustomTabs = () => {
                   </div>
 
                   <div className="flex items-center gap-2 mt-3">
-                    <h1 className="font-bold">LIHO Hotel Tainan</h1>
+                    <h1 className="font-bold text-xl">LIHO Hotel Tainan</h1>
                     <div className="flex gap-1">
-                      <IconStar className="text-yellow-500 fill-yellow-500" />
-                      <IconStar className="text-yellow-500 fill-yellow-500" />
-                      <IconStar className="text-yellow-500 fill-yellow-500" />
+                      <IconStar className="text-yellow-400 fill-yellow-400" />
+                      <IconStar className="text-yellow-400 fill-yellow-400" />
+                      <IconStar className="text-yellow-400 fill-yellow-400" />
                     </div>
                   </div>
                 </div>
                 <div className="py-2">
-                  <p className="text-gray-600">
-                    8F, No 145, Sec 2, Zhongyi Rd., Tainan City, Tainan, Taiwan,
-                    700 - SEE MAP
+                  <p className="text-gray-600 text-sm hover:underline flex flex-row cursor-pointer">
+                    12 Ahmed Ragheb, Downtown, Cairo, Egypt, 11519 -
+                    <span className=" text-bg_banfsgy text-sm  flex flex-row items-center">
+                      <IconLocation
+                        className="ml-2 mr-1 text-xs fill-[#5d22d5] text-[#5d22d5]"
+                        width="12px"
+                        height="12px"
+                      />
+                      See Map
+                    </span>
                   </p>
                 </div>
               </div>
 
               <div>
-                <p className="py-2 text-gray-600">
+                <p className="py-2 text-gray-600 text-sm">
                   Get your trip off to a great start with a stay at this
-                  property, which offers free Wi-Fi in all rooms. Strategically
-                  situated in Tainan City, allowing you access and proximity to
-                  local attractions and sights. Dont leave before paying a visit
-                  to the famous Chimei Museum. This 3-star property features hot
-                  tub to make your stay more indulgent and memorable
+                  property, which offers free Wi-Fi in all rooms. Conveniently
+                  situated in the Downtown part of Cairo, this property puts you
+                  close to attractions and interesting dining options. Don't
+                  leave before paying a visit to the famous The Museum of
+                  Egyptian Antiquities. Rated with 5 stars, this high-quality
+                  property provides guests with access to massage, restaurant
+                  and hot tub on-site.
                 </p>
               </div>
             </div>
@@ -278,13 +294,13 @@ const CustomTabs = () => {
           <div className="col-span-6 px-3 md:col-span-2">
             <div className="p-4 border rounded-sm">
               <div>
-                <h1 className="font-bold"> 7.7 Very good </h1>
-                <p>12,161 reviews</p>
+                <h1 className="font-bold text-xl"> 7.7 Very good </h1>
+                <p className="text-sm  text-bg_banfsgy">12,161 reviews</p>
               </div>
               <div className="flex flex-wrap gap-1 mt-4">
-                <p className="p-2 border rounded-lg">Housekeeping</p>
-                <p className="p-2 border rounded-lg">Housekeeping</p>
-                <p className="p-2 border rounded-lg">Housekeeping</p>
+                <p className="p-2 border  text-sm rounded-lg">Housekeeping </p>
+                <p className="p-2 border text-sm rounded-lg">Housekeeping</p>
+                <p className="p-2 border text-sm rounded-lg">Housekeeping</p>
               </div>
               <div className="mt-4">
                 <Carousel
@@ -362,7 +378,7 @@ const CustomTabs = () => {
           </div>
         </div>
       </div>
-      <div id="content2 ">
+      <div id="Rooms">
         <div className="flex justify-between p-3 mt-5 border-b">
           <h1 className="font-bold">Select your room</h1>
 

@@ -57,7 +57,7 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   )
 );
 
-function SelectForm() {
+function SelectForm({ placeholder, mobile }: any) {
   const form = useForm({
     initialValues: {
       email: "",
@@ -70,8 +70,54 @@ function SelectForm() {
   });
 
   return (
+
     <div>
-      <Group>
+      
+      {mobile ? (
+        <>
+          <Group noWrap w='100%' py='sm' px='md' className="hover:bg-gray-100">
+            <IconBuilding />
+            <div>
+              <Text size="sm">Egrisi Hotel</Text>
+              <Text size="xs" opacity={0.65} className="flex">
+                <Avatar src="https://f.worldota.net/ratehawk-landing/branch/b429229/_next/static/assets/ge.962a33a0.svg" size="xs" className="mr-1" />
+                <p className="">Batumi, Gonio, ul. Svimon Kananeli, 60</p>
+              </Text>
+            </div>
+          </Group>
+          <Group className="hover:bg-gray-100" w='100%' py='sm' px='md' noWrap>
+          <IconBuilding />
+          <div>
+            <Text size="sm">Egrisi Hotel</Text>
+            <Text size="xs" opacity={0.65} className="flex">
+              <Avatar src="https://f.worldota.net/ratehawk-landing/branch/b429229/_next/static/assets/ge.962a33a0.svg" size="xs" className="mr-1" />
+              <p className="">Batumi, Gonio, ul. Svimon Kananeli, 60</p>
+            </Text>
+          </div>
+        </Group>
+          <Group className="hover:bg-gray-100" w='100%' py='sm' px='md' noWrap>
+          <IconBuilding />
+          <div>
+            <Text size="sm">Egrisi Hotel</Text>
+            <Text size="xs" opacity={0.65} className="flex">
+              <Avatar src="https://f.worldota.net/ratehawk-landing/branch/b429229/_next/static/assets/ge.962a33a0.svg" size="xs" className="mr-1" />
+              <p className="">Batumi, Gonio, ul. Svimon Kananeli, 60</p>
+            </Text>
+          </div>
+        </Group>
+        <Group className="hover:bg-gray-100" w='100%' py='sm' px='md' noWrap>
+          <IconBuilding />
+          <div>
+            <Text size="sm">Egrisi Hotel</Text>
+            <Text size="xs" opacity={0.65} className="flex">
+              <Avatar src="https://f.worldota.net/ratehawk-landing/branch/b429229/_next/static/assets/ge.962a33a0.svg" size="xs" className="mr-1" />
+              <p className="">Batumi, Gonio, ul. Svimon Kananeli, 60</p>
+            </Text>
+          </div>
+        </Group>
+      </>
+      ):(
+        <Group>
         <Select
           radius={'lg'}
           className="w-full "
@@ -88,6 +134,9 @@ function SelectForm() {
           withinPortal
         />
       </Group>
+     
+      )
+      }
     </div>
   );
 }
