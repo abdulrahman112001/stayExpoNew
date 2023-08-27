@@ -12,6 +12,9 @@ import {
   IconMap,
   IconMapBolt,
   IconStar,
+  IconThumbDownFilled,
+  IconThumbUp,
+  IconThumbUpFilled,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -298,9 +301,9 @@ const CustomTabs = () => {
                 <p className="text-sm  text-bg_banfsgy">12,161 reviews</p>
               </div>
               <div className="flex flex-wrap gap-1 mt-4">
-                <p className="p-2 border  text-sm rounded-lg">Housekeeping </p>
-                <p className="p-2 border text-sm rounded-lg">Housekeeping</p>
-                <p className="p-2 border text-sm rounded-lg">Housekeeping</p>
+                <p className="p-2 border  text-xs rounded-lg flex items-center">Housekeeping <IconThumbUpFilled className="w-[15px] h-[15px] ml-1 fill-green-500 text-green-500" /> </p>
+                <p className="p-2 border text-xs rounded-lg">Housekeeping</p>
+                <p className="p-2 border text-xs rounded-lg">Housekeeping</p>
               </div>
               <div className="mt-4">
                 <Carousel
