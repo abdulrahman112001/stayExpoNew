@@ -7,9 +7,15 @@ import {
   Button,
   Image,
   rem,
+  Loader,
 } from "@mantine/core";
 import image from "../../../public/assets/image.969ed1dc.svg";
 import useFetch from "@/hooks/useFetch";
+import { useMutate } from "@/hooks/useMutate";
+import { useState } from "react";
+import { useForm } from "@mantine/form";
+import { ToastContainer } from "react-toastify";
+import { notify } from "@/utils/toast";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -75,17 +81,53 @@ const useStyles = createStyles((theme) => ({
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
     padding: "10px",
+    height:'35px'
     
   },
 }));
 
+
 export default function Subscribe() {
   const { classes } = useStyles();
+  const [isLoading, setIsLoading] = useState(false); 
+  const form = useForm({
+    initialValues: {
+      email: "",
+     
+    },
+
+    validate: {
+      // email: (val) => (/^\S+@\S+$/.test(val) ? null : "Invalid email"),
+      // password: (val) =>
+      //   val.length <= 6
+      //     ? "Password should include at least 6 characters"
+      //     : null,
+    },
+  });
 
   const { data: NewsSection } = useFetch({
     endpoint: `api/dashboard/part/show/News_page`,
     queryKey: [`News_page`],
   });
+
+  const { mutate: addSubscriber } = useMutate({
+    mutationKey: [`subscribe`],
+    endpoint: `api/section/subscriber/store`,
+    onSuccess: (data: any) => {
+      setIsLoading(false);
+      notify("success", "Subscribed Successfully");
+      console.log('done');
+    },
+    onError: (err: any) => {
+      console.log('error', err);
+      // setIsLoading(false);
+      notify("error", `${err?.response?.data?.message}`);   
+    },
+    formData: true,
+});
+  
+
+
   return (
     <div
       className={`${classes.wrapper} border-0 p-5 md:px-20 md:py-10 m-auto subscribtion`}
@@ -113,19 +155,35 @@ export default function Subscribe() {
           }
         </Text>
 
-        <div className={classes.controls}>
-          
+        <form onSubmit={form.onSubmit((values) => {
+                  console.log(values);
+                 
+                  addSubscriber(values);
+                })}> 
+          <div className={classes.controls}>
           <TextInput
-             
+            name="email"
+            value={form.values.email}
+            onChange={(event) =>
+              form.setFieldValue("email", event.currentTarget.value)
+            }
             placeholder="Your email"
             classNames={{ input: classes.input, root: classes.inputWrapper }}
           />
-          <Button className={`${classes.control} bg-bg_banfsgy  hover:bg-bg_banfsgy border `}>
-            Subscribe
-          </Button>
-        </div>
+              <Button      
+                 onClick={() => setIsLoading(true)} 
+                 type="submit" 
+                 className={`rounded-s-0 rounded-s-none bg-bg_banfsgy  hover:bg-bg_banfsgy border `}
+              >
+                Subscribe
+              {isLoading ? <Loader ml={'xs'} color="#fff" size={'xs'} /> : null}
+            </Button>
+            </div>
+        </form>
+        <ToastContainer />
       </div>
       <Image src={image.src} className={classes.image} alt="img" />
     </div>
+    
   );
 }

@@ -14,9 +14,9 @@ function StepsChexkOut() {
 
   return (
     <>
-      <Stepper active={active} onStepClick={setActive} breakpoint="sm">
+      <Stepper active={active} onStepClick={setActive} breakpoint="xs">
         <Stepper.Step label="First step" description="Choose Room">
-          Step 1 content: Create an account
+          <div className="text-lg font-semibold py-10">  Step 1 content: Create an account</div>
         </Stepper.Step>
         <Stepper.Step label="Second step" description="Guest & Payment Details">
           <div className="grid grid-cols-12 mt-5">

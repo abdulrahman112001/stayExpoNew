@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FilterIcon() {
+export default function FilterIcon({black}:any) {
   return (
     <>
       <svg
@@ -9,7 +9,7 @@ export default function FilterIcon() {
         height="24px"
         width="24px"
         aria-hidden="true"
-        fill="#fff"
+        fill= {black?"black":"#fff"}
         color="text.lightest"
         focusable="false"
         role="img"

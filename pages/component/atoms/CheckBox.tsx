@@ -4,7 +4,7 @@ import { Checkbox } from "@mantine/core";
 type CheckboxComp_TP = {
   label: string;
   className?: string;
-  text?: string;
+  text?: any;
 };
 
 function CheckboxComp({ label, className, text }: CheckboxComp_TP) {
