@@ -4,6 +4,7 @@ import Image from "next/image";
 import shape from "../../../public/assets/primary-shape.png";
 import SerachComponent from "../mucles/SerachComponent";
 import useFetch from "@/hooks/useFetch";
+import TextSkelton from "../Skelton/text";
 function HeroSection() {
   const form = useForm({
     initialValues: {
@@ -16,7 +17,11 @@ function HeroSection() {
     },
   });
 
-  const { data: HeroSection } = useFetch({
+  const {
+    data: HeroSection,
+    isLoading: loadingText,
+    isRefetching: refetchText,
+  } = useFetch({
     endpoint: `api/dashboard/part/show/home_page`,
     queryKey: [`Hero-section`],
   });
@@ -26,20 +31,27 @@ function HeroSection() {
       <div className="container p-0 m-auto md:p-20">
         <div className="grid grid-cols-2 px-5 ">
           <div className="col-span-2 md:col-span-1 ">
-          
-                  <h1 className="pt-5 mt-2 text-2xl font-semibold">
-                    {
-                                  //@ts-ignore
+            {loadingText || refetchText ? (
+              <TextSkelton loading={true} />
+            ) : (
+              <>
+                <h1 className="pt-5 mt-2 text-2xl font-semibold">
+                  {
+                    //@ts-ignore
+                    HeroSection?.data?.parts[0].hero_title
+                  }
+                </h1>
+                <p className="mt-2">
+                  {
+                    //@ts-ignore
 
-                    HeroSection?.data?.parts[0].hero_title}
-                  </h1>
-                  <p className="mt-2">{
-                                //@ts-ignore
-
-                  HeroSection?.data?.parts[1].hero_body}</p>
-   
+                    HeroSection?.data?.parts[1].hero_body
+                  }
+                </p>
+              </>
+            )}
           </div>
-          <div className="col-span-2 md:col-span-1 pb-5 ">
+          <div className="col-span-2 pb-5 md:col-span-1 ">
             <form
               onSubmit={form.onSubmit((values) => {
                 //console.log(values)
