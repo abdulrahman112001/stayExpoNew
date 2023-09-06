@@ -10,7 +10,6 @@ import apiImg from "./../../public/assets/api.svg";
 import hotelImg from "./../../public/assets/hotels-icon.png";
 import mapImg from "./../../public/assets/map.webp";
 import shape from "./../../public/assets/primary-shape.png";
-
 import { useForm } from "@mantine/form";
 import Link from "next/link";
 import DateInputComp from "../component/atoms/DateInput";

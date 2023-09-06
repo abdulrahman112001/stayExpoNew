@@ -1,7 +1,6 @@
 import loadable from "@loadable/component";
 import { Inter } from "next/font/google";
 import Loading from "./component/Home/loading";
-import useFetch from "@/hooks/useFetch";
 
 const inter = Inter({ subsets: ["latin"] });
 const HeroSectionMain = loadable(() => import("./component/Home/HeroSection"), {

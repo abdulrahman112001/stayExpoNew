@@ -63,11 +63,12 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (promis: any) => {
   const { classes } = useStyles();
   console.log(id,'idddd')
   type Blog = {};
+    
   const { data: Blog } = useFetch<any>({
     endpoint: `api/section/blog/${id}`,
     queryKey: [`Details-Blog-page/${id}`],
-    
   });
+  
   console.log(Blog?.data?.blog?.category?.name,'cat')
   
   return (
@@ -75,7 +76,7 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (promis: any) => {
       <section className="p-5">
         <div className="flex flex-row items-center justify-between">
           {/* <div>
-            <h2 className="mt-2 text-2xl capitalize font-medium text-stone-800">
+            <h2 className="mt-2 text-2xl font-medium capitalize text-stone-800">
               {Blog?.data?.blog?.title}
             </h2>
           </div> */}
@@ -155,7 +156,7 @@ const DetailsBlogs: FC<DetailsBlogsProps> = (promis: any) => {
               </ul>
          
               <div className="w-[100%]  border-rounded flex p-10 mt-3 mb-5  bg-gray-200">
-                <button className="p-2 text-sm m-auto text-black bg-orange-300 rounded-lg">
+                <button className="p-2 m-auto text-sm text-black bg-orange-300 rounded-lg">
                   GOOD LUCK!
                 </button>
               </div>
