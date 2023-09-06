@@ -129,7 +129,7 @@ const DetailsEvent = () => {
                   />
                 </div>
                 <div className="col-span-1 lg:col-span-7">
-                  <h4 className="pb-3 text-3xl max-sm:text-xl font-semibold leading-6 text-center text-white lg:text-left ">
+                  <h4 className="pb-3 text-3xl font-semibold leading-6 text-center text-white max-sm:text-xl lg:text-left ">
                   {Event?.data?.event?.title}
                   </h4>
                   <div className="text-center lg:text-left">
@@ -142,15 +142,15 @@ const DetailsEvent = () => {
                 
                   </div>
                   <div className="text-center lg:text-left">
-                    <p className="inline-flex items-center py-2 text-2xl max-sm:text-sm text-center text-white lg:py-5 lg:text-left ">
+                    <p className="inline-flex items-center py-2 text-2xl text-center text-white max-sm:text-sm lg:py-5 lg:text-left ">
                     from {Event?.data?.event?.start_date} - to {Event?.data?.event?.end_date}
                       <IconCalendar className="ml-2" />
                     </p>
-                    <p className="text-base text-center max-sm:text-sm text-white lg:pt-2 lg:text-left ">
+                    <p className="text-base text-center text-white max-sm:text-sm lg:pt-2 lg:text-left ">
                     {Event?.data?.event?.location}
                     </p>
                     <button
-                      className="px-2 py-1 mt-5 text-base max-sm:text-sm font-light text-center text-white lg:text-left bg-bg_banfsgy rounded-2xl"
+                      className="px-2 py-1 mt-5 text-base font-light text-center text-white max-sm:text-sm lg:text-left bg-bg_banfsgy rounded-2xl"
                       onClick={() => setIsOpen(!isOpen)}
                     >
                       Group Booking
@@ -203,7 +203,7 @@ const DetailsEvent = () => {
 
                       {arr?.map((item, index) => (
                         <>
-                          <div className="col-span-1 lg:col-span-3">
+                          <div className="col-span-1 lg:col-span-3" key={item?.id}>
                             <SelectNormal
                               placeholder="Room Type "
                               className="pt-4 rounded-md focus:border-bg_banfsgy"
@@ -219,7 +219,7 @@ const DetailsEvent = () => {
                           <ModalComp
                             opened={openDate}
                             isClose={() => setOpenDate(false)}
-                            title={<button className="px-5 py-2 rounded-lg bg-bg_banfsgy text-white " onClick={()=>setOpenDate(false)}><IconArrowBigLeftLines className="text-white font-bold" /></button>}
+                            title={<button className="px-5 py-2 text-white rounded-lg bg-bg_banfsgy " onClick={()=>setOpenDate(false)}><IconArrowBigLeftLines className="font-bold text-white" /></button>}
                             fullScreen={true}
                             withCloseButton={false}
                           >
@@ -309,7 +309,7 @@ const DetailsEvent = () => {
                                     className="pt-2 rounded-md focus:border-bg_banfsgy"
                                   />
                                 </div>
-                                <div className="col-span-1 lg:col-span-12 mt-2">
+                                <div className="col-span-1 mt-2 lg:col-span-12">
                                   <TextereaCustom />
                                 </div>
                                 <div className="col-span-1 mt-3 lg:col-span-12">
@@ -341,17 +341,17 @@ const DetailsEvent = () => {
               </div>
             </div>
             <div className="hidden p-5 lg:col-span-4 lg:block lg:pt-10 ">
-              <div className="flex lg:flex-col flex-row justify-between items-center">
+              <div className="flex flex-row items-center justify-between lg:flex-col">
                 <div className=" bg-[#0006]  p-5  rounded-2xl ">
                   <p className="py-5 font-light text-white lg:text-5xl ">
                     Need <span className="text-[#f30]"> 5</span> or less rooms?
                   </p>
                   <div className="flex flex-row items-center justify-between">
                     <div>
-                      <p className="font-light text-white lg:text-2xl text-base ">
+                      <p className="text-base font-light text-white lg:text-2xl ">
                         Try our online
                       </p>
-                      <p className="font-light text-white lg:text-2xl  text-base  ">
+                      <p className="text-base font-light text-white lg:text-2xl ">
                         booking tool
                       </p>
                     </div>
