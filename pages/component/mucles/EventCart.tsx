@@ -51,7 +51,7 @@ const EventCart = ({ Events }: EventCart_TP) => {
                     {item?.location}{" "}
                   </p>
                   {item?.domains.map((domain: any) => (
-                    <span className="pr-2 text-xs text-gray-500 lg:text-sm">
+                    <span className="pr-2 text-xs text-gray-500 lg:text-sm" key={item?.domain}>
                       {domain?.name}
                     </span>
                   ))}

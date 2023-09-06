@@ -135,7 +135,7 @@ const DetailsEvent = () => {
                   <div className="text-center lg:text-left">
     
                     {Event?.data?.event?.domains.map((domain:any)=>(
-                      <span className="font-semibold  text-[#9E9E9E]  pr-2 text-sm   ">
+                      <span className="font-semibold  text-[#9E9E9E]  pr-2 text-sm   " key={domain?.id}>
                         {domain?.name}
                       </span>
                   ))}
