@@ -26,7 +26,7 @@ export default function CustomNavigatonDetails() {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <div className="bg-[#f4f6f8]">
+    <div className="bg-[#efe8fc] sticky top-0 z-50">
       <div className="hidden  container gap-3 grid-cols-10 m-auto lg:grid lg:px-10  lg:py-4" >
         <div className="col-span-3 py-1 ">
           <SelectForm />

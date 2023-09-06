@@ -75,7 +75,7 @@ export function QuestionToggle({
               value={value}
               onChange={setValue}
             >
-            <Group mt="xs">
+            <Group mt="xs" className='freq-ask_radio'>
                 <Radio  hidden={true}  className={value === 'like' ? 'p-[.5rem] border rounded-sm bg-green-200 border-slate-300' :`p-[.5rem] border rounded-sm border-slate-300  `} value="like" label={<IconThumbUp size={20}  color={value === 'like'? "green" : "#999"} />}/>
                 <Radio   hidden={true}   className={value === 'dislike' ? 'p-[.5rem] border rounded-sm bg-red-200 border-slate-300' :`p-[.5rem] border rounded-sm border-slate-300  `}  value="dislike" label={<IconThumbDown size={20} color={value === 'dislike'? "red" : "#999"} />}/>
                 { value?

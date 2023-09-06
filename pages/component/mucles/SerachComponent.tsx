@@ -17,11 +17,11 @@ export default function SerachComponent({width}:any) {
   return (
     <>
       <div>
-        <div className={ width? "w-[100%] mt-10 md:ml-auto hidden md:block" :"w-[100%] lg:w-[60%] mt-10 md:ml-auto hidden md:block"}>
+        <div className={ width? "w-[100%] mt-5 md:ml-auto hidden md:block" :"w-[100%] lg:w-[60%] mt-5 md:ml-auto hidden md:block"}>
           <div className="p-3 shadow-2xl rounded-xl">
             <SelectForm />
             <div className="grid grid-cols-2 mt-4">
-              <div className="col-span-2">
+              <div className="col-span-2 ">
                 <DateInputComp placeholder="Check-in - Check-out " />
                 
               </div>
@@ -76,7 +76,8 @@ export default function SerachComponent({width}:any) {
         withCloseButton={false}
       >
         
-        <SelectForm />
+        <SelectForm mobile={true} />
+        
       </ModalComp>
       <ModalComp
         opened={openDate}
@@ -95,7 +96,7 @@ export default function SerachComponent({width}:any) {
         fullScreen={true}
         withCloseButton={false}
       >
-        <DropDown />
+        <DropDown mobile={true}  />
       </ModalComp>
     </>
   );

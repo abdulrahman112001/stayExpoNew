@@ -22,9 +22,10 @@ export default function SelectNormal( {
   return (
     <div>
       <Select
+        radius={'md'}
         icon={icon}
         placeholder={placeholder}
-        className={`${className} py-5` }
+        className={`${className} ` }
         data={[
           { value: "react", label: "React" },
           { value: "ng", label: "Angular" },

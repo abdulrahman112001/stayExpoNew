@@ -1,14 +1,14 @@
 "use client";
 import {
   Button,
-  Image,
+
   Title,
   createStyles,
   rem
 } from "@mantine/core";
 import apiImg from "./../../public/assets/api.svg";
 import hotelImg from "./../../public/assets/hotels-icon.png";
-import mapImg from "./../../public/assets/map.webp";
+import mapImg from "./../../public/assets/Resize_map (3).webp";
 import shape from "./../../public/assets/primary-shape.png";
 import { useForm } from "@mantine/form";
 import Link from "next/link";
@@ -17,6 +17,7 @@ import DropDown from "../component/atoms/DropDown";
 import SelectForm from "../component/atoms/SelectForm";
 import ServiceFeature from "../component/atoms/ServiceFeature";
 import SerachComponent from "../component/mucles/SerachComponent";
+import Image from "next/image";
 
 
 const useStyles = createStyles((theme) => ({
@@ -110,17 +111,24 @@ const Service = () => {
             </Button>
           </div>
 
-          <Image src={apiImg.src}  className={classes.image} alt="img" pb={"lg"} width={100} height={100}/>
+          <Image src={apiImg.src}  className={classes.image} alt="img"  width={100} height={100}/>
         </div>
       </div>
-      <div className="bg-[#f8f8f8]">
-        <div className="grid lg:grid-cols-12 md:grid-cols-2 max-sm:grid-cols-1 ">
-          <div className="lg:col-span-6 md:col-span-1 max-sm:col-span-1 bg-[#f8f8f8]">
-            <div className="lg:w-[] sm:hidden  ">
-              <Image src={mapImg.src} alt="img" width={650} height={400} />
+      <div className="bg-[#f8f8f8]  max-sm:px-3">
+        <div className="grid lg:grid-cols-12 md:grid-cols-1  max-sm:grid-cols-1 gap-5 ">
+          <div className="col-span-6  lg:block md:hidden sm:hidden  max-sm:hidden  bg-[#f8f8f8]">
+            <div className="w-[100%]">
+              <Image src={mapImg.src} alt="img" width={800} height={200} className=""  />
             </div>
           </div>
+          {/* <div className="col-span-6">
+            <div className="w-[100%]">
+              <Image src={mapImg.src} alt="img" width={700} height={500} className=""  />
+            </div>
+          </div>
+           */}
           <ServiceFeature
+            
             label="Huge choice of inventory"
             Icon={hotelImg.src}
             description="You choose from over 2,000,000 hotels, guest houses, hostels, and apartments at great prices for corporate clients and travel agencies. We work with the world’s largest hotel suppliers and tens of thousands of hotels directly. This enables us to provide the best rates and save your money."

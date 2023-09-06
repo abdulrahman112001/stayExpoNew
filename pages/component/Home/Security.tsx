@@ -19,7 +19,7 @@ function Security() {
   });
 
   return (
-    <div className="bg-[#f8f8f8] p-5 md:p-20 mt-10">
+    <div className="bg-white p-5 md:p-20 ">
       <div>
         <h4
           className="relative  mt-5 py-5 text-3xl font-bold  

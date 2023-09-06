@@ -48,7 +48,6 @@ function Blog() {
         </div>
         <div className="px-5 mt-4">
           <Carousel
-            withIndicators
             // height={200}
             slideSize="22%"
             slideGap="md"

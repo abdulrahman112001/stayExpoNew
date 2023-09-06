@@ -14,8 +14,8 @@ import CheckboxComp from "../atoms/CheckBox";
 export default function DetailsBooking() {
   return (
     <div>
-      <div className="flex gap-2">
-        <h2 className="font-bold">Almost done!</h2>
+      <div className="flex gap-2 py-3">
+        <p className="font-bold">Almost done!</p>
         <p>Enter your details and complete your booking now.</p>
       </div>
       <div className="p-3 border shadow-md rounded-xl">

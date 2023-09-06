@@ -19,7 +19,6 @@ export default function TextereaCustom ({
     return (
       <div>
          <Textarea
-              mt="md"
               label={label}
               placeholder={placeholder}
               description={description}
