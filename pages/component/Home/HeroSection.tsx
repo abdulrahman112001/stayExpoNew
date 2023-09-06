@@ -4,7 +4,7 @@ import Image from "next/image";
 import shape from "../../../public/assets/primary-shape.png";
 import SerachComponent from "../mucles/SerachComponent";
 import useFetch from "@/hooks/useFetch";
-import TextSkelton from "../Skelton/text";
+import TextSkelton from "../Skelton/TextSkelton";
 function HeroSection() {
   const form = useForm({
     initialValues: {
