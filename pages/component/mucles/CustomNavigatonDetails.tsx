@@ -1,9 +1,9 @@
 "use client";
 import { Button, Tabs } from "@mantine/core";
-import { IconPhone, IconSearch } from "@tabler/icons-react";
+import { IconChevronLeft, IconPhone, IconSearch } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import imgCustomer from "../../../public/assets/discount.jpg";
 import FilterCustom from "../Search/FilterCustom";
 import CheckboxComp from "../atoms/CheckBox";
@@ -15,19 +15,44 @@ import FilterIcon from "../icons/FilterIcon";
 import MapIcon from "../icons/MapIcon";
 import SearchIcon from "../icons/SearchIcon";
 import ModalComp from "../template/Modal";
-import SerachComponent from "./SerachComponent";
+import SerachComponent from "./SearchComponent";
 import SideBar from "../template/SideBar";
 import FilterSearch from "../template/FilterSearch";
+import { IconChevronDownLeft } from "@tabler/icons-react";
 
-export default function CustomNavigatonDetails() {
+export default function CustomNavigatonDetails({rooms}:any) {
   const [open, setOpen] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
   const [openMap, setOpenMap] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  
+  const [windowHeight,setWindowHeight]=useState<any>()
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowHeight(window.scrollY)
+
+    }
+
+    window.addEventListener('scroll', handleResize); // ideally you need to throttle this event
+    // fire on first render if needed
+    handleResize();
+    // cleanup this component
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+},[]);
+console.log(windowHeight)
   return (
-    <div className="bg-[#efe8fc] sticky top-0 z-50">
-      <div className="hidden  container gap-3 grid-cols-10 m-auto lg:grid lg:px-10  lg:py-4" >
+    
+    <div className= {windowHeight < 300 ? "bg-[#efe8fc] sticky top-0 z-50 ":"bg-[#efe8fc] "}>
+      {rooms?
+      <div className="hidden   gap-2 grid-cols-12 m-auto lg:grid md:pl-[2rem] md:pr-[7rem] lg:py-2" >
+        <div className="col-span-2 py-1 ">
+          <div className="flex flex-row items-center pl-10 back-link  cursor-pointer py-3">    
+             <IconChevronLeft className="w-[15px] h-[15px] mr-2 ml-2  text-bg_banfsgy back-icon duration-200 " />
+             <Link href='/search'  className= "font-semibold text-sm text-bg_banfsgy" > Back to Listings</Link>
+          </div>
+        </div>
         <div className="col-span-3 py-1 ">
           <SelectForm />
         </div>
@@ -38,11 +63,29 @@ export default function CustomNavigatonDetails() {
           <DropDown />
         </div>
         <div className="col-span-1  py-2 ">
-          <Button className="py-1 px-[5px] text-base rounded-xl  font-semibold text-white  hover:bg-violet-600 bg-bg_banfsgy ">
+          <Button className="py-1 px-[5px] text-base rounded-md  font-semibold text-white  hover:bg-violet-600 bg-bg_banfsgy ">
             Update Search
           </Button>
         </div>
       </div>
+      :
+      <div className="hidden   gap-3 grid-cols-10 m-auto lg:grid md:pl-[4rem] md:pr-[6rem]  md:py-2" >
+        <div className="col-span-3 py-1 ">
+          <SelectForm />
+        </div>
+        <div className="col-span-3  py-1">
+          <DateInputComp placeholder="12/2/2022" />
+        </div>
+        <div className="col-span-3  py-1">
+          <DropDown />
+        </div>
+        <div className="col-span-1  py-2 ">
+          <Button className="py-1 px-[5px] text-base rounded-md  font-semibold text-white  hover:bg-violet-600 bg-bg_banfsgy ">
+            Update Search
+          </Button>
+        </div>
+      </div>
+      }
       <div className=" flex flex-row items-center justify-between bg-bg_banfsgy lg:hidden">
         <Button
           onClick={() => setOpen(true)}

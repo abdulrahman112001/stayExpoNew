@@ -22,7 +22,6 @@ import useFetch from "@/hooks/useFetch";
 import { useMutate } from "@/hooks/useMutate";
 import { useState } from "react";
 import { useForm } from "@mantine/form";
-import { ToastContainer } from "react-toastify";
 import { notify } from "@/utils/toast";
 import Image from "next/image";
 import Link from "next/link";
@@ -254,10 +253,10 @@ function Footer() {
                           <button      
                             onClick={() => setIsLoading(true)} 
                             type="submit" 
-                            className="px-2 py-2 rounded-lg  rounded-l-none hover:text-bg_banfsgy hover:bg-transparent hover:border-gray-400 hover:border bg-bg_banfsgy "
+                            className="px-2  py-2 rounded-lg  rounded-l-none hover:text-bg_banfsgy hover:bg-transparent hover:border-gray-400 hover:border bg-bg_banfsgy "
                           >
                             Subscribe
-                          {isLoading ? <Loader color="#fff" size={'xs'} /> : null}
+                          {/* {isLoading ? <Loader color="#fff" size={'xs'} /> : null} */}
                         </button>
                       
                     </form>
@@ -333,7 +332,7 @@ function Footer() {
             2016 - 2023 StayExpo®. All rights reserved. powered by SavvyHost
           </p>
         </div>
-        <ToastContainer />
+
       </footer>
     </>
   );

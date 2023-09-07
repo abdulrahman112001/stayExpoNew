@@ -24,6 +24,8 @@ import { useDisclosure } from "@mantine/hooks";
 import {
   IconBook,
   IconChartPie3,
+  IconChevronDown,
+  IconChevronsDown,
   IconCode,
   IconCoin,
   IconFingerprint,
@@ -34,7 +36,6 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import Link from "next/link";
-import { ToastContainer } from "react-toastify";
 import avatarImg from "../../../public/assets/avatar.jpg";
 import ToggleMenue from "../Home/ToggleMenue";
 import Logo from "../atoms/Logo";
@@ -238,8 +239,13 @@ export default function Navbar() {
               {user ? (
                 <div className="drop-down_avatar flex flex-row items-center">
                  {user?.type && (
+                    <div className="flex flex-col px-1">
+                      <div className=" text-gray-700 text-sm font-semibold  capitalize mr-2 ">
+                        {user?.name}
+                      </div>
                     <div className=" text-gray-600 text-xs  capitalize mr-2 ">
                       {user?.type}
+                    </div>
                     </div>
                   )}
                   <Menu
@@ -251,15 +257,20 @@ export default function Navbar() {
                     width={200}
                     shadow="md"
                   >
+                    
                     <Menu.Target>
-                      <Avatar
-                        radius="xl"
-                        size="md"
-                        className="cursor-pointer"
-                        src={avatarImg.src}
-                      />
+                     <div className="flex flex-row items-center gap-2">
+                          <Avatar
+                            radius="xl"
+                            size="md"
+                            className="cursor-pointer "
+                            src={avatarImg.src}
+                          />
+                          <IconChevronDown className="w-[15px] h-[15px] text-gray-400"/>
+                      </div>
                     </Menu.Target>
-
+               
+                  
                     <Menu.Dropdown>
                       <Link href="/user-profile">
                         <div className="flex items-center gap-2 p-3">
@@ -400,7 +411,6 @@ export default function Navbar() {
           </Group>
         </SideBar>
       </Box>
-      <ToastContainer />
     </>
   );
 }

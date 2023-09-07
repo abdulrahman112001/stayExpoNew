@@ -19,7 +19,6 @@ import { upperFirst, useToggle } from "@mantine/hooks";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
-import { ToastContainer } from "react-toastify";
 import Button from "../atoms/Button";
 import ButtonWithIcons from "../atoms/ButtonWithIcons";
 import facebookIcon from "../../../public/assets/facebook.svg";
@@ -297,7 +296,7 @@ export default function AuthinticationForm({ opened, close }:any) {
                     className="lg:px-[100px] px-5  text-center py-1  rounded-md m-auto w-full"
                     action={() => setIsLoading(true)}
                   >
-                    {isLoading ? <Loader /> : upperFirst(type)}
+                    {isLoading ? <Loader color="#fff" /> : upperFirst(type)}
                     {/* {} */}
                   </Button>
                 </div>
@@ -329,7 +328,7 @@ export default function AuthinticationForm({ opened, close }:any) {
           </div>
         </div>
       </Modal>
-      <ToastContainer />
+    
     </div>
   );
 }

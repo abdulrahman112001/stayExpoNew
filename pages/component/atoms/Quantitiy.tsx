@@ -50,11 +50,11 @@ export default function Quantitiy({ min = 1, max = 10 }: QuantityInputProps) {
   const { classes } = useStyles();
   const handlers = useRef<NumberInputHandlers>(null);
   const [value, setValue] = useState<number | ''>(1);
-
+   console.log(value,'value')
   return (
     <div className={classes.wrapper}>
       <ActionIcon<'button'>
-        size={28}
+        size={20}
         variant="transparent"
         onClick={() => handlers.current?.decrement()}
         disabled={value === min}
@@ -75,7 +75,7 @@ export default function Quantitiy({ min = 1, max = 10 }: QuantityInputProps) {
       />
 
       <ActionIcon<'button'>
-        size={28}
+        size={20}
         variant="transparent"
         onClick={() => handlers.current?.increment()}
         disabled={value === max}

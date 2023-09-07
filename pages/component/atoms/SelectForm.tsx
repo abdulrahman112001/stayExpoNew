@@ -1,7 +1,7 @@
 import { Avatar, Group, Select, Text } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconBuilding, IconSearch } from "@tabler/icons-react";
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 const data = [
   {
@@ -57,17 +57,26 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   )
 );
 
-function SelectForm({ placeholder, mobile }: any) {
-  const form = useForm({
-    initialValues: {
-      email: "",
-      termsOfService: false,
-    },
-    validate: {
-      email: (value: string) =>
-        /^\S+@\S+$/.test(value) ? null : "Invalid email",
-    },
-  });
+function SelectForm({ placeholder, mobile ,value,setValue}: any) {
+  
+  // useEffect(()=>{
+  //   if(value){
+  
+  //      document.getElementById("mantine-7vikrjh1v-target")?.setAttribute("aria-expanded", true)
+  //     console.log(document.getElementById("mantine-7vikrjh1v-target"),'seg')
+    
+  //   }
+  // },[])
+  // const form = useForm({
+  //   initialValues: {
+  //     email: "",
+  //     termsOfService: false,
+  //   },
+  //   validate: {
+  //     email: (value: string) =>
+  //       /^\S+@\S+$/.test(value) ? null : "Invalid email",
+  //   },
+  // });
 
   return (
 
@@ -119,8 +128,10 @@ function SelectForm({ placeholder, mobile }: any) {
       ):(
         <Group>
         <Select
+         value={value}
+         onChange={setValue}
           radius={'lg'}
-          className="w-full "
+          className="w-full font-semibold"
           placeholder="City, Address,Landmark"
           itemComponent={SelectItem}
           searchable

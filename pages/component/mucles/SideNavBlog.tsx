@@ -4,7 +4,7 @@ import facebookIcon from "./../../../public/assets/facebook.svg"
 import youtubeIcon from "./../../../public/assets/youtube.svg"
 import Image from "next/image"
 import Link from "next/link"
-import SerachComponent from "./SerachComponent"
+import SerachComponent from "./SearchComponent"
 
 export const SideNavBlog = () => {
   return (

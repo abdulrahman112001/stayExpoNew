@@ -1,7 +1,6 @@
 import {
   Card,
   Group,
-  Image,
   Text,
   createStyles,
   getStylesRef,
@@ -14,6 +13,8 @@ import Link from "next/link";
 import like from './../../../public/assets/Like.svg'
 import { IconChevronLeft } from "@tabler/icons-react";
 import { IconChevronRight } from "@tabler/icons-react";
+import Image from "next/image";
+
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
@@ -39,14 +40,14 @@ const useStyles = createStyles((theme) => ({
     height:"100%",
     opacity: 0,
   },
-  carouselIndicator: {
-    height:'100%',
-    transition: "width 250ms ease",
+  // carouselIndicator: {
+  //   height:'100%',
+  //   transition: "width 250ms ease",
 
-    "&[data-active]": {
-      width: rem(16),
-    },
-  },
+  //   "&[data-active]": {
+  //     width: rem(16),
+  //   },
+  // },
 
   title: {
     fontWeight: 700,
@@ -76,8 +77,8 @@ export default function CardSearch({
   const { classes } = useStyles();
 
   const slides = image?.map((image) => (
-    <Carousel.Slide key={image}>
-      <Image src={image} alt="img" height={280} className="max-sm:h-[240px]"/>
+    <Carousel.Slide  key={image} >
+      <Image src={image} alt="img" height={0} width={0} className="h-full w-[100%]"/>
     </Carousel.Slide>
   ));
 
@@ -91,16 +92,16 @@ export default function CardSearch({
       <Group noWrap spacing={0}>
         
           <div className="grid grid-cols-12">
-            <div className="col-span-4 md:col-span-3 Carousel-container">
+            <div className="col-span-4 md:col-span-3 Carousel-container h-[100%]">
               <Carousel
-                withIndicators
+               height='100%'
+                withIndicators={true}
                 loop
                 nextControlIcon={<div className="nextIcon"> <IconChevronRight className=" absolute top-[50%] right-[10px] text-white " /></div>}
                 previousControlIcon={<div className="prevIcon"><IconChevronLeft className=" absolute top-[50%] left-[10px] text-white " /> </div>}
                 classNames={{
                   root: classes.carousel,
                   controls: classes.carouselControls,
-                  indicator: classes.carouselIndicator,
                 }}
               >
                  {slides}
@@ -125,7 +126,7 @@ export default function CardSearch({
                        TRAVEL SUSTAINABLE
                     </p>
                   </div>
-                  <div className="flex bg-[#F4F6F8]  px-1 rounded-lg items-center">
+                 <div className="flex bg-[#F4F6F8]  px-1 rounded-lg items-center">
                     <IconPlant2 className="text-xs text-[#004499]  w-[12px] md:w-[15px] " />
                     <p className="text-[#004499]  font-semibold px-1 text-[8px] md:text-[12px]">
                         SPA & WELLNESS
@@ -137,6 +138,18 @@ export default function CardSearch({
                       Best Deal
                     </p>
                   </div>
+                 {/* <div className="flex bg-[#5d22d529]  px-1 rounded-lg items-center">
+                    <IconCoin className="text-xs  text-white   fill-[#5d22d5]  w-[12px] md:w-[18px] max-sm:w-[15px] " />
+                    <p className="text-[#5d22d5]  font-semibold  px-1 text-[8px] md:text-[12px]">
+                      Best Deal
+                    </p>
+                  </div>
+                  <div className="flex bg-[#5d22d529]  px-1 rounded-lg items-center">
+                    <IconCoin className="text-xs  text-white   fill-[#5d22d5]  w-[12px] md:w-[18px] max-sm:w-[15px] " />
+                    <p className="text-[#5d22d5]  font-semibold  px-1 text-[8px] md:text-[12px]">
+                      Best Deal
+                    </p>
+                  </div> */}
            
                 </Group>
                 <Text
@@ -185,7 +198,7 @@ export default function CardSearch({
                 </Group>
                 </div>
                 <Group className="px-2 pb-4  h-[15%]  inline-flex items-center ">
-                  <h3 className="font-bold text-white bg-[#5d22d5] text-xs p-1 mt-2 max-sm:font-semibold px-3 max-sm:mt-1  rounded-lg">
+                  <h3 className="font-bold text-white bg-[#5d22d5] text-xs p-1 mt-2 max-sm:font-semibold px-3 max-sm:px-2 max-sm:mt-1  rounded-lg">
                     8.5
                   </h3>
                   <p className="text-xs md:text-sm mt-2 max-sm:mt-1 ">
@@ -219,7 +232,7 @@ export default function CardSearch({
                   </h6>
                   <p className="text-xs text-gray-500">Total: $125</p>
                   <Button className="px-2 py-1 my-2 rounded-full bg-[#05ac05] hidden md:block">
-                    <Link href="/checkout" className="text-base font-semibold">Choose your room</Link>
+                    <Link href="/checkout" className="text-base font-[400]">Choose your room</Link>
                   </Button>
                 </div>
               </div>

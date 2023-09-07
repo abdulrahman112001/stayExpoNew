@@ -16,9 +16,9 @@ const toastOptions: ToastOptions_TP = {
 }
 
 const STYLES = {
-  success: "bg-mainGreen text-white",
-  error: "bg-mainRed text-white",
-  info: "bg-blue-300 text-white",
+  success: "bg-mainGreen text-white ",
+  error: "bg-mainRed text-white ",
+  info: "bg-blue-300 text-white ",
 }
 
 type ToastType = keyof typeof STYLES 
@@ -28,10 +28,10 @@ export const notify = (
   msg?: string,
   position: ToastPosition = "top-right"
 ) => {
-  let message = msg || "تمت العملية بنجاح"
+  let message = msg || "the proccess is done successfully"
 
   if (type === "error" && !!!msg) {
-    message = "حدث خطأ ما ، حاول لاحقاً"
+    message = "There is something wronge try again"
   }
   const className = STYLES[type]
 

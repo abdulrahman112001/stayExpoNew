@@ -13,23 +13,20 @@ const FilterSearch = () => {
   const [activeTab, setActiveTab] = useState<any>('first');
 
 
-    
     const onClick: React.MouseEventHandler<HTMLElement> = (e) => {
       //@ts-ignore
-
       e.currentTarget?.nextSibling?.setAttribute("data-active", true)  // <a data-id="0" class="active nav-link">Info</a>
-
     }
   
 
   return (
     <>
-    <div className="mt-5">
+    <div className="mt-5 custom-navigation-filter-search">
             <p className="  font-semibold py-2">Sort By</p>
             <SelectForm />
           </div>
           <div className="mt-5 ">
-            <h3 className=" font-semibold py-2 border-b-[#ccc]  border-b">Deals</h3>
+            <h3 className="font-semibold py-2 border-b-[#ccc] border-b">Deals</h3>
           
             <CheckboxComp
               label="Retail - you pick the hotel"
@@ -40,7 +37,7 @@ const FilterSearch = () => {
             
           </div>
           <div className="mt-5">
-            <h3 className=" font-semibold py-2 border-b-[#ccc] border-b">Your Budget</h3>
+            <h3 className="font-semibold py-2 border-b-[#ccc] border-b">Your Budget</h3>
             
               <CheckboxComp label="$$$$$" text='$0 to $80 per night' />
              

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import FilterCustom from '../Search/FilterCustom';
 import SideNavBlog from './SideNavBlog';
 import SideBar from '../template/SideBar';
-import SerachComponent from './SerachComponent';
+import SerachComponent from './SearchComponent';
 import SearchInput from '../atoms/SearchInput';
 import Link from 'next/link';
 import Image from 'next/image';

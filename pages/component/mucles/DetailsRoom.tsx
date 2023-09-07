@@ -157,7 +157,7 @@ export default function DetailsRoom() {
                 <div className="col-span-12 md:col-span-3 px-3 ">
                   <p className="px-2 text-sm font-semibold pb-2 " >Payment & cancellation</p>
                   <div className="pt-[1px] h-full bg-white border-l pb-5">
-                    <div className="mt-5 bg-red-500 w-[70%]">
+                    <div className="mt-5  bg-[#e12d2d] w-[55%]">
                       <p className="p-1 text-xs text-white font-semibold ">SAVE 75% TODAY!</p>
                     </div>
                     <div className="flex flex-col items-end justify-end mt-3">
@@ -190,12 +190,12 @@ export default function DetailsRoom() {
                           </p>
                     </div>
                     <div className="m-auto mt-4 text-end ">
-                      <p className="text-red-500 text-sm font-semibold px-1 pb-5">Our last 5 rooms!</p>
+                      <p className="text-[#e12d2d] text-sm font-semibold px-1 pb-5">Our last 5 rooms!</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-12 col-span-12 mt-10 border border-red-500 ">
+              <div className="grid grid-cols-12 col-span-12 mt-10 border border-[#e12d2d] ">
                 <div className="col-span-12 p-0 md:col-span-4">
            
                   <div className="h-full p-2 bg-white border-r">
@@ -254,7 +254,7 @@ export default function DetailsRoom() {
                 </div>
                 <div className="col-span-12 md:col-span-3 px-3 ">
                   <div className="pt-[1px] h-full bg-white border-l pb-5">
-                    <div className="mt-5 bg-red-500 w-[70%]">
+                    <div className="mt-5 bg-[#e12d2d] w-[55%]">
                       <p className="p-1 text-xs text-white font-semibold ">SAVE 75% TODAY!</p>
                     </div>
                     <div className="flex flex-col items-end justify-end mt-3">
@@ -287,7 +287,7 @@ export default function DetailsRoom() {
                           </p>
                     </div>
                     <div className="m-auto mt-4 text-end ">
-                      <p className="text-red-500 text-sm font-semibold px-1 pb-5">Our last 5 rooms!</p>
+                      <p className="text-[#e12d2d] text-sm font-semibold px-1 pb-5">Our last 5 rooms!</p>
                     </div>
                   </div>
                 </div>
@@ -307,7 +307,7 @@ export default function DetailsRoom() {
            <div className=" ">
               <p className="flex flex-row items-center text-sm bg-red-200 text-red-600 p-1 rounded">
                 <IconClock className="mr-2" />
-              Hurry up! <strong className="px-1"> 1 room type</strong> has already sold out for your dates!
+                Hurry up! <strong className="px-1"> 1 room type</strong> has already sold out for your dates!
               </p>
                 
            </div>
