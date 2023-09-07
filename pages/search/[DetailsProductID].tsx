@@ -32,18 +32,27 @@ export default function Page() {
 
   const [activeSection,setActiveSection]=useState<any>()
   const [windowHeight,setWindowHeight]=useState<any>()
+  const [imageGallery,setImageGallery] = useState<boolean>(false)
+  const openImages = () =>{
+    
+    setImageGallery(true)
+    //@ts-ignore
+    document.querySelector('.image-gallery-fullscreen-button')?.click()
+
+  }
+  const handleTabClick = () => {
+    // scroll.scrollTo("content", {
+    //   // smooth: true as boolean ,
+    // });
+  };
 
   useEffect(() => {
     const handleResize = () => {
       setWindowHeight(window.scrollY)
-
     }
-
     window.addEventListener('scroll', handleResize); // ideally you need to throttle this event
-
     // fire on first render if needed
     handleResize();
-
     // cleanup this component
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -51,10 +60,102 @@ export default function Page() {
 },[]);
  
 
-console.log(activeSection,'hi')
   return (
     <>
-    <CustomNavigatonDetails/>
+    <CustomNavigatonDetails rooms={true}/>
+    {windowHeight >= 420  ?
+      <div className="flex flex-row items-center  sticky top-0 z-[100] bg-white justify-between py-3 px-[5rem] border rounded ">
+          <ul className="hidden gap-10 md:flex ">
+            <li>
+              <Link
+                activeClass="active"
+                to="Overview"
+                className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-[.9rem]"
+                spy={true}
+                smooth={true}
+                // offset={-50}
+                // duration={500}
+              >
+                <button onClick={handleTabClick}>Overview</button>
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                to="Rooms"
+                className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-[.9rem]"
+                spy={true}
+                smooth={true}
+                // offset={-50}
+                // duration={500}
+              >
+                <button onClick={handleTabClick}>Rooms</button>
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                to="content"
+                className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-[.9rem]"
+                spy={true}
+                smooth={true}
+                // offset={-50}
+                // duration={500}
+              >
+                <button onClick={handleTabClick}>Facilities</button>
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-[.9rem]"
+                to="content"
+                spy={true}
+                smooth={true}
+                // offset={-50}
+                // duration={500}
+              >
+                <button onClick={handleTabClick}>Reviews</button>
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-[.9rem]"
+                to="content"
+                spy={true}
+                smooth={true}
+                // offset={-50}
+                // duration={500}
+              >
+                <button onClick={handleTabClick}>Location</button>
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                className="text-gray-700 hover:text-bg_banfsgy text-sm hover:border-b-4 hover:border-bg_banfsgy py-[.9rem]"
+                to="content"
+                spy={true}
+                smooth={true}
+                // offset={-50}
+                // duration={500}
+              >
+                <button onClick={handleTabClick}>Policies</button>
+              </Link>
+            </li>
+          </ul>
+          <div className="flex items-center gap-2">
+            <small className="text-xs text-gray-600">from</small>
+            <span className="text-lg text-red-600">$ 72</span>
+            <button className="p-1 text-white text-sm font-medium rounded bg-bg_banfsgy">
+              Select Room
+            </button>
+          </div>
+      </div>
+      :
+      null
+    }   
     <div className=" md:m-auto lg:px-20  ">
       <div className="hidden md:block">
         <div className="grid grid-cols-5">
@@ -76,10 +177,15 @@ console.log(activeSection,'hi')
                 alt=""
                 width="100"
                 height="250"
+                onClick={openImages}
               />
             )}
           </div>
           <div className="grid grid-cols-3 col-span-3 ">
+{/*           
+          <div className={imageGallery? '' : 'hidden' }>
+               <ImageSlider media={images}/>
+           </div> */}
             <div className="col-span-1">
               <div className="p-1">
                 {isLoading ? (
@@ -169,7 +275,6 @@ console.log(activeSection,'hi')
       </div>
       <div className="md:hidden">
         <ImageSlider media={images}/>
-        
       </div>
       <div className="pb-5">
       <CustomTabs />

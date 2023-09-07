@@ -1,57 +1,20 @@
 "use client";
 import { Carousel } from "@mantine/carousel";
 import {
-  IconAwardFilled,
-  IconBasketDollar,
   IconBeach,
-  IconBed,
-  IconBedFilled,
-  IconBrandKbin,
   IconBuilding,
-  IconBuildingArch,
   IconBuildingBank,
   IconBuildingCastle,
   IconBuildingMosque,
   IconBuildingStore,
-  IconCalendar,
-  IconCalendarBolt,
-  IconCalendarCode,
-  IconCalendarCog,
-  IconCalendarExclamation,
-  IconCalendarOff,
-  IconCalendarPause,
-  IconCalendarRepeat,
-  IconCashBanknote,
   IconCheck,
   IconCoffee,
-  IconCoinPound,
-  IconCoinRupee,
   IconCoins,
-  IconCup,
-  IconCurrencyDollar,
-  IconEyeDollar,
   IconFileCertificate,
-  IconFilter,
-  IconFilterExclamation,
   IconFlag,
-  IconFlagDollar,
-  IconFlower,
-  IconGardenCart,
-  IconMan,
-  IconMap,
-  IconMapBolt,
-  IconMapPin,
-  IconMoneybag,
-  IconMoodConfuzed,
-  IconPigMoney,
-  IconPinFilled,
   IconPinnedFilled,
-  IconPlayerSkipBack,
-  IconReplace,
-  IconShieldDollar,
   IconSmokingNo,
   IconStar,
-  IconThumbDownFilled,
   IconThumbUp,
   IconThumbUpFilled,
   IconUserCancel,
@@ -83,9 +46,12 @@ const CustomTabs = () => {
     // });
   };
 
+
   return (
+
+    
     <div className="mt-3">
-      <div className="flex items-center justify-between p-3 border rounded ">
+      <div className="flex flex-row items-center justify-between p-3 border rounded ">
         <ul className="hidden gap-10 md:flex ">
           <li>
             <Link
@@ -352,7 +318,7 @@ const CustomTabs = () => {
 
             <div className="mt-4 runded-sm">
               <div className="p-4 md:pl-10 bg-red-100 runded-sm">
-                <h1 className="font-bold text-red-600">
+                <h1 className="font-bold text-[#e12d2d]">
                   This property is in high demand!
                 </h1>
                 <p>51 travelers have booked today.</p>

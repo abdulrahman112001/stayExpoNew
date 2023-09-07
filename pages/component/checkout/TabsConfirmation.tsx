@@ -2,44 +2,44 @@ import { Tabs } from "@mantine/core";
 import Image from "next/image";
 import Button from "../atoms/Button";
 import Link from "next/link";
+import { IconLoader, IconLoader2, IconLoader3, IconReload, IconRepeat } from "@tabler/icons-react";
 
 export default function TabsConfirmation() {
   return (
     <div>
-      <Tabs defaultValue="gallery">
+      <Tabs defaultValue="gallery"  color="violet">
         <Tabs.List>
-          <Tabs.Tab value="gallery" className="font-bold">Manage</Tabs.Tab>
-          <Tabs.Tab value="messages" className="font-bold">Room</Tabs.Tab>
-          <Tabs.Tab value="settings" className="font-bold">important info</Tabs.Tab>
+          <Tabs.Tab value="gallery" className="font-bold"><div className="text-base font-bold">Manage</div></Tabs.Tab>
+          <Tabs.Tab value="messages" className="font-bold"> <div className="text-base font-bold">Room</div></Tabs.Tab>
+          <Tabs.Tab value="settings" className="font-bold"><div className="text-base font-bold">important info</div></Tabs.Tab>
         </Tabs.List>
 
         <Tabs.Panel value="gallery" pt="xs">
           <div className="flex justify-between">
             <div className="w-full">
               <div>
-                <div className="flex ">
-                  <h2 className="font-bold">Confirmation</h2>
-                  <div className="flex justify-between gap-1">
-                    <p className="mx-2 bg-yellow-100">25498064919841</p>
-                    <p className="mx-2 bg-yellow-100">25498064919841</p>
-                  </div>
+                <div className="grid md:grid-cols-3 gap-2 grid-cols-2 px-2">
+                  <div className=" col-span-1 font-semibold ">confirmation:</div>
+                  <div className=" col-span-1 bg-yellow-100">#:2666489478</div>
+                  <div className=" col-span-1 bg-yellow-100">#:2666489478</div>
+                  <div className=" col-span-1 bg-yellow-100">#:2666489478</div>
                 </div>
-                <div className="flex justify-between">
-                  <h2 className="font-bold">number</h2>
+                <div className="flex justify-between py-2 px-2">
+                  <h6 className=" font-semibold">number</h6>
                   <p className="bg-yellow-100">25498064919841</p>
                 </div>
-                <div className="flex justify-between ">
-                  <h2 className="font-bold">Hotel phone number</h2>
+                <div className="flex justify-between py-2 px-2">
+                  <h6 className="font-semibold">Hotel phone number</h6>
                   <p className="bg-yellow-100">212-803-4500</p>
                 </div>
               </div>
               <div className="pt-2 mt-5 border-t border-gray-400">
-                <Link href="/" className="font-bold text-blue-700">
-                  Book again
+                <Link href="/" className="font-bold gap-2 inline-flex  items-center text-bg_banfsgy">
+                <IconReload className="w-[18px] h-[18px]" />  Book again
                 </Link>
               </div>
-              <div className="pt-2 mt-5 border-t border-gray-400">
-                <h2 className="font-bold">Cancellation policy</h2>
+              <div className="pt-2 mt-2 border-t border-gray-400">
+                <h6 className="font-semibold">Cancellation policy</h6>
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Saepe dolores possimus incidunt modi aspernatur, sint neque
@@ -52,18 +52,18 @@ export default function TabsConfirmation() {
                 <Button className="p-2 px-4 mt-5">Cancel</Button>
               </div>
             </div>
-            <div className="flex flex-col w-full px-3 border-l">
-              <h2>Top FAQs</h2>
-              <Link href="/" className="font-bold text-blue-700">
+            <div className="md:flex  hidden flex-col w-full  px-3 border-l">
+              <p className="font-semibold text-sm"> Top FAQs</p>
+              <Link href="/" className="font-semibold text-sm py-1 text-bg_banfsgy">
                 Can i cancel thisd reservation ?
               </Link>
-              <Link href="/" className="font-bold text-blue-700">
-                Can i cancel thisd reservation ?
+              <Link href="/" className="font-semibold text-sm py-1 text-bg_banfsgy">
+                Can i cancel this reservation ?
               </Link>
-              <Link href="/" className="font-bold text-blue-700">
+              <Link href="/" className="font-semibold text-sm py-1 text-bg_banfsgy">
                 print a receipt
               </Link>
-              <Link href="/" className="font-bold text-blue-700">
+              <Link href="/" className="font-semibold text-sm py-1 text-bg_banfsgy">
                 see all FAQs
               </Link>
             </div>
@@ -71,7 +71,7 @@ export default function TabsConfirmation() {
         </Tabs.Panel>
 
         <Tabs.Panel value="messages" pt="xs">
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-2 px-2">
             <div>
               <Image
                 className="!w-[120px] max-w-[120px] h-[120px] rounded-xl"
@@ -81,10 +81,10 @@ export default function TabsConfirmation() {
                 height="100"
               />
             </div>
-            <div>
-              <h2 className="font-bold">
+            <div >
+              <h6 className="font-bold">
                 interContinental New Yourk Times Square
-              </h2>
+              </h6>
               <p className="text-gray-800">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Perspiciatis estiae sint,
@@ -93,40 +93,40 @@ export default function TabsConfirmation() {
               <p className="text-gray-500">Time Square - Theatre District</p>
             </div>
           </div>
-          <div>
-            <h2 className="font-bold"> Reservation Name</h2>
+          <div className="px-2">
+            <h6 className=" font-semibold text-sm py-1 "> Reservation Name</h6>
             <div className="flex gap-2">
-              <h2 className="font-bold">Room 1 </h2>
-              <p>Abood Azmy</p>
+              <h2 className="font-semibold text-sm">Room 1 </h2>
+              <p className="text-sm">Abood Azmy</p>
             </div>
             <div className="flex gap-2" >
-              <h2 className="font-bold">Room 2 </h2>
-              <p>Abood Azmy</p>
+              <h2 className="font-semibold text-sm">Room 2 </h2>
+              <p className="text-sm">Abood Azmy</p>
             </div>
             <div className="flex gap-2">
-              <h2 className="font-bold">Room 3 </h2>
-              <p>Abood Azmy</p>
+              <h2 className="font-semibold text-sm">Room 3 </h2>
+              <p className="text-sm">Abood Azmy</p>
             </div>
           </div>
         </Tabs.Panel>
 
         <Tabs.Panel value="settings" pt="xs">
-          <h3 className="font-bold text-gray-500">
+          <h6 className="font-bold text-gray-600">
             credit card required
-          </h3>
-          <p className="text-gray-400">
+          </h6>
+          <p className="text-gray-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor repellendus quidem repudiandae similique temporibus reiciendis cumque, perferendis, veniam, nesciunt eum commodi? Saepe esse doloremque possimus nam eligendi quaerat atque voluptate.
           </p>
-          <h3 className="font-bold text-gray-500">
+          <h6 className="font-bold text-gray-600">
             Additional check-in information
-          </h3>
-          <p className="text-gray-400">
+          </h6>
+          <p className="text-gray-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor repellendus quidem repudiandae similique temporibus reiciendis cumque, perferendis, veniam, nesciunt eum commodi? Saepe esse doloremque possimus nam eligendi quaerat atque voluptate.
           </p>
-          <h3 className="font-bold text-gray-500">
+          <h6 className="font-bold text-gray-600">
             Additional  information
-          </h3>
-          <p className="text-gray-400">
+          </h6>
+          <p className="text-gray-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor repellendus quidem repudiandae similique temporibus reiciendis cumque, perferendis, veniam, nesciunt eum commodi? Saepe esse doloremque possimus nam eligendi quaerat atque voluptate.
           </p>
         </Tabs.Panel>

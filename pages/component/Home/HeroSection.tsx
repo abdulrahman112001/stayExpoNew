@@ -2,8 +2,8 @@
 import { useForm } from "@mantine/form";
 import Image from "next/image";
 import shape from "../../../public/assets/primary-shape.png";
-import SerachComponent from "../mucles/SerachComponent";
 import useFetch from "@/hooks/useFetch";
+import SearchComponent from "../mucles/SearchComponent";
 function HeroSection() {
   const form = useForm({
     initialValues: {
@@ -23,7 +23,7 @@ function HeroSection() {
 
   return (
     <div className="relative Hero-section-overflow">
-      <div className="container p-0 m-auto md:p-20">
+      <div className="container p-0 m-auto lg:p-20 md:p-5">
         <div className="grid grid-cols-2 px-5 ">
           <div className="col-span-2 md:col-span-1 ">
           
@@ -45,7 +45,7 @@ function HeroSection() {
                 //console.log(values)
               })}
             >
-              <SerachComponent />
+              <SearchComponent />
             </form>
           </div>
         </div>

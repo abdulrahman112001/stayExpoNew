@@ -22,7 +22,7 @@ const bottonVars = tv({
 type ButtonVariants_TP = VariantProps<typeof bottonVars>
 
 interface ButtonProps_TP extends ButtonVariants_TP {
-  children: ReactNode
+  children?: ReactNode
   className?: string
   disabled?: boolean
   action?: () => void

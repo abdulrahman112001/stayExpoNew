@@ -6,7 +6,16 @@ function DateInputComp({ placeholder, mobile,setOpen }: any) {
   
   const [date, setDate] = useState<[Date | null, Date | null]>([null, null]);
   const [range,setRange] = useState<number|null>(null)
-   
+  const [windowSize, setWindowSize] = useState<number | any>();
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   function getDayDiff(startDate: any, endDate: any) {
     const msInDay = 24 * 60 * 60 * 1000;
   
@@ -27,6 +36,7 @@ function DateInputComp({ placeholder, mobile,setOpen }: any) {
         <>
         <DatePicker
           type="range"
+  
           //@ts-ignore
           placeholder={<><IconCalendar  className="w-[20px] h-[20px] text-bg_banfsgy" /> {placeholder}</>}
           value={date}
@@ -43,22 +53,32 @@ function DateInputComp({ placeholder, mobile,setOpen }: any) {
         </div>
         </>
       ) : (
+        <div className=" relative ">
         <DatePickerInput
-          type="range"
-          radius={"lg"}
+          type="range"   
+          id="date-picker"
+          valueFormat={`MM/DD/YYYY`}
           // label="Pick dates range"
-                    //@ts-ignore
-
+          //@ts-ignore
           placeholder={<span className=" inline-flex items-center h-[100%]"><IconCalendar  className="w-[20px] h-[20px] text-bg_banfsgy mr-2" /> {placeholder}</span>}
           value={date}
-          onChange={setDate}
+          onChange={(value)=>{
+            setDate(value)
+            setRange(0)
+          }}
           mx="auto"
           maw={400}
           weekendDays={[]}
           numberOfColumns={1}
           clearable
-          className="bg-white rounded-2xl focus:border-bg_banfsgy "
+          className="bg-white rounded-lg  font-semibold  "
         />
+         {range && windowSize >800 ? 
+        <span className=" absolute h-[100%] z-[200] top-3 left-[180px] text-[0.875rem] font-semibold text-gray-500 ">({range}) nights</span>
+        : 
+        null
+        }
+        </div>
       )}
     </div>
   );

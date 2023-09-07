@@ -17,7 +17,7 @@ import DateInputComp from "../component/atoms/DateInput";
 import DropDown from "../component/atoms/DropDown";
 import SelectForm from "../component/atoms/SelectForm";
 import ServiceFeature from "../component/atoms/ServiceFeature";
-import SerachComponent from "../component/mucles/SerachComponent";
+import SerachComponent from "../component/mucles/SearchComponent";
 import Image from "next/image";
 
 

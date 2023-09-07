@@ -14,13 +14,13 @@ import useFetch from "@/hooks/useFetch";
 import { useMutate } from "@/hooks/useMutate";
 import { useState } from "react";
 import { useForm } from "@mantine/form";
-import { ToastContainer } from "react-toastify";
 import { notify } from "@/utils/toast";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
     display: "flex",
     alignItems: "center",
+    justifyContent:"space-between",
     padding: `calc(${theme.spacing.xl} * 2)`,
     borderRadius: theme.radius.md,
     backgroundColor:
@@ -28,12 +28,11 @@ const useStyles = createStyles((theme) => ({
     border: `${rem(1)} solid ${
       theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[3]
     }`,
-    gap: "140px",
+
 
     [theme.fn.smallerThan("sm")]: {
       flexDirection: "column-reverse",
       padding: theme.spacing.xl,
-      gap: "10px",
     },
   },
 
@@ -120,7 +119,7 @@ export default function Subscribe() {
     },
     onError: (err: any) => {
       console.log('error', err);
-      // setIsLoading(false);
+      setIsLoading(false);
       notify("error", `${err?.response?.data?.message}`);   
     },
     formData: true,
@@ -130,10 +129,10 @@ export default function Subscribe() {
 
   return (
     <div
-      className={`${classes.wrapper} border-0 p-5 md:px-20 md:py-10 m-auto subscribtion`}
+      className={`${classes.wrapper} border-0 md:px-20 md:py-10 pb-7 m-auto subscribtion`}
     >
       <div className={`${classes.body} justify-between`}>
-        <Title className="relative  mt-5 py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
+        <Title className="relative  py-5 text-3xl font-bold  after:w-[50px] after:absolute after:left-[0px] after:bg-bg_banfsgy after:bottom-[10%] after:h-[3px]">
           {
             //@ts-ignore
 
@@ -180,7 +179,7 @@ export default function Subscribe() {
             </Button>
             </div>
         </form>
-        <ToastContainer />
+        
       </div>
       <Image src={image.src} className={classes.image} alt="img" />
     </div>
