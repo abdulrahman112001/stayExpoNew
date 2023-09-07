@@ -1,6 +1,7 @@
 "use client";
 import { Carousel } from "@mantine/carousel";
 import {
+  IconAward,
   IconBeach,
   IconBuilding,
   IconBuildingBank,
@@ -13,6 +14,7 @@ import {
   IconCoins,
   IconFileCertificate,
   IconFlag,
+  IconLocation,
   IconPinnedFilled,
   IconSeeding,
   IconSmokingNo,
