@@ -16,6 +16,7 @@ import {
   IconFlag,
   IconLocation,
   IconPinnedFilled,
+  IconPool,
   IconSeeding,
   IconSmokingNo,
   IconStar,
@@ -35,7 +36,6 @@ import bus from "./../../../public/assets/bus.svg";
 import car from "./../../../public/assets/car.svg";
 import checkin from "./../../../public/assets/checkin.svg";
 import hygiene from "./../../../public/assets/hygiene.svg";
-import { IconPool } from "@tabler/icons-react";
 const CustomTabs = () => {
   const [activeTab, setActiveTab] = useState<string>("tab1");
 
@@ -186,7 +186,7 @@ const CustomTabs = () => {
                   situated in the Downtown part of Cairo, this property puts you
                   close to attractions and interesting dining options. Dont
                   leave before paying a visit to the famous The Museum of
-                  Egyptian Antiquities. Rated with 5 stars, this high-quality
+                  Egyptian Antiquities. Rated with 5 stars, this high quality
                   property provides guests with access to massage, restaurant
                   and hot tub on-site.
                 </p>

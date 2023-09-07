@@ -10,8 +10,8 @@ const EventCart = ({ Events }: EventCart_TP) => {
   return (
     <>
       {Events?.data?.events?.map((item: any) => (
-        <>
-          <div className="grid grid-cols-12 border-b " key={item?.id}>
+        <div  key={item?.id}> 
+          <div className="grid grid-cols-12 border-b ">
             <div className="col-span-12 py-2 lg:col-span-3 ">
               <Image
                 src={
@@ -75,7 +75,7 @@ const EventCart = ({ Events }: EventCart_TP) => {
               </Link>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </>
   );
